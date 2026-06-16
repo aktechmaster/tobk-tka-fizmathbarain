@@ -1,13 +1,4 @@
 // Bank Soal TKA Numerikal Kelas 9
-// Format tipe: PG (Pilihan Ganda), PGK (Pilihan Ganda Kompleks), BS (Benar/Salah)
-// Tingkat Kesulitan & Nilai:
-// - Sangat Mudah: 4 – 5
-// - Mudah: 6 – 7
-// - Sedang: 8 – 10
-// - Lumayan Sulit: 11 – 13
-// - Sulit: 14 – 16
-// - Sangat Sulit: 17 – 20
-
 const daftarSoal = [
   {
     id: 1,
@@ -47,15 +38,15 @@ const daftarSoal = [
     tipe: "PGK",
     tingkatKesulitan: "Lumayan Sulit",
     rentangNilai: "11 – 13",
-    soal: `Terdapat tiga bilangan yang dinyatakan dengan (33<sup>2</sup> − 3<sup>2</sup>), (8<sup>2</sup> + 296), dan (36 × 35).<br>
+    soal: `Terdapat tiga bilangan yang dinyatakan dengan (33² − 3²), (8² + 296), dan (36 × 35).<br>
     Bilangan apa saja yang merupakan faktor persekutuan ketiga bilangan tersebut?<br>
     <strong>Pilih semua jawaban benar!</strong>`,
     gambar: null,
     pilihan: [
-      "2<sup>3</sup> × 3<sup>3</sup> × 7",
-      "2<sup>2</sup> × 3<sup>2</sup> × 7",
-      "2<sup>2</sup> × 3<sup>2</sup> × 5",
-      "2 × 3<sup>2</sup> × 5"
+      "2³ × 3³ × 7",
+      "2² × 3² × 7",
+      "2² × 3² × 5",
+      "2 × 3² × 5"
     ],
     kunciJawaban: [2, 3]
   },
@@ -81,7 +72,7 @@ const daftarSoal = [
     tingkatKesulitan: "Mudah",
     rentangNilai: "6 – 7",
     soal: `Harga setengah kilogram cabe rawit pada hari ini adalah Rp35.000,00.<br><br>
-    Jika hari ini Ibu membeli cabe rawit seberat 2<sup>1</sup>/<sub>4</sub> kilogram, total harga yang harus dibayar Ibu adalah ....`,
+    Jika hari ini Ibu membeli cabe rawit seberat 2¼ kilogram, total harga yang harus dibayar Ibu adalah ....`,
     gambar: null,
     pilihan: [
       "A. Rp175.000,00",
@@ -93,5 +84,7 @@ const daftarSoal = [
   }
 ];
 
-// WAJIB ADA INI
-window.daftarSoal = daftarSoal;
+// WAJIB: Membuka data ke halaman HTML
+if (typeof window !== 'undefined') {
+    window.daftarSoal = daftarSoal;
+}
