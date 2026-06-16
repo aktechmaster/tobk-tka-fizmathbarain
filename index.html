@@ -358,9 +358,9 @@
 
       // ✅ KONDISI PEMANGGILAN SOAL KELAS 9 NUMERIKAL
       if (kelas === '9' && mapel === 'TKA Numerasi (Matematika)') {
-        // Membuat tag script untuk memuat soal-tka-num-9.js
+        // Membuat tag script untuk memuat soal_tka_num_9.js
         const scriptSoal = document.createElement('script');
-        scriptSoal.src = 'soal-tka-num-9.js'; // Pastikan nama file sesuai
+        scriptSoal.src = 'soal_tka_num_9.js'; // Pastikan nama file sesuai
         scriptSoal.onload = () => {
           daftarSoal = window.daftarSoal || [];
           if(daftarSoal.length > 0) {
@@ -370,7 +370,7 @@
           }
         };
         scriptSoal.onerror = () => {
-          alert('Gagal memuat file soal-tka-num-9.js. Pastikan file ada di folder yang sama.');
+          alert('Gagal memuat file soal_tka_num_9.js. Pastikan file ada di folder yang sama.');
         };
         document.body.appendChild(scriptSoal);
       } else {
