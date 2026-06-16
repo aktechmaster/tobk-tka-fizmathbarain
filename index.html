@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>TO TKA — Fizmath Brain</title>
   
-  <!-- ✅ PERBAIKAN FAVICON: TAJAM, TIDAK BURAM -->
   <link rel="icon" type="image/png" href="fizmathfav.png" sizes="16x16">
-
   <style>
     link[rel="icon"] {
       image-rendering: -webkit-optimize-contrast;
@@ -20,8 +18,8 @@
   <style>
     :root{
       font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      --accent: #0088CC; /* Warna biru utama dari gambar */
-      --secondary: #FFCC00; /* Warna kuning dari gambar */
+      --accent: #0088CC;
+      --secondary: #FFCC00;
       --danger: #b91c1c;
       --muted: #51657a;
       --card-bg: #fff;
@@ -30,13 +28,12 @@
     body{display:flex;align-items:center;justify-content:center;padding:16px}
     .card{width:780px;max-width:100%;background:var(--card-bg);border-radius:14px;box-shadow:0 8px 30px rgba(11,37,64,0.12);padding:22px;position:relative;box-sizing:border-box;max-height:calc(100vh - 36px);overflow:auto;}
     
-    /* ✅ PERBAIKAN LOGO: DIPERBESAR & TAJAM */
     .logo-header {
       text-align: center;
       margin-bottom: 15px;
     }
     .logo-header img {
-      height: 85px !important; /* Ukuran pas, tidak kekecil lagi */
+      height: 85px !important;
       width: auto !important;
       object-fit: contain !important;
       image-rendering: -webkit-optimize-contrast !important;
@@ -57,7 +54,6 @@
     .question{font-size:18px;margin-bottom:12px;line-height:1.35}
     .choices{display:flex;flex-direction:column;gap:10px}
     
-/* --- NAVIGASI KOTAK PRESISI (VERSI DIPERKECIL) --- */
 .question-nav {
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
@@ -94,12 +90,10 @@
     }
 }
 
-    /* Style Pilihan */
     label.choice{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid #e6eef8;cursor:pointer;font-size:16px;user-select:none;background:#fbfeff; transition: all 0.2s;}
     label.choice:hover { background: #f0f7ff; border-color: var(--accent); }
     label.choice.selected { background: #e6f2ff; border-color: var(--accent); font-weight: 600; }
 
-    /* Style Tabel Benar/Salah */
     .bs-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #e6eef8; border-radius: 10px; overflow: hidden; margin-top: 10px; }
     .bs-table th, .bs-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e6eef8; }
     .bs-table th { background: #f0f7ff; font-weight: 700; color: #0b4f7a; font-size: 14px; }
@@ -110,10 +104,9 @@
 
     input[type="radio"], input[type="checkbox"] {accent-color:var(--accent);width:20px;height:20px; cursor: pointer;}
     
-    /* Style Kotak Hasil (Result Box) */
     .result-box { background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%); border: 2px solid #e6eef8; border-radius: 16px; padding: 24px; margin: 20px 0; text-align: center; box-shadow: 0 10px 30px rgba(31,141,214,0.15); }
-    .result-score-label { font-size: 14px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-    .result-score-value { font-size: 48px; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 16px; }
+    .result-score-label { font-size: 14px; font-weight: 700; color: #51657a; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .result-score-value { font-size: 48px; font-weight: 900; color: #1f8dd6; line-height: 1; margin-bottom: 16px; }
     .result-details { display: flex; justify-content: center; gap: 20px; border-top: 1px solid #dae7f5; padding-top: 16px; }
     .result-item { font-size: 15px; font-weight: 700; display: flex; flex-direction: column; align-items: center; }
     .result-item.correct { color: #10b981; } 
@@ -142,25 +135,6 @@
     
     @media (max-width:640px){body{padding:10px}.card{padding:16px;border-radius:12px}h1{font-size:18px}input, select, label.choice, .question{font-size:16px}.start-btn{padding:14px;font-size:18px;border-radius:12px}.big-btn{min-width:100px;padding:12px;border-radius:12px;font-size:16px}.warning-modal{padding:18px}}
 
-    /* --- INI GAYA UNTUK KOTAK NILAI --- */
-.result-box {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
-  border: 2px solid #e6eef8;
-  border-radius: 16px;
-  padding: 24px;
-  margin: 20px 0;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(31,141,214,0.15);
-}
-.result-score-label { font-size: 14px; font-weight: 700; color: #51657a; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-.result-score-value { font-size: 48px; font-weight: 900; color: #1f8dd6; line-height: 1; margin-bottom: 16px; }
-.result-details { display: flex; justify-content: center; gap: 20px; border-top: 1px solid #dae7f5; padding-top: 16px; }
-.result-item { font-size: 15px; font-weight: 700; display: flex; flex-direction: column; align-items: center; }
-.result-item.correct { color: #10b981; } 
-.result-item.wrong { color: #ef4444; }   
-.result-val { font-size: 20px; font-weight: 900; }
-
-/* --- CSS LAYAR HUKUMAN (BLACK SCREEN) --- */
 #layar-penalti {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.98);
@@ -172,7 +146,6 @@
 .hukuman-box p { font-size: 18px; }
 #timer-penalti { font-size: 80px; font-weight: 900; color: #ff4444; margin: 20px 0; }
 
-/* Container Navigasi Nomor Soal */
 .question-nav {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -193,21 +166,18 @@
     transition: all 0.3s ease;
 }
 
-/* Warna Kuning: Belum Dijawab */
 .nav-item.unanswered {
     background-color: var(--secondary);
     color: #000;
     border-color: #fbc02d;
 }
 
-/* Warna Biru: Sudah Dijawab */
 .nav-item.answered {
     background-color: var(--accent);
     color: #fff;
     border-color: #0066aa;
 }
 
-/* Warna Putih/Border Biru: Soal yang Sedang Dibuka */
 .nav-item.active {
     outline: 3px solid #ff5722;
     transform: scale(1.05);
@@ -215,7 +185,6 @@
 
   </style>
   
-  <!-- ✅ PERBAIKAN LINK MATJAX AGAR TIDAK ERROR -->
   <script src="https://cdn.jsdelivr.net/npm/polyfill-library@3.111.0/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
@@ -241,7 +210,6 @@
 
   <div class="card" id="app">
     <div id="start-screen">
-  <!-- ✅ BAGIAN LOGO SUDAH DIPERBAIKI DI SINI -->
   <div class="logo-header">
     <img src="fizmath.png" alt="Fizmath Brain">
   </div>
@@ -332,16 +300,12 @@
   </div>
 </div>  
 
-  <!-- ============================================== -->
-  <!-- ✅ BAGIAN SCRIPT UTAMA YANG SUDAH DIPERBARUI ✅ -->
-  <!-- ============================================== -->
   <script>
     let daftarSoal = [];
     let currentIndex = 0;
     let jawabanSiswa = {};
     let skorTotal = 0;
 
-    // Elemen HTML
     const startScreen = document.getElementById('start-screen');
     const quizArea = document.getElementById('quiz-area');
     const controls = document.getElementById('controls');
@@ -351,26 +315,24 @@
     const nextBtn = document.getElementById('nextBtn');
     const pageIndicator = document.getElementById('pageIndicator');
 
-    // Fungsi memuat file soal sesuai pilihan
     startBtn.addEventListener('click', () => {
       const kelas = document.getElementById('kelas').value;
       const mapel = document.getElementById('mapel').value;
 
-      // ✅ KONDISI PEMANGGILAN SOAL KELAS 9 NUMERIKAL
       if (kelas === '9' && mapel === 'TKA Numerasi (Matematika)') {
-        // Membuat tag script untuk memuat soal_tka_num_9.js
         const scriptSoal = document.createElement('script');
-        scriptSoal.src = 'soal_tka_num_9.js'; // Pastikan nama file sesuai
+        scriptSoal.src = 'soal_tka_num_9.js';
         scriptSoal.onload = () => {
-          daftarSoal = window.daftarSoal || [];
-          if(daftarSoal.length > 0) {
+          // GANTI CARA BACA DATA AGAR PASTI BACA
+          if (window.daftarSoal && window.daftarSoal.length > 0) {
+            daftarSoal = window.daftarSoal;
             mulaiUjian();
           } else {
-            alert('File soal dimuat tetapi datanya kosong!');
+            alert('Data soal kosong! Cek file soal_tka_num_9.js');
           }
         };
         scriptSoal.onerror = () => {
-          alert('Gagal memuat file soal_tka_num_9.js. Pastikan file ada di folder yang sama.');
+          alert('File soal TIDAK DITEMUKAN. Pastikan nama dan lokasi sama.');
         };
         document.body.appendChild(scriptSoal);
       } else {
@@ -386,7 +348,6 @@
       tampilkanSoal(0);
     }
 
-    // Membuat tombol navigasi kotak-kotak
     function buatNavigasiSoal() {
       questionNav.innerHTML = '';
       daftarSoal.forEach((soal, idx) => {
@@ -398,15 +359,12 @@
       });
     }
 
-    // Fungsi utama menampilkan soal
     function tampilkanSoal(idx) {
       currentIndex = idx;
       const soal = daftarSoal[idx];
       
-      // Update indikator halaman
       pageIndicator.textContent = `Soal ${idx + 1} dari ${daftarSoal.length}`;
       
-      // Tandai navigasi aktif
       document.querySelectorAll('.nav-item').forEach((el, i) => {
         el.classList.remove('active');
         if(i === idx) el.classList.add('active');
@@ -421,12 +379,10 @@
         <div class="question">${soal.soal}</div>
       `;
 
-      // Tampilkan Gambar jika ada
       if(soal.gambar) {
         htmlSoal += `<img src="${soal.gambar}" alt="Gambar Soal" style="max-width:100%; border-radius:8px; margin: 8px 0;">`;
       }
 
-      // Render berdasarkan Tipe Soal
       if(soal.tipe === 'PG') {
         htmlSoal += `<div class="choices">`;
         soal.pilihan.forEach((pil, noPil) => {
@@ -461,12 +417,10 @@
 
       quizArea.innerHTML = htmlSoal;
 
-      // Panggil MathJax agar rumus matematika dirender ulang
       if (window.MathJax) {
         MathJax.typesetPromise && MathJax.typesetPromise([quizArea]);
       }
 
-      // Atur tombol Sebelumnya / Selanjutnya / Selesai
       prevBtn.disabled = idx === 0;
       if(idx === daftarSoal.length - 1) {
         nextBtn.textContent = 'SELESAI & NILAI';
@@ -477,14 +431,12 @@
       }
     }
 
-    // Fungsi simpan jawaban PG
     function simpanJawaban(idx, jawaban) {
       jawabanSiswa[idx] = jawaban;
       document.querySelectorAll('.nav-item')[idx].classList.remove('unanswered');
       document.querySelectorAll('.nav-item')[idx].classList.add('answered');
     }
 
-    // Fungsi simpan jawaban PGK (Banyak jawaban benar)
     function tambahJawabanPGK(idx, nilai, dicek) {
       if(!jawabanSiswa[idx]) jawabanSiswa[idx] = [];
       if(dicek) jawabanSiswa[idx].push(nilai);
@@ -494,12 +446,11 @@
       }
     }
 
-    // Menghitung Skor
     function hitungSkor() {
       let benar = 0;
       let totalNilai = 0;
       daftarSoal.forEach((soal, idx) => {
-        const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]); // Ambil nilai maks
+        const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]);
         if(soal.tipe === 'PG') {
           if(jawabanSiswa[idx] === soal.kunciJawaban) {
             benar++;
@@ -518,7 +469,6 @@
       return {benar, totalNilai, maksNilai: daftarSoal.reduce((sum, s) => sum + parseInt(s.rentangNilai.split('–')[1]), 0)};
     }
 
-    // Tampilan Hasil Akhir
     function tampilkanHasil() {
       const hasil = hitungSkor();
       quizArea.innerHTML = `
@@ -541,7 +491,6 @@
       questionNav.style.display = 'none';
     }
 
-    // Navigasi Tombol
     prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
 
   </script>
