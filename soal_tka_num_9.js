@@ -8,7 +8,6 @@
 // - Sulit: 14 – 16
 // - Sangat Sulit: 17 – 20
 
-// ✅ NAMA VARIABEL HARUS PERSIS: daftarSoal
 const daftarSoal = [
   {
     id: 1,
@@ -94,5 +93,5 @@ const daftarSoal = [
   }
 ];
 
-// ✅ Wajib ada baris ini agar variabel terbaca oleh HTML
+// WAJIB ADA INI
 window.daftarSoal = daftarSoal;
