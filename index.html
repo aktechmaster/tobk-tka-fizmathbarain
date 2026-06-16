@@ -362,13 +362,15 @@
         const scriptSoal = document.createElement('script');
         scriptSoal.src = 'soal_tka_num_9.js'; // Pastikan nama file sesuai
         scriptSoal.onload = () => {
-          daftarSoal = window.daftarSoal || [];
-          if(daftarSoal.length > 0) {
-            mulaiUjian();
-          } else {
-            alert('File soal dimuat tetapi datanya kosong!');
-          }
-        };
+  // Ambil data dari window, pastikan tidak kosong
+  if (window.daftarSoal && Array.isArray(window.daftarSoal) && window.daftarSoal.length > 0) {
+    daftarSoal = window.daftarSoal;
+    mulaiUjian();
+  } else {
+    alert('File soal dimuat tetapi datanya kosong!');
+    console.log('Isi window.daftarSoal:', window.daftarSoal); // Untuk cek di konsol jika masih gagal
+  }
+};
         scriptSoal.onerror = () => {
           alert('Gagal memuat file soal_tka_num_9.js. Pastikan file ada di folder yang sama.');
         };
