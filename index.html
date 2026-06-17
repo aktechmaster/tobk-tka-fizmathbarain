@@ -336,7 +336,6 @@
   <!-- ✅ BAGIAN SCRIPT UTAMA YANG SUDAH DIPERBARUI ✅ -->
   <!-- ============================================== -->
  <script>
-    // 🔴 PERBAIKAN: Jangan gunakan 'let daftarSoal = []' agar tidak tabrakan dengan file JS luar
     let currentIndex = 0;
     let jawabanSiswa = {};
     let skorTotal = 0;
@@ -351,32 +350,60 @@
     const nextBtn = document.getElementById('nextBtn');
     const pageIndicator = document.getElementById('pageIndicator');
 
-    // Fungsi memuat file soal sesuai pilihan
+    // 🔑 KONFIGURASI PASSWORD BERDASARKAN KELAS
+    const daftarPassword = {
+        '4': 'tka4sd001',
+        '5': 'tka5sd001',
+        '6': 'tka6sd001',
+        '7': 'tka7smp001',
+        '8': 'tka8smp001',
+        '9': 'tka9smp001'
+    };
+
     startBtn.addEventListener('click', () => {
       const kelas = document.getElementById('kelas').value;
       const mapel = document.getElementById('mapel').value;
+      const passwordInput = document.getElementById('password').value;
 
-      // ✅ KONDISI PEMANGGILAN SOAL KELAS 9 NUMERIKAL
-      if (kelas === '9' && mapel === 'TKA Numerasi (Matematika)') {
-        // Membuat tag script untuk memuat soal_tka_num_9.js
-        const scriptSoal = document.createElement('script');
-        scriptSoal.src = 'soal_tka_num_9.js'; // Pastikan nama file sesuai
-        scriptSoal.onload = () => {
-          // Ambil data dari window, pastikan tidak kosong
-          if (window.daftarSoal && Array.isArray(window.daftarSoal) && window.daftarSoal.length > 0) {
-            mulaiUjian();
-          } else {
-            alert('File soal dimuat tetapi datanya kosong!');
-            console.log('Isi window.daftarSoal:', window.daftarSoal);
-          }
-        };
-        scriptSoal.onerror = () => {
-          alert('Gagal memuat file soal_tka_num_9.js. Pastikan file ada di folder yang sama.');
-        };
-        document.body.appendChild(scriptSoal);
-      } else {
-        alert('Untuk sementara hanya Kelas 9 - TKA Numerasi yang tersedia.');
+      // Validasi Form Tidak Kosong
+      if(!kelas || !mapel || !passwordInput) {
+          alert('Harap lengkapi pilihan Kelas, Mata Pelajaran, dan Password!');
+          return;
       }
+
+      // ✅ LOGIKA NOMOR 2: VALIDASI PASSWORD BERDASARKAN KELAS
+      if(passwordInput !== daftarPassword[kelas]) {
+          alert(`Password salah untuk Kelas ${kelas}!\n\nPassword yang benar: ${daftarPassword[kelas]}`);
+          return; // Hentikan proses jika password salah
+      }
+
+      // ✅ LOGIKA NOMOR 1: PEMANGGILAN FILE SOAL DINAMIS
+      // Ubah nama file sesuai pilihan user
+      let namaFileSoal = "";
+      if (mapel === 'TKA Numerasi (Matematika)') {
+          namaFileSoal = `soal_tka_num_${kelas}.js`;
+      } else if (mapel === 'TKA Literasi (B. Indonesia)') {
+          namaFileSoal = `soal_tka_lit_${kelas}.js`;
+      }
+
+      // Membuat tag script untuk memuat file soal yang sesuai
+      const scriptSoal = document.createElement('script');
+      scriptSoal.src = namaFileSoal; 
+      
+      scriptSoal.onload = () => {
+        if (window.daftarSoal && Array.isArray(window.daftarSoal) && window.daftarSoal.length > 0) {
+          mulaiUjian();
+        } else {
+          alert('File soal dimuat tetapi datanya kosong! Pastikan isi file ' + namaFileSoal + ' sudah benar.');
+          console.log('Isi window.daftarSoal:', window.daftarSoal);
+        }
+      };
+      
+      scriptSoal.onerror = () => {
+        alert(`Gagal memuat file soal: ${namaFileSoal}.\n\nPastikan file tersebut ada di folder yang sama dengan halaman ini.`);
+      };
+      
+      document.body.appendChild(scriptSoal);
     });
 
     function mulaiUjian() {
@@ -390,7 +417,7 @@
     // Membuat tombol navigasi kotak-kotak
     function buatNavigasiSoal() {
       questionNav.innerHTML = '';
-      window.daftarSoal.forEach((soal, idx) => { // 🔴 Gunakan window.daftarSoal
+      window.daftarSoal.forEach((soal, idx) => {
         const navItem = document.createElement('div');
         navItem.className = 'nav-item unanswered';
         navItem.textContent = idx + 1;
@@ -402,10 +429,10 @@
     // Fungsi utama menampilkan soal
     function tampilkanSoal(idx) {
       currentIndex = idx;
-      const soal = window.daftarSoal[idx]; // 🔴 Gunakan window.daftarSoal
+      const soal = window.daftarSoal[idx];
       
       // Update indikator halaman
-      pageIndicator.textContent = `Soal ${idx + 1} dari ${window.daftarSoal.length}`; // 🔴 Gunakan window.daftarSoal
+      pageIndicator.textContent = `Soal ${idx + 1} dari ${window.daftarSoal.length}`;
       
       // Tandai navigasi aktif
       document.querySelectorAll('.nav-item').forEach((el, i) => {
@@ -469,7 +496,7 @@
 
       // Atur tombol Sebelumnya / Selanjutnya / Selesai
       prevBtn.disabled = idx === 0;
-      if(idx === window.daftarSoal.length - 1) { // 🔴 Gunakan window.daftarSoal
+      if(idx === window.daftarSoal.length - 1) {
         nextBtn.textContent = 'SELESAI & NILAI';
         nextBtn.onclick = tampilkanHasil;
       } else {
@@ -496,11 +523,10 @@
     }
 
     // Menghitung Skor
-    ui
     function hitungSkor() {
       let benar = 0;
       let totalNilai = 0;
-      window.daftarSoal.forEach((soal, idx) => { // 🔴 Gunakan window.daftarSoal
+      window.daftarSoal.forEach((soal, idx) => {
         const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]); // Ambil nilai maks
         if(soal.tipe === 'PG') {
           if(jawabanSiswa[idx] === soal.kunciJawaban) {
@@ -517,7 +543,7 @@
           }
         }
       });
-      return {benar, totalNilai, maksNilai: window.daftarSoal.reduce((sum, s) => sum + parseInt(s.rentangNilai.split('–')[1]), 0)}; // 🔴 Gunakan window.daftarSoal
+      return {benar, totalNilai, maksNilai: window.daftarSoal.reduce((sum, s) => sum + parseInt(s.rentangNilai.split('–')[1]), 0)};
     }
 
     // Tampilan Hasil Akhir
@@ -538,7 +564,7 @@
             </div>
           </div>
         </div>
-      `; // 🔴 Gunakan window.daftarSoal pada total salah
+      `;
       controls.style.display = 'none';
       questionNav.style.display = 'none';
     }
