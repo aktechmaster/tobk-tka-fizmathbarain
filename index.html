@@ -483,13 +483,15 @@ let namaFileSoal = `soal_tka_gabungan_${kelas}.js`;
     function buatNavigasiSoal() {
       questionNav.innerHTML = '';
       window.daftarSoal.forEach((soal, idx) => {
-        const navItem = document.createElement('div');
-        navItem.className = 'nav-item unanswered';
-        navItem.textContent = idx + 1;
-        navItem.onclick = () => tampilkanSoal(idx);
-        questionNav.appendChild(navItem);
-      });
-    }
+  // JANGAN buat kotak navigasi untuk halaman INFO
+  if (soal.tipe === 'INFO') return; 
+
+  const navItem = document.createElement('div');
+  navItem.className = 'nav-item unanswered';
+  navItem.textContent = soal.id; // Ambil nomor dari ID, bukan urutan indeks
+  navItem.onclick = () => tampilkanSoal(idx);
+  questionNav.appendChild(navItem);
+});
 
     // Fungsi utama menampilkan soal
     function tampilkanSoal(idx) {
@@ -497,7 +499,11 @@ let namaFileSoal = `soal_tka_gabungan_${kelas}.js`;
       const soal = window.daftarSoal[idx];
       
       // Update indikator halaman
-      pageIndicator.textContent = `Soal ${idx + 1} dari ${window.daftarSoal.length}`;
+      if (soal.tipe === 'INFO') {
+  pageIndicator.textContent = `INFORMASI`;
+} else {
+  pageIndicator.textContent = `Soal ${soal.id} dari ${window.daftarSoal.filter(s => s.tipe !== 'INFO').length}`;
+}
       
       // Tandai navigasi aktif & sudah dijawab
       document.querySelectorAll('.nav-item').forEach((el, i) => {
@@ -599,6 +605,7 @@ let namaFileSoal = `soal_tka_gabungan_${kelas}.js`;
       let benar = 0;
       let totalNilai = 0;
       window.daftarSoal.forEach((soal, idx) => {
+        if (soal.tipe === 'INFO') return; 
         const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]); // Ambil nilai maks
         if(soal.tipe === 'PG') {
           if(jawabanSiswa[idx] === soal.kunciJawaban) {
