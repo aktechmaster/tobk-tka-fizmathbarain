@@ -385,43 +385,44 @@
     }
 
     // Cek apakah pengguna sedang dalam ujian saat halaman dimuat
-    window.onload = () => {
-        // ✅ Cek kalau ujian SUDAH SELESAI, langsung ke halaman login
-        if (sessionStorage.getItem('ujianSelesai') === 'true') {
-            sessionStorage.removeItem('ujianSelesai'); // Bersihkan tanda
-            startScreen.style.display = 'block';
-            quizArea.style.display = 'none';
-            controls.style.display = 'none';
-            questionNav.style.display = 'none';
-            return; // Berhenti di sini, jangan muat soal
-        }
+window.onload = () => {
+    // ✅ Cek kalau ujian SUDAH SELESAI, langsung ke halaman login
+    if (sessionStorage.getItem('ujianSelesai') === 'true') {
+        sessionStorage.removeItem('ujianSelesai');
+        startScreen.style.display = 'block';
+        quizArea.style.display = 'none';
+        controls.style.display = 'none';
+        questionNav.style.display = 'none';
+        return;
+    }
+    
+    const dataTersimpan = ambilDataDariStorage();
+    if (dataTersimpan) {
+        // Isi kembali formulir dengan data sebelumnya
+        document.getElementById('kelas').value = dataTersimpan.kelas;
+        document.getElementById('mapel').value = dataTersimpan.mapel;
+        document.getElementById('nama').value = dataTersimpan.nama;
+        document.getElementById('asal').value = dataTersimpan.asal;
+        document.getElementById('nomor').value = dataTersimpan.nomor;
+        jawabanSiswa = dataTersimpan.jawaban || {};
         
-        const dataTersimpan = ambilDataDariStorage();
-        if (dataTersimpan) {
-            // Isi kembali formulir dengan data sebelumnya
-            document.getElementById('kelas').value = dataTersimpan.kelas;
-            document.getElementById('mapel').value = dataTersimpan.mapel;
-            document.getElementById('nama').value = dataTersimpan.nama;
-            document.getElementById('asal').value = dataTersimpan.asal;
-            document.getElementById('nomor').value = dataTersimpan.nomor;
-            jawabanSiswa = dataTersimpan.jawaban || {};
-            
-            // Panggil ulang soal dan lanjutkan ujian
-            let namaFileSoal = `soal_tka_gabungan_${dataTersimpan.kelas}.js`;
+        // Panggil ulang soal dan lanjutkan ujian
+        let namaFileSoal = `soal_tka_gabungan_${dataTersimpan.kelas}.js`;
 
-            const scriptSoal = document.createElement('script');
-            scriptSoal.src = namaFileSoal; 
-            scriptSoal.onload = () => {
-                setTimeout(() => {
-                    if (window.daftarSoal) {
-                        mulaiUjian();
-                        tampilkanSoal(dataTersimpan.halamanAktif || 0); // Buka di halaman terakhir
-                    }
-                }, 100);
-            };
-            document.body.appendChild(scriptSoal);
-        }
-    };
+        const scriptSoal = document.createElement('script');
+        scriptSoal.src = namaFileSoal; 
+        scriptSoal.onload = () => {
+            setTimeout(() => {
+                if (window.daftarSoal) {
+                    mulaiUjian();
+                    buatNavigasiSoal(); // ✅ TAMBAHKAN BARIS INI
+                    tampilkanSoal(dataTersimpan.halamanAktif || 0);
+                }
+            }, 100);
+        };
+        document.body.appendChild(scriptSoal);
+    }
+};
 
     // Simpan data setiap kali ada perubahan jawaban atau pindah halaman
     window.addEventListener('beforeunload', simpanDataKeStorage);
@@ -474,11 +475,12 @@
     });
 
     function mulaiUjian() {
-      startScreen.style.display = 'none';
-      quizArea.style.display = 'block';
-      controls.style.display = 'flex';
-      buatNavigasiSoal();
-    }
+  startScreen.style.display = 'none';
+  quizArea.style.display = 'block';
+  controls.style.display = 'flex';
+  buatNavigasiSoal(); // ✅ SUDAH ADA, TETAP DIKOMPAKKAN
+  questionNav.style.display = 'grid'; // ✅ TAMBAHKAN INI AGAR TAMPIL PENUH
+}
 
     // ==================================================
     // ✅ LOGIKA NAVIGASI & TAMPILAN SOAL (SUDAH PERBAIKAN TOTAL)
