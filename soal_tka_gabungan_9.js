@@ -89,7 +89,7 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
   // ⚠️ HALAMAN PEMISAH / PEMBERITAHUAN
   // ==============================================
   {
-    id: 6,
+    id: 99, // ⚠️ UBAH JADI 99 (ANGKA KHUSUS), SUPAYA TIDAK MENGGANGGU URUTAN
     tipe: "INFO", // Tipe khusus, nanti tidak dihitung skornya
     tingkatKesulitan: "-",
     rentangNilai: "0 – 0",
@@ -112,7 +112,7 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
   // ✅ BAGIAN 2: TKA NUMERASI (MATEMATIKA)
   // ==============================================
   {
-    id: 7, // ID lanjut setelah halaman info
+    id: 6, // ✅ MULAI LAGI DARI NOMOR 6
     tipe: "PG",
     tingkatKesulitan: "Sangat Mudah",
     rentangNilai: "4 – 5",
@@ -129,7 +129,7 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     kunciJawaban: "A"
   },
   {
-    id: 8,
+    id: 7,
     tipe: "PGK",
     tingkatKesulitan: "Sedang",
     rentangNilai: "8 – 10",
@@ -145,7 +145,7 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     kunciJawaban: [0, 1, 2]
   },
   {
-    id: 9,
+    id: 8,
     tipe: "PGK",
     tingkatKesulitan: "Lumayan Sulit",
     rentangNilai: "11 – 13",
@@ -162,7 +162,7 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     kunciJawaban: [2, 3]
   },
   {
-    id: 10,
+    id: 9,
     tipe: "PG",
     tingkatKesulitan: "Mudah",
     rentangNilai: "6 – 7",
@@ -178,7 +178,7 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     kunciJawaban: "B"
   },
   {
-    id: 11,
+    id: 10,
     tipe: "PG",
     tingkatKesulitan: "Mudah",
     rentangNilai: "6 – 7",
