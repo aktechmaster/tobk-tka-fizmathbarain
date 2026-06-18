@@ -89,8 +89,8 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
   // ⚠️ HALAMAN PEMISAH / PEMBERITAHUAN
   // ==============================================
   {
-    id: 99, // ⚠️ UBAH JADI 99 (ANGKA KHUSUS), SUPAYA TIDAK MENGGANGGU URUTAN
-    tipe: "INFO", // Tipe khusus, nanti tidak dihitung skornya
+    id: 99, // ⚠️ ID KHUSUS: SUPAYA TIDAK MUNCUL DI KOTAK NAVIGASI
+    tipe: "INFO", // Tipe khusus, tidak dihitung skor
     tingkatKesulitan: "-",
     rentangNilai: "0 – 0",
     soal: `
@@ -112,7 +112,7 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
   // ✅ BAGIAN 2: TKA NUMERASI (MATEMATIKA)
   // ==============================================
   {
-    id: 6, // ✅ MULAI LAGI DARI NOMOR 6
+    id: 6, // ✅ MULAI LAGI DARI NOMOR 6 (PAS SAMBUNG)
     tipe: "PG",
     tingkatKesulitan: "Sangat Mudah",
     rentangNilai: "4 – 5",
@@ -186,11 +186,4 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     Jika hari ini Ibu membeli cabe rawit seberat 2¼ kilogram, total harga yang harus dibayar Ibu adalah ....`,
     gambar: null,
     pilihan: [
-      "A. Rp175.000,00",
-      "B. Rp157.500,00",
-      "C. Rp140.000,00",
-      "D. Rp87.500,00"
-    ],
-    kunciJawaban: "B"
-  }
-];
+      "A.
