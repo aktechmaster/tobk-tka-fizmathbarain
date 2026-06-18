@@ -1,11 +1,8 @@
 // ==================================================
 // BANK SOAL TKA GABUNGAN: LITERASI & NUMERASI KELAS 9
 // ==================================================
-window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
+window.daftarSoal = [
 
-  // ==============================================
-  // ✅ BAGIAN 1: TKA LITERASI (B. INDONESIA)
-  // ==============================================
   {
     id: 1,
     tipe: "PG",
@@ -85,12 +82,9 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     kunciJawaban: "B"
   },
 
-  // ==============================================
-  // ⚠️ HALAMAN PEMISAH / PEMBERITAHUAN
-  // ==============================================
   {
-    id: 99, // ⚠️ ID KHUSUS: SUPAYA TIDAK MUNCUL DI KOTAK NAVIGASI
-    tipe: "INFO", // Tipe khusus, tidak dihitung skor
+    id: 99,
+    tipe: "INFO",
     tingkatKesulitan: "-",
     rentangNilai: "0 – 0",
     soal: `
@@ -104,15 +98,12 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     </div>
     `,
     gambar: null,
-    pilihan: [], // Kosong, tidak ada pilihan jawaban
-    kunciJawaban: "" // Kosong, tidak ada kunci
+    pilihan: [],
+    kunciJawaban: ""
   },
 
-  // ==============================================
-  // ✅ BAGIAN 2: TKA NUMERASI (MATEMATIKA)
-  // ==============================================
   {
-    id: 6, // ✅ MULAI LAGI DARI NOMOR 6 (PAS SAMBUNG)
+    id: 6,
     tipe: "PG",
     tingkatKesulitan: "Sangat Mudah",
     rentangNilai: "4 – 5",
@@ -186,4 +177,12 @@ window.daftarSoal = [ // Langsung masukkan ke window, TIDAK pakai const/let/var
     Jika hari ini Ibu membeli cabe rawit seberat 2¼ kilogram, total harga yang harus dibayar Ibu adalah ....`,
     gambar: null,
     pilihan: [
-      "A.
+      "A. Rp126.000,00",
+      "B. Rp157.500,00",
+      "C. Rp175.000,00",
+      "D. Rp192.500,00"
+    ],
+    kunciJawaban: "B"
+  }
+
+]; // ✅ TANDA PENUTUP ARRAY YANG HILANG SEBELUMNYA
