@@ -481,111 +481,117 @@
     }
 
     // Membuat tombol navigasi kotak-kotak
-    function buatNavigasiSoal() {
-      questionNav.innerHTML = '';
-      window.daftarSoal.forEach((soal, idx) => {
-        // JANGAN buat kotak navigasi untuk halaman INFO
-        if (soal.tipe === 'INFO') return; 
+function buatNavigasiSoal() {
+  questionNav.innerHTML = '';
+  window.daftarSoal.forEach((soal) => {
+    // ❌ JANGAN buat kotak untuk tipe INFO
+    if (soal.tipe === 'INFO') return;
 
-        const navItem = document.createElement('div');
-        navItem.className = 'nav-item unanswered';
-        navItem.textContent = soal.id; // Ambil nomor dari ID, bukan urutan indeks
-        navItem.onclick = () => tampilkanSoal(idx);
-        questionNav.appendChild(navItem);
-      });
-    } 
+    const navItem = document.createElement('div');
+    navItem.className = 'nav-item unanswered';
+    navItem.textContent = soal.id; // ✅ Ambil ANGKA LANGSUNG dari ID soal (1,2,3...6,7,8...)
+    navItem.onclick = () => {
+      // Cari posisi asli soal ini di daftar (lewati INFO)
+      const posisi = window.daftarSoal.findIndex(s => s.id === soal.id);
+      tampilkanSoal(posisi);
+    };
+    questionNav.appendChild(navItem);
+  });
+}
 
-    // Fungsi utama menampilkan soal
-    function tampilkanSoal(idx) {
-      currentIndex = idx;
-      const soal = window.daftarSoal[idx];
-      
-      // Update indikator halaman
-      if (soal.tipe === 'INFO') {
-          pageIndicator.textContent = `INFORMASI`;
-      } else {
-          pageIndicator.textContent = `Soal ${soal.id} dari ${window.daftarSoal.filter(s => s.tipe !== 'INFO').length}`;
-      }
-      
-      // Tandai navigasi aktif & sudah dijawab
-      document.querySelectorAll('.nav-item').forEach((el, i) => {
-        el.classList.remove('active');
-        if(i === idx) el.classList.add('active');
-        if(jawabanSiswa[i] !== undefined) {
-            el.classList.remove('unanswered');
-            el.classList.add('answered');
-        }
-      });
+// Fungsi utama menampilkan soal
+function tampilkanSoal(idx) {
+  currentIndex = idx;
+  const soal = window.daftarSoal[idx];
 
-      let htmlSoal = `
-        <div class="qno">
-          <span>Soal Nomor ${soal.id}</span>
-          <span class="badge-type">${soal.tipe} | ${soal.tingkatKesulitan} (${soal.rentangNilai})</span>
-        </div>
-        <div class="question">${soal.soal}</div>
-      `;
+  // ✅ TAMPILKAN NOMOR YANG BENAR: Pakai soal.id, BUKAN idx+1
+  if (soal.tipe === 'INFO') {
+    pageIndicator.textContent = `INFORMASI`;
+  } else {
+    pageIndicator.textContent = `Soal ${soal.id} dari ${window.daftarSoal.filter(s => s.tipe !== 'INFO').length}`;
+  }
 
-      // Tampilkan Gambar jika ada
-      if(soal.gambar) {
-        htmlSoal += `<img src="${soal.gambar}" alt="Gambar Soal" style="max-width:100%; border-radius:8px; margin: 8px 0;">`;
-      }
-
-      // Render berdasarkan Tipe Soal
-      if(soal.tipe === 'PG') {
-        htmlSoal += `<div class="choices">`;
-        soal.pilihan.forEach((pil, noPil) => {
-          const huruf = String.fromCharCode(65 + noPil);
-          const terpilih = jawabanSiswa[idx] === huruf ? 'selected' : '';
-          htmlSoal += `
-            <label class="choice ${terpilih}">
-              <input type="radio" name="jawaban${idx}" value="${huruf}" 
-                ${jawabanSiswa[idx] === huruf ? 'checked' : ''} 
-                onchange="simpanJawaban(${idx}, '${huruf}')">
-              ${pil}
-            </label>
-          `;
-        });
-        htmlSoal += `</div>`;
-      } 
-      else if(soal.tipe === 'INFO') {
-          // ✅ TIDAK tampilkan pilihan jawaban, hanya info
-          htmlSoal += `<div style="height: 50px;"></div>`; 
-      }
-      else if(soal.tipe === 'PGK') {
-        htmlSoal += `<div class="choices">`;
-        soal.pilihan.forEach((pil, noPil) => {
-          const terpilih = jawabanSiswa[idx]?.includes(noPil) ? 'selected' : '';
-          htmlSoal += `
-            <label class="choice ${terpilih}">
-              <input type="checkbox" name="jawaban${idx}" value="${noPil}" 
-                ${jawabanSiswa[idx]?.includes(noPil) ? 'checked' : ''} 
-                onchange="tambahJawabanPGK(${idx}, ${noPil}, this.checked)">
-              ${pil}
-            </label>
-          `;
-        });
-        htmlSoal += `</div>`;
-      }
-
-      quizArea.innerHTML = htmlSoal;
-
-      // Panggil MathJax agar rumus matematika dirender ulang
-      if (window.MathJax) {
-        MathJax.typesetPromise && MathJax.typesetPromise([quizArea]);
-      }
-
-      // Atur tombol Sebelumnya / Selanjutnya / Selesai
-      prevBtn.disabled = idx === 0;
-      if(idx === window.daftarSoal.length - 1) {
-        nextBtn.textContent = 'SELESAI & NILAI';
-        nextBtn.onclick = tampilkanHasil;
-      } else {
-        nextBtn.textContent = 'Selanjutnya';
-        nextBtn.onclick = () => tampilkanSoal(idx + 1);
-      }
-
-      simpanDataKeStorage(); // Simpan setiap kali pindah soal
+  // ✅ PERBAIKAN UTAMA: Tandai kotak aktif yang ANGKAnya SAMA dengan soal.id
+  document.querySelectorAll('.nav-item').forEach(el => {
+    el.classList.remove('active');
+    // Kalau tulisan di kotak = nomor soal sekarang, tandai aktif
+    if (el.textContent == soal.id) {
+      el.classList.add('active');
     }
+    // Tandai sudah dijawab
+    if (jawabanSiswa[idx] !== undefined) {
+      el.classList.remove('unanswered');
+      el.classList.add('answered');
+    }
+  });
+
+  let htmlSoal = `
+    <div class="qno">
+      <span>Soal Nomor ${soal.id}</span> <!-- ✅ PAKAI ID, BUKAN idx+1 -->
+      <span class="badge-type">${soal.tipe} | ${soal.tingkatKesulitan} (${soal.rentangNilai})</span>
+    </div>
+    <div class="question">${soal.soal}</div>
+  `;
+
+  // --- SISA KODE DI BAWAH INI TETAP SAMA SEPERTI YANG ADA ---
+  // Tampilkan Gambar jika ada
+  if(soal.gambar) {
+    htmlSoal += `<img src="${soal.gambar}" alt="Gambar Soal" style="max-width:100%; border-radius:8px; margin: 8px 0;">`;
+  }
+
+  // Render berdasarkan Tipe Soal
+  if(soal.tipe === 'PG') {
+    htmlSoal += `<div class="choices">`;
+    soal.pilihan.forEach((pil, noPil) => {
+      const huruf = String.fromCharCode(65 + noPil);
+      const terpilih = jawabanSiswa[idx] === huruf ? 'selected' : '';
+      htmlSoal += `
+        <label class="choice ${terpilih}">
+          <input type="radio" name="jawaban${idx}" value="${huruf}" 
+            ${jawabanSiswa[idx] === huruf ? 'checked' : ''} 
+            onchange="simpanJawaban(${idx}, '${huruf}')">
+          ${pil}
+        </label>
+      `;
+    });
+    htmlSoal += `</div>`;
+  } 
+  else if(soal.tipe === 'INFO') {
+    htmlSoal += `<div style="height: 50px;"></div>`; 
+  }
+  else if(soal.tipe === 'PGK') {
+    htmlSoal += `<div class="choices">`;
+    soal.pilihan.forEach((pil, noPil) => {
+      const terpilih = jawabanSiswa[idx]?.includes(noPil) ? 'selected' : '';
+      htmlSoal += `
+        <label class="choice ${terpilih}">
+          <input type="checkbox" name="jawaban${idx}" value="${noPil}" 
+            ${jawabanSiswa[idx]?.includes(noPil) ? 'checked' : ''} 
+            onchange="tambahJawabanPGK(${idx}, ${noPil}, this.checked)">
+          ${pil}
+        </label>
+      `;
+    });
+    htmlSoal += `</div>`;
+  }
+
+  quizArea.innerHTML = htmlSoal;
+
+  if (window.MathJax) {
+    MathJax.typesetPromise && MathJax.typesetPromise([quizArea]);
+  }
+
+  prevBtn.disabled = idx === 0;
+  if(idx === window.daftarSoal.length - 1) {
+    nextBtn.textContent = 'SELESAI & NILAI';
+    nextBtn.onclick = tampilkanHasil;
+  } else {
+    nextBtn.textContent = 'Selanjutnya';
+    nextBtn.onclick = () => tampilkanSoal(idx + 1);
+  }
+
+  simpanDataKeStorage();
+}
 
     // Fungsi simpan jawaban PG
     function simpanJawaban(idx, jawaban) {
