@@ -757,7 +757,7 @@
     prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
 
    // ==================================================
-    // ✅ FITUR DETEKSI PELANGGARAN (PINDAH TAB / KELUAR JENDELA)
+    // ✅ FITUR DETEKSI PELANGGARAN (HANYA MENCATAT & MEMBERI PERINGATAN)
     // ==================================================
     
     function catatPelanggaran() {
@@ -774,13 +774,8 @@
             // Simpan data ke storage agar pelanggaran tidak hilang meski di-refresh
             simpanDataKeStorage();
 
-            // Berikan Alert yang "keren" dan tegas
-            if (window.violationCount >= 5) {
-                alert(`🚨 PELANGGARAN MAKSIMAL!\n\nKamu terdeteksi meninggalkan ujian sebanyak ${window.violationCount} kali.\nBatas toleransi telah habis. Ujian akan dihentikan secara otomatis!`);
-                tampilkanHasil(); // Otomatis mengakhiri ujian dan mensubmit nilai
-            } else {
-                alert(`⚠️ PERINGATAN!\n\nKamu terdeteksi meninggalkan layar ujian sebanyak ${window.violationCount} kali.\n(Pindah tab atau membuka aplikasi lain tidak diizinkan!)\n\nJika mencapai 5 kali, ujian akan otomatis diselesaikan.`);
-            }
+            // Berikan Alert peringatan saja, TANPA batas maksimal dan pemblokiran
+            alert(`⚠️ PERINGATAN!\n\nKamu terdeteksi meninggalkan layar ujian sebanyak ${window.violationCount} kali.\n\nAktivitas ini terus dicatat oleh sistem. Harap tetap fokus pada halaman ujian!`);
         }
     }
 
