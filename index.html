@@ -642,6 +642,7 @@
                 });
                 htmlSoal += `</div>`;
             } 
+                        } 
             else if(soal.tipe === 'PGK') {
                 htmlSoal += `<div class="choices">`;
                 soal.pilihan.forEach((pil, noPil) => {
@@ -657,10 +658,26 @@
                 });
                 htmlSoal += `</div>`;
             }
+            // ✅ DI SINI TEMPATNYA: TAMBAHKAN KODE TIPE BS DI BAWAH INI
+            else if(soal.tipe === 'BS') {
+                htmlSoal += `<div class="choices">`;
+                soal.pilihan.forEach((pil, noPil) => {
+                    const terpilih = jawabanSiswa[idx]?.includes(noPil) ? 'selected' : '';
+                    htmlSoal += `
+                        <label class="choice ${terpilih}">
+                            <input type="checkbox" name="jawaban${idx}" value="${noPil}" 
+                                ${jawabanSiswa[idx]?.includes(noPil) ? 'checked' : ''} 
+                                onchange="tambahJawabanPGK(${idx}, ${noPil}, this.checked)">
+                            ${pil}
+                        </label>
+                    `;
+                });
+                htmlSoal += `</div>`;
+            }
+            // ✅ SAMPAI DI SINI
         }
 
         quizArea.innerHTML = htmlSoal;
-
         // Perbaruan Indikator Warna Kotak Navigasi
         document.querySelectorAll('.nav-item').forEach(el => {
             const nomorDiKotak = parseInt(el.textContent);
