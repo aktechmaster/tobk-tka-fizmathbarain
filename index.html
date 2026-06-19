@@ -615,7 +615,6 @@
                 <div style="height: 50px;"></div>
             `;
         } else {
-            // ✅ Keterangan Badge (Tipe, Kesulitan, Bobot) SUDAH DIHAPUS DI SINI
             htmlSoal = `
                 <div class="qno">
                     <span>Soal Nomor ${soal.id}</span>
@@ -685,9 +684,12 @@
         }
 
         prevBtn.disabled = idx === 0;
+        
+        // ✅ INI DIA LETAK TOMBOL SELESAINYA
         if(idx === window.daftarSoal.length - 1) {
             nextBtn.textContent = 'SELESAI & NILAI';
-            nextBtn.onclick = tampilkanHasil;
+            // ✅ SUDAH DIGANTI MENJADI PANGGILAN KONFIRMASI
+            nextBtn.onclick = konfirmasiSelesai; 
         } else {
             nextBtn.textContent = 'Selanjutnya';
             nextBtn.onclick = () => tampilkanSoal(idx + 1);
@@ -698,7 +700,7 @@
 
     function simpanJawaban(idx, jawaban) {
         jawabanSiswa[idx] = jawaban;
-        tampilkanSoal(currentIndex); // Refresh style kelas pilihan terpilih & kotak navigasi
+        tampilkanSoal(currentIndex); 
     }
 
     function tambahJawabanPGK(idx, nilai, dicek) {
@@ -744,6 +746,18 @@
     }
 
     // ==================================================
+    // ✅ FUNGSI KONFIRMASI SEBELUM SELESAI UJIAN
+    // ==================================================
+    
+    window.konfirmasiSelesai = function() {
+        const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
+        
+        if (yakin) {
+            tampilkanHasil(); 
+        }
+    };
+
+    // ==================================================
     // ✅ TAMPILAN HASIL AKHIR & TOMBOL KEMBALI
     // ==================================================
 
@@ -773,7 +787,6 @@
         controls.style.display = 'none';
         questionNav.style.display = 'none';
         
-        // Pengecekan aman (safe check) agar tidak error jika timerBadge tidak ada
         const timerBadge = document.getElementById('timerBadge');
         if (timerBadge) {
             timerBadge.classList.add('hidden');
