@@ -430,18 +430,12 @@
 
     // Logika Mulai Ujian (UI Tampilan Utama)
     function mulaiUjian() {
-        if (startScreen) startScreen.style.display = 'none';
-        if (quizArea) quizArea.style.display = 'block';
-        if (controls) controls.style.display = 'flex';
-        if (questionNav) questionNav.style.display = 'grid';
-        
-        // Gunakan pengamanan (if) agar tidak crash jika ID HTML tidak ada
-        const timerB = document.getElementById('timerBadge');
-        if (timerB) timerB.classList.remove('hidden');
-        
-        const violationB = document.getElementById('violationBadge');
-        if (violationB) violationB.classList.remove('hidden');
-        
+        startScreen.style.display = 'none';
+        quizArea.style.display = 'block';
+        controls.style.display = 'flex';
+        questionNav.style.display = 'grid';
+        document.getElementById('timerBadge').classList.remove('hidden');
+        document.getElementById('violationBadge').classList.remove('hidden');
         jalankanTimerUjian();
     }
 
@@ -663,44 +657,8 @@
                 });
                 htmlSoal += `</div>`;
             }
-            else if (soal.tipe === 'BS') {
-                htmlSoal += `
-                <table class="bs-table">
-                    <thead>
-                        <tr>
-                            <th>Pernyataan</th>
-                            <th style="text-align:center; width: 100px;">BENAR</th>
-                            <th style="text-align:center; width: 100px;">SALAH</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                `;
-                
-                // 🛡️ SAFEGUARD: Mendukung properti 'pernyataan' maupun 'pilihan' agar tidak crash
-                const listPernyataan = soal.pernyataan || soal.pilihan || [];
-                
-                listPernyataan.forEach((p, pIdx) => {
-                    const jwbSiswa = (jawabanSiswa[idx] && jawabanSiswa[idx][pIdx]) ? jawabanSiswa[idx][pIdx] : '';
-                    const cekB = jwbSiswa === 'B' ? 'checked' : '';
-                    const cekS = jwbSiswa === 'S' ? 'checked' : '';
-                    
-                    htmlSoal += `
-                        <tr>
-                            <td>${p}</td>
-                            <td class="opt" style="text-align:center;" onclick="document.getElementById('bs_${idx}_${pIdx}_B').click()">
-                                <input type="radio" class="bs-radio" id="bs_${idx}_${pIdx}_B" name="bs_${idx}_${pIdx}" value="B" ${cekB} onchange="simpanJawabanBS(${idx}, ${pIdx}, 'B')">
-                            </td>
-                            <td class="opt" style="text-align:center;" onclick="document.getElementById('bs_${idx}_${pIdx}_S').click()">
-                                <input type="radio" class="bs-radio" id="bs_${idx}_${pIdx}_S" name="bs_${idx}_${pIdx}" value="S" ${cekS} onchange="simpanJawabanBS(${idx}, ${pIdx}, 'S')">
-                            </td>
-                        </tr>
-                    `;
-                });
-                htmlSoal += `</tbody></table>`;
-            }
         }
 
-        // 🌟 KUNCI PERBAIKAN: Suntikkan komponen HTML yang sudah dibuat ke dalam layar quizArea
         quizArea.innerHTML = htmlSoal;
 
         // Perbaruan Indikator Warna Kotak Navigasi
@@ -727,8 +685,10 @@
 
         prevBtn.disabled = idx === 0;
         
+        // ✅ INI DIA LETAK TOMBOL SELESAINYA
         if(idx === window.daftarSoal.length - 1) {
             nextBtn.textContent = 'SELESAI & NILAI';
+            // ✅ SUDAH DIGANTI MENJADI PANGGILAN KONFIRMASI
             nextBtn.onclick = konfirmasiSelesai; 
         } else {
             nextBtn.textContent = 'Selanjutnya';
@@ -753,21 +713,6 @@
         tampilkanSoal(currentIndex);
     }
 
-      function simpanJawabanBS(idx, pIdx, jawaban) {
-    if (!jawabanSiswa[idx]) {
-        jawabanSiswa[idx] = {};
-    }
-    jawabanSiswa[idx][pIdx] = jawaban;
-    
-    const totalPernyataan = window.daftarSoal[idx].pernyataan.length;
-    const totalDijawab = Object.keys(jawabanSiswa[idx]).length;
-    
-    if (totalDijawab === totalPernyataan) {
-        tampilkanSoal(currentIndex); 
-    } else {
-        simpanDataKeStorage();
-    }
-}
     // ==================================================
     // ✅ FUNGSI HITUNG SKOR (RINCIAN LENGKAP KATEGORI)
     // ==================================================
@@ -804,22 +749,7 @@
                 const jawabanUser = jawabanSiswa[idx] || [];
                 const kunci = soal.kunciJawaban || [];
                 if(JSON.stringify(jawabanUser.sort()) === JSON.stringify(kunci.sort())) isBenar = true;
-            } 
-            // ✅ TAMBAHKAN PENILAIAN BENAR/SALAH DI SINI
-            else if(soal.tipe === 'BS') {
-    const jawabanUser = jawabanSiswa[idx] || {};
-    const kunci = soal.kunciJawaban || [];
-    let benarSemua = true;
-    
-    if (Object.keys(jawabanUser).length !== kunci.length) {
-        benarSemua = false;
-    } else {
-        kunci.forEach((k, pIdx) => {
-            if(jawabanUser[pIdx] !== k) benarSemua = false;
-        });
-    }
-    if (benarSemua) isBenar = true;
-}
+            }
 
             // Memasukkan nilai jika jawaban benar
             if (isBenar) {
