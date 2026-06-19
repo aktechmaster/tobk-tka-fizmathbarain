@@ -595,16 +595,15 @@
             htmlSoal = `
                 <div class="qno">
                     <span>INFORMASI</span>
-                    <span class="badge-type">INFO</span>
                 </div>
                 <div class="question">${soal.soal}</div>
                 <div style="height: 50px;"></div>
             `;
         } else {
+            // ✅ Keterangan Badge (Tipe, Kesulitan, Bobot) SUDAH DIHAPUS DI SINI
             htmlSoal = `
                 <div class="qno">
                     <span>Soal Nomor ${soal.id}</span>
-                    <span class="badge-type">${soal.tipe} | ${soal.tingkatKesulitan} (${soal.rentangNilai})</span>
                 </div>
                 <div class="question">${soal.soal}</div>
             `;
