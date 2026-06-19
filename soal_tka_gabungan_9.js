@@ -825,4 +825,4 @@ window.daftarSoal = [
     ],
     kunciJawaban: [0, 1, 2]
   }
-  }];
+  ];
