@@ -713,25 +713,46 @@
         tampilkanSoal(currentIndex);
     }
 
+    // ==================================================
+    // ✅ FUNGSI HITUNG SKOR (DENGAN PEMISAHAN LITERASI & NUMERASI)
+    // ==================================================
+    
     function hitungSkor() {
         let benar = 0;
         let totalNilai = 0;
+        let skorLiterasi = 0; // Variabel baru untuk Literasi
+        let skorNumerasi = 0; // Variabel baru untuk Numerasi
+
         window.daftarSoal.forEach((soal, idx) => {
             if (soal.tipe === 'INFO' || soal.id === 99) return; 
             
             const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]) || 0;
+            let isBenar = false;
+
+            // Cek kebenaran soal PG
             if(soal.tipe === 'PG') {
                 if(jawabanSiswa[idx] === soal.kunciJawaban) {
-                    benar++;
-                    totalNilai += nilaiSoal;
+                    isBenar = true;
                 }
             }
+            // Cek kebenaran soal PGK
             if(soal.tipe === 'PGK') {
                 const jawabanUser = jawabanSiswa[idx] || [];
                 const kunci = soal.kunciJawaban || [];
                 if(JSON.stringify(jawabanUser.sort()) === JSON.stringify(kunci.sort())) {
-                    benar++;
-                    totalNilai += nilaiSoal;
+                    isBenar = true;
+                }
+            }
+
+            // Jika jawaban benar, tambahkan nilai berdasarkan kategorinya
+            if (isBenar) {
+                benar++;
+                totalNilai += nilaiSoal;
+                
+                if (soal.kategori === 'LITERASI') {
+                    skorLiterasi += nilaiSoal;
+                } else if (soal.kategori === 'NUMERASI') {
+                    skorNumerasi += nilaiSoal;
                 }
             }
         });
@@ -742,20 +763,8 @@
             return sum + (parseInt(s.rentangNilai.split('–')[1]) || 0);
         }, 0);
         
-        return {benar, totalNilai, maksNilai, totalSoalValid};
+        return {benar, totalNilai, maksNilai, totalSoalValid, skorLiterasi, skorNumerasi};
     }
-
-    // ==================================================
-    // ✅ FUNGSI KONFIRMASI SEBELUM SELESAI UJIAN
-    // ==================================================
-    
-    window.konfirmasiSelesai = function() {
-        const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
-        
-        if (yakin) {
-            tampilkanHasil(); 
-        }
-    };
 
     // ==================================================
     // ✅ TAMPILAN HASIL AKHIR & TOMBOL KEMBALI
@@ -765,16 +774,29 @@
         const hasil = hitungSkor();
         quizArea.innerHTML = `
             <div class="result-box">
-                <div class="result-score-label">Skor Akhir</div>
+                <div class="result-score-label">Skor Keseluruhan</div>
                 <div class="result-score-value">${hasil.totalNilai} / ${hasil.maksNilai}</div>
+                
+                <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-around; margin-bottom: 25px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Literasi</div>
+                        <div style="font-size: 28px; font-weight: 900; color: #0056b3;">${hasil.skorLiterasi}</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Numerasi</div>
+                        <div style="font-size: 28px; font-weight: 900; color: #d97706;">${hasil.skorNumerasi}</div>
+                    </div>
+                </div>
+
                 <div class="result-details">
                     <div class="result-item correct">
                         <span class="result-val">${hasil.benar}</span>
-                        <span>Benar</span>
+                        <span>Total Benar</span>
                     </div>
                     <div class="result-item wrong">
                         <span class="result-val">${hasil.totalSoalValid - hasil.benar}</span> 
-                        <span>Salah</span>
+                        <span>Total Salah</span>
                     </div>
                 </div>
                 
