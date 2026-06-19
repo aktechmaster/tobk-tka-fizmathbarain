@@ -824,5 +824,5 @@ window.daftarSoal = [
       "Pernyataan 4"
     ],
     kunciJawaban: [0, 1, 2]
-  },
+  }
   }];
