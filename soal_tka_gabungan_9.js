@@ -331,7 +331,7 @@ window.daftarSoal = [
         "Pada pukul 11.00 belum ada pendonor yang memasuki tahap pemulihan."
     ],
     kunciJawaban: ["B", "S", "B"]
-}
+},
   {
     id: 42,
     kategori: "NUMERASI",
