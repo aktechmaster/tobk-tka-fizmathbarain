@@ -577,6 +577,14 @@
         });
     }
 
+   window.konfirmasiSelesai = function() {
+        const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
+        
+        if (yakin) {
+            tampilkanHasil(); 
+        }
+    };
+
    // Menampilkan soal berdasarkan index
     function tampilkanSoal(idx) {
         currentIndex = idx;
