@@ -657,7 +657,7 @@
                         </thead>
                         <tbody>`;
                 
-                soal.pernyataan.forEach((p, noPernyataan) => {
+                soal.pilihan.forEach((p, noPernyataan) => {
                     // Cek apakah data jawabanSiswa[idx] sudah ada, jika belum set kosong
                     const jawabanSaatIni = (jawabanSiswa[idx] && jawabanSiswa[idx][noPernyataan]) ? jawabanSiswa[idx][noPernyataan] : null;
                     
