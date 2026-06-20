@@ -108,7 +108,7 @@ window.daftarSoal = [
   },
 
   {
-    id: 6,
+    id: 31,
     kategori: "NUMERASI", // ✅ Kategori ditambahkan
     tipe: "PG",
     tingkatKesulitan: "Sangat Mudah",
@@ -126,7 +126,7 @@ window.daftarSoal = [
     kunciJawaban: "A"
   },
   {
-    id: 7,
+    id: 32,
     kategori: "NUMERASI", // ✅ Kategori ditambahkan
     tipe: "PGK",
     tingkatKesulitan: "Sedang",
@@ -143,7 +143,7 @@ window.daftarSoal = [
     kunciJawaban: [0, 1, 2]
   },
   {
-    id: 8,
+    id: 33,
     kategori: "NUMERASI", // ✅ Kategori ditambahkan
     tipe: "PGK",
     tingkatKesulitan: "Lumayan Sulit",
@@ -161,7 +161,7 @@ window.daftarSoal = [
     kunciJawaban: [2, 3]
   },
   {
-    id: 9,
+    id: 34,
     kategori: "NUMERASI", // ✅ Kategori ditambahkan
     tipe: "PG",
     tingkatKesulitan: "Mudah",
@@ -178,7 +178,7 @@ window.daftarSoal = [
     kunciJawaban: "B"
   },
   {
-    id: 10,
+    id: 35,
     kategori: "NUMERASI", // ✅ Kategori ditambahkan
     tipe: "PG",
     tingkatKesulitan: "Mudah",
@@ -194,25 +194,97 @@ window.daftarSoal = [
     ],
     kunciJawaban: "B"
   },
-  {
-    id: 11, // Sesuaikan nomor urut ID
-    kategori: "NUMERASI", 
-    tipe: "BS", // ✅ Pastikan tipenya 'BS'
-    tingkatKesulitan: "Sedang",
-    rentangNilai: "8 – 10",
-    soal: `Berdasarkan gambar uang yang dimiliki Adit, tentukan apakah pernyataan berikut Benar atau Salah!`,
-    gambar: "link_gambar_uang_adit.jpg", // Kosongkan (null) jika tidak ada gambar
-    
-    // ✅ GUNAKAN 'pernyataan', BUKAN 'pilihan'
-    pernyataan: [
-      "Nilai uang Adit setara dengan selembar uang lima puluh ribuan.",
-      "Nilai uang Adit setara dengan tiga lembar uang dua puluh ribuan.",
-      "Nilai uang Adit setara dengan lima lembar uang sepuluh ribuan.",
-      "Nilai uang Adit setara dengan sepuluh lembar uang dua ribuan."
-    ],
-    
-    // ✅ KUNCI JAWABAN MENGGUNAKAN ARRAY BERISI 'B' ATAU 'S'
-    // Urutannya harus sama persis dengan urutan pernyataan di atas
-    kunciJawaban: ["B", "S", "B", "S"] 
-  }
+  // ==========================================
+    // SOAL NOMOR 36 (PG)
+    // ==========================================
+    {
+        id: 36,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "<b>Proyek Renovasi Gedung</b><br><br>Proyek renovasi suatu gedung sekolah harus diselesaikan paling lambat dalam waktu 60 hari sesuai dengan kontrak kerja yang telah disepakati bersama. Manajer proyek telah menghitung kebutuhan tenaga kerja dengan asumsi setiap pegawai memiliki kemampuan dan produktivitas yang sama setiap harinya. Kemajuan proyek sangat bergantung pada jumlah pegawai; semakin banyak pegawai yang bekerja, maka waktu pengerjaan akan semakin singkat.<br><br>Pekerjaan dinyatakan selesai jika seluruh beban kerja telah terpenuhi. Jika terjadi kendala pada jumlah pegawai atau waktu kerja, manajer harus melakukan penyesuaian agar total beban kerja tetap terpenuhi tepat waktu. Penyesuaian ini sangat penting dilakukan agar renovasi gedung selesai tepat 60 hari tanpa melanggar batas kontrak yang ada.<br><br>Berdasarkan perencanaan awal, renovasi gedung dapat diselesaikan oleh 12 pegawai dalam waktu 60 hari. Jika manajer memutuskan untuk menambah jumlah pegawai menjadi 18 orang agar pekerjaan lebih cepat selesai, maka waktu yang diperlukan untuk menyelesaikan renovasi tersebut adalah...",
+        pilihan: [
+            "30 hari",
+            "40 hari",
+            "45 hari",
+            "90 hari"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 37 (BENAR-SALAH)
+    // ==========================================
+    {
+        id: 37,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "BS",
+        soal: "<b>Proyek Renovasi Gedung</b><br><br>Proyek renovasi suatu gedung sekolah harus diselesaikan paling lambat dalam waktu 60 hari sesuai dengan kontrak kerja yang telah disepakati bersama. Manajer proyek telah menghitung kebutuhan tenaga kerja dengan asumsi setiap pegawai memiliki kemampuan dan produktivitas yang sama setiap harinya. Kemajuan proyek sangat bergantung pada jumlah pegawai; semakin banyak pegawai yang bekerja, maka waktu pengerjaan akan semakin singkat.<br><br>Pekerjaan dinyatakan selesai jika seluruh beban kerja telah terpenuhi. Jika terjadi kendala pada jumlah pegawai atau waktu kerja, manajer harus melakukan penyesuaian agar total beban kerja tetap terpenuhi tepat waktu. Penyesuaian ini sangat penting dilakukan agar renovasi gedung selesai tepat 60 hari tanpa melanggar batas kontrak yang ada.<br><br>Berdasarkan situasi tersebut, tentukan Benar atau Salah untuk setiap pernyataan berikut tentang penyelesaian renovasi gedung tersebut!",
+        pilihan: [
+            "Sisa pekerjaan yang harus diselesaikan setelah hari ke-10 adalah setara dengan pekerjaan 800 hari penuh yang dikerjakan 1 orang.",
+            "Selama 10 hari pertama, proyek mengalami ketertinggalan jadwal yang setara dengan hasil kerja 5 orang selama 10 hari.",
+            "Agar renovasi tetap selesai tepat waktu manajer cukup mempekerjakan kembali 15 pegawai semula tanpa perlu menambah tenaga kerja tambahan."
+        ],
+        // Kunci: Benar - Benar - Salah
+        kunciJawaban: ["B", "B", "S"]
+    },
+
+    // ==========================================
+    // SOAL NOMOR 38 (PGK)
+    // ==========================================
+    {
+        id: 38,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PGK",
+        soal: "<b>Proyek Renovasi Gedung</b><br><br>Proyek renovasi suatu gedung sekolah harus diselesaikan paling lambat dalam waktu 60 hari sesuai dengan kontrak kerja yang telah disepakati bersama. Manajer proyek telah menghitung kebutuhan tenaga kerja dengan asumsi setiap pegawai memiliki kemampuan dan produktivitas yang sama setiap harinya. Kemajuan proyek sangat bergantung pada jumlah pegawai; semakin banyak pegawai yang bekerja, maka waktu pengerjaan akan semakin singkat.<br><br>Pekerjaan dinyatakan selesai jika seluruh beban kerja telah terpenuhi. Jika terjadi kendala pada jumlah pegawai atau waktu kerja, manajer harus melakukan penyesuaian agar total beban kerja tetap terpenuhi tepat waktu. Penyesuaian ini sangat penting dilakukan agar renovasi gedung selesai tepat 60 hari tanpa melanggar batas kontrak yang ada.<br><br>Berdasarkan situasi tersebut, berikut ini manakah pernyataan yang sesuai tentang penyelesaian renovasi gedung dalam sisa waktu yang tersedia?<br>Pilih semua jawaban benar! Jawaban benar lebih dari satu.",
+        pilihan: [
+            "Sisa waktu efektif yang tersedia untuk menyelesaikan seluruh sisa pekerjaan adalah 24 hari.",
+            "Beban pekerjaan yang masih tersisa setara dengan hasil kerja 20 orang selama 60 hari.",
+            "Manajer proyek harus menyiapkan total 30 pegawai agar proyek selesai tepat waktu.",
+            "Manajer proyek cukup menambah 5 orang pegawai dari jumlah semula agar renovasi gedung selesai tepat waktu."
+        ],
+        // Kunci: Pernyataan 1 dan 3 (Indeks 0 dan 2)
+        kunciJawaban: [0, 2]
+    },
+
+    // ==========================================
+    // SOAL NOMOR 39 (PG)
+    // ==========================================
+    {
+        id: 39,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "<b>Alur Pelayanan Donor Darah</b><br><br>Kegiatan donor adalah salah satu bentuk aksi kemanusiaan yang sangat bermanfaat untuk diri sendiri dan orang lain. Setetes darah yang disumbangkan dapat memberikan harapan hidup bagi orang lain yang membutuhkan, terutama mereka yang mengalami kecelakaan, setelah menjalani operasi, atau menderita penyakit yang serius. Tak hanya untuk penerima, pendonor juga bisa mendapatkan manfaat. Diantaranya bermanfaat untuk mendeteksi penyakit, meningkatkan produksi sel darah, dan menjaga kesehatan jantung. Oleh karena itu disarankan untuk melakukan donor darah tiga bulan setelah donor darah terakhir.<br><br>Biasanya aksi donor darah difasilitasi oleh Palang Merah Indonesia (PMI). Berikut adalah alur kegiatan donor darah di sebuah posko PMI.<br><br>Seorang pendonor darah mendatangi posko PMI. Kebetulan saat ini sedang tidak ada antrian sehingga orang tersebut dapat langsung dilayani.<br><br>Jika tidak ada kendala pada pelayanan donor darah, apa yang sedang dilakukan pendonor tersebut setelah 25 menit berlalu?",
+        gambar: "9,10,11.png",
+        pilihan: [
+            "Tahap pemeriksaan kesehatan",
+            "Duduk di kursi tunggu",
+            "Proses pengambilan darah",
+            "Istirahat di ruang pemulihan"
+        ],
+        kunciJawaban: "C"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 40 (PGK)
+    // ==========================================
+    {
+        id: 40,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PGK",
+        soal: "<b>Alur Pelayanan Donor Darah</b><br><br>Kegiatan donor adalah salah satu bentuk aksi kemanusiaan yang sangat bermanfaat untuk diri sendiri dan orang lain. Setetes darah yang disumbangkan dapat memberikan harapan hidup bagi orang lain yang membutuhkan, terutama mereka yang mengalami kecelakaan, setelah menjalani operasi, atau menderita penyakit yang serius. Tak hanya untuk penerima, pendonor juga bisa mendapatkan manfaat. Diantaranya bermanfaat untuk mendeteksi penyakit, meningkatkan produksi sel darah, dan menjaga kesehatan jantung. Oleh karena itu disarankan untuk melakukan donor darah tiga bulan setelah donor darah terakhir.<br><br>Biasanya aksi donor darah difasilitasi oleh Palang Merah Indonesia (PMI). Berikut adalah alur kegiatan donor darah di sebuah posko PMI.<br><br>Pada suatu waktu, Yuda baru saja sampai di posko PMI untuk melakukan donor darah. Diketahui bahwa Rama dan Fajar juga berada di posko PMI tersebut. Rama sedang menunggu antrian untuk proses pengambilan darah, sedangkan Fajar sedang proses pengambilan darah sejak 16 menit yang lalu. Mereka tidak ada janji untuk pulang bersama ketika donor darah selesai.<br><br>Berikut ini pernyataan manakah yang mungkin akan terjadi di posko PMI tersebut?<br>Pilih semua jawaban benar! Jawaban benar lebih dari satu.",
+        gambar: "9,10,11.png",
+        pilihan: [
+            "Yuda sempat bertemu Rama di kursi tunggu.",
+            "Ketika Yuda proses pengambilan darah, Fajar telah pulang lebih dulu.",
+            "Yuda menunggu di kursi tunggu selama 30 menit.",
+            "Sejak pertama kali datang hingga pulang, Yuda menghabiskan waktu lebih dari 1,5 jam."
+        ],
+        // Kunci: Pernyataan 1 dan 4 (Indeks 0 dan 3)
+        kunciJawaban: [0, 3]
+    }
 ];
