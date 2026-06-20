@@ -562,5 +562,99 @@ window.daftarSoal = [
             "21.600 buah"
         ],
         kunciJawaban: "B"
+    },
+  // ==========================================
+    // SOAL NOMOR 51 (PG)
+    // ==========================================
+    {
+        id: 51,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "<b>Pengecatan Rumah</b><br><br>Pak Doni mempunyai rumah dengan tampak samping kanan sebagai berikut.<br><br>Pak Doni ingin mengecat dinding samping kanan rumah tersebut. Terdapat empat merek cat di pasaran yang dapat digunakan Pak Doni seperti ditunjukkan pada tabel berikut.<br><br><table style='width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; font-size: 14px;'><thead><tr style='background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;'><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: left;'>Merek Cat</th><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>1 kg Dapat Mengecat</th><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: left;'>Kemasan yang Tersedia di Toko</th></tr></thead><tbody><tr><td style='padding: 10px; border: 1px solid #cbd5e1;'>Momilex</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$7\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>5 kg-an dan 10 kg-an</td></tr><tr style='background-color: #f8fafc;'><td style='padding: 10px; border: 1px solid #cbd5e1;'>Josun</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$8\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>2 kg-an dan 10 kg-an</td></tr><tr><td style='padding: 10px; border: 1px solid #cbd5e1;'>Bulux</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$10\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>2 kg-an dan 5 kg-an</td></tr><tr style='background-color: #f8fafc;'><td style='padding: 10px; border: 1px solid #cbd5e1;'>Noppin</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$9\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>1 kg-an dan 5 kg-an</td></tr></tbody></table><br>Pak Doni ingin membeli cat dengan merek yang sama. Supaya sisa cat yang dibeli paling sedikit, cat merek apakah yang sebaiknya dipilih?",
+        gambar: "21.png",
+        pilihan: [
+            "Momilex",
+            "Josun",
+            "Bulux",
+            "Noppin"
+        ],
+        kunciJawaban: "C"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 52 (PG)
+    // ==========================================
+    {
+        id: 52,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Sebuah usaha rumahan akan mengemas produk makanan menggunakan kemasan berbentuk prisma segitiga yang dibuat dari karton. Setiap kemasan dibuat dari satu jaring-jaring utuh. Berikut gambar kemasan dan sketsa jaring-jaringnya.<br><br>Karton yang tersedia untuk produksi hari itu memiliki ukuran 50 cm x 100 cm. Pemotongan karton dilakukan dengan rapi dan memperhatikan tata letak. Jaring-jaring kemasan dibuat dengan kertas yang saling terhubung dan bukan menggabungkan hasil potongan lain.<br><br>Banyak kemasan maksimum yang dapat dibuat adalah ....",
+        gambar: "22.png",
+        pilihan: [
+            "4 kemasan",
+            "8 kemasan",
+            "9 kemasan",
+            "14 kemasan"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 53 (PG)
+    // ==========================================
+    {
+        id: 53,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Perhatikan posisi robot pembersih pada gambar berikut!<br><br>Robot tersebut kemudian akan bergerak mengikuti translasi $T(4, -2)$.<br><br>Posisi robot setelah berpindah sesuai translasi tersebut adalah....",
+        gambar: "23.png",
+        pilihan: [
+            "titik A",
+            "titik B",
+            "titik C",
+            "titik D"
+        ],
+        kunciJawaban: "C"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 54 (PG)
+    // ==========================================
+    {
+        id: 54,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Perhatikan gambar berikut!<br><br>Transformasi tunggal yang paling tepat untuk mengubah posisi segitiga ABC menjadi segitiga A'B'C' adalah ....",
+        gambar: "24.png",
+        pilihan: [
+            "translasi $(-3, 1)$",
+            "refleksi terhadap garis $y = x$",
+            "rotasi 90° berlawanan arah jarum jam dengan pusat di titik asal",
+            "refleksi terhadap sumbu-Y"
+        ],
+        kunciJawaban: "C"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 55 (PG)
+    // ==========================================
+    {
+        id: 55,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Dalam pembangunan sebuah monumen peringatan, kontraktor menggunakan bata ringan berbentuk balok untuk menyusun bagian dalam monumen. Desain monumen peringatan diberikan pada gambar.<br><br>Setiap bata ringan yang digunakan berukuran 60 cm × 20 cm × 10 cm. Susunan bata ringan pada monumen tersebut dianggap tersusun rapat tanpa celah.<br><br>Berapakah jumlah minimal bata ringan yang diperlukan untuk membangun monumen tersebut?",
+        gambar: "25.png",
+        pilihan: [
+            "16.800 buah",
+            "18.000 buah",
+            "19.200 buah",
+            "21.600 buah"
+        ],
+        kunciJawaban: "B"
     }
 ];
