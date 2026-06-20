@@ -763,7 +763,7 @@
     }
 
     // ==================================================
-    // ✅ FUNGSI HITUNG SKOR (VERSI ANTI-CRASH)
+    // ✅ FUNGSI HITUNG SKOR (VERSI PARSIAL / SEBAGIAN)
     // ==================================================
     
     function hitungSkor() {
@@ -777,17 +777,15 @@
             if (soal.tipe === 'INFO' || soal.id === 99) return; 
             hasil.totalSoalValid++;
             
-            // PELINDUNG 1: Mencegah crash jika rentangNilai lupa ditulis di soal.js
+            // Membaca poin maksimal dari soal
             let nilaiSoal = 0;
             if (soal.rentangNilai && typeof soal.rentangNilai === 'string') {
-                // Membelah pakai regex agar mau baca tanda minus (-) maupun en-dash (–)
                 const pecah = soal.rentangNilai.split(/[-–]/); 
                 nilaiSoal = parseInt(pecah[1]) || 0;
             }
-            
             hasil.maksNilai += nilaiSoal;
 
-            // Membaca kategori soal
+            // Membaca kategori literasi/numerasi
             const kategori = (soal.kategori || '').toUpperCase();
             if (kategori === 'LITERASI') {
                 hasil.litTotalSoal++;
@@ -797,50 +795,78 @@
                 hasil.numMaks += nilaiSoal;
             }
 
-            // Mengecek jawaban benar/salah
-            let isBenar = false;
+            let skorItem = 0;
+            let isBenarPenuh = false; // Hanya bernilai true jika soal dijawab 100% sempurna
             
+            // 1. TIPE Pilihan Ganda (PG)
             if(soal.tipe === 'PG') {
-                if(jawabanSiswa[idx] === soal.kunciJawaban) isBenar = true;
-            } 
-            else if(soal.tipe === 'PGK') {
-                // PELINDUNG 2: Memastikan jawabanUser adalah Array sebelum di-sort
-                const jawabanUser = Array.isArray(jawabanSiswa[idx]) ? jawabanSiswa[idx] : [];
-                const kunci = Array.isArray(soal.kunciJawaban) ? soal.kunciJawaban : [];
-                if(JSON.stringify(jawabanUser.slice().sort()) === JSON.stringify(kunci.slice().sort())) {
-                    isBenar = true;
+                if(jawabanSiswa[idx] === soal.kunciJawaban) {
+                    skorItem = nilaiSoal;
+                    isBenarPenuh = true;
                 }
             } 
-            // ==================================================
-            // ✅ SKOR UNTUK TIPE BS
-            // ==================================================
-            else if(soal.tipe === 'BS') {
-                // PELINDUNG 3: Memastikan jawaban berupa Array
+            // 2. TIPE Pilihan Ganda Kompleks (PGK) - PARSIAL
+            else if(soal.tipe === 'PGK') {
                 const jawabanUser = Array.isArray(jawabanSiswa[idx]) ? jawabanSiswa[idx] : [];
                 const kunci = Array.isArray(soal.kunciJawaban) ? soal.kunciJawaban : [];
+                const totalPilihan = soal.pilihan ? soal.pilihan.length : 0;
                 
-                // Menghapus nilai kosong (null) di belakang array jika siswa tidak menjawab pernyataan terakhir
-                const cleanUser = Array.from(jawabanUser, item => item || null);
+                if (totalPilihan > 0) {
+                    let aksiBenar = 0;
+                    for (let i = 0; i < totalPilihan; i++) {
+                        const userCentang = jawabanUser.includes(i);
+                        const kunciCentang = kunci.includes(i);
+                        
+                        // Cek apakah siswa tepat dalam mencentang (atau tidak mencentang) opsi ini
+                        if (userCentang === kunciCentang) {
+                            aksiBenar++;
+                        }
+                    }
+                    skorItem = (aksiBenar / totalPilihan) * nilaiSoal;
+                    if (aksiBenar === totalPilihan) isBenarPenuh = true;
+                }
+            } 
+            // 3. TIPE Benar/Salah (BS) - PARSIAL
+            else if(soal.tipe === 'BS') {
+                const jawabanUser = Array.isArray(jawabanSiswa[idx]) ? jawabanSiswa[idx] : [];
+                const kunci = Array.isArray(soal.kunciJawaban) ? soal.kunciJawaban : [];
+                const totalPernyataan = kunci.length;
                 
-                if(JSON.stringify(cleanUser) === JSON.stringify(kunci)) {
-                    isBenar = true;
+                if (totalPernyataan > 0) {
+                    let tebakanBenar = 0;
+                    for (let i = 0; i < totalPernyataan; i++) {
+                        if (jawabanUser[i] === kunci[i]) {
+                            tebakanBenar++;
+                        }
+                    }
+                    skorItem = (tebakanBenar / totalPernyataan) * nilaiSoal;
+                    if (tebakanBenar === totalPernyataan) isBenarPenuh = true;
                 }
             }
 
-            // Memasukkan nilai jika jawaban benar
-            if (isBenar) {
-                hasil.totalBenar++;
-                hasil.totalNilai += nilaiSoal;
+            // Jika mendapat poin (meski parsial), masukkan ke perhitungan total
+            if (skorItem > 0) {
+                // Bulatkan ke 2 angka di belakang koma (misal: 6.67) agar rapi
+                skorItem = Math.round(skorItem * 100) / 100;
+                hasil.totalNilai += skorItem;
+                
+                // Indikator "Jumlah Soal Benar" hanya dihitung jika 100% sempurna
+                if (isBenarPenuh) hasil.totalBenar++;
                 
                 if (kategori === 'LITERASI') {
-                    hasil.litBenar++;
-                    hasil.litSkor += nilaiSoal;
+                    if (isBenarPenuh) hasil.litBenar++;
+                    hasil.litSkor += skorItem;
                 } else if (kategori === 'NUMERASI') {
-                    hasil.numBenar++;
-                    hasil.numSkor += nilaiSoal;
+                    if (isBenarPenuh) hasil.numBenar++;
+                    hasil.numSkor += skorItem;
                 }
             }
         });
+        
+        // Membulatkan total skor akhir keseluruhan
+        hasil.totalNilai = Math.round(hasil.totalNilai * 100) / 100;
+        hasil.litSkor = Math.round(hasil.litSkor * 100) / 100;
+        hasil.numSkor = Math.round(hasil.numSkor * 100) / 100;
         
         return hasil;
     }
