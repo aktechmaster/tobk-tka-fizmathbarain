@@ -2,57 +2,59 @@
 // BANK SOAL TKA GABUNGAN: LITERASI & NUMERASI KELAS 9
 // ==================================================
 window.daftarSoal = [
-  {
-    id: 1,
-    kategori: "LITERASI", // ✅ Kategori ditambahkan
-    tipe: "PG",
-    tingkatKesulitan: "Sangat Mudah",
-    rentangNilai: "4 – 5",
-    soal: `[ISI SOAL LITERASI NOMOR 1 DI SINI]<br><br>
-    Contoh: Bacalah teks berikut dengan cermat! Berdasarkan isi teks tersebut, apa gagasan utama paragraf kedua?`,
-    gambar: null,
-    pilihan: [
-      "A. [Pilihan A]",
-      "B. [Pilihan B]",
-      "C. [Pilihan C]",
-      "D. [Pilihan D]"
-    ],
-    kunciJawaban: "A"
-  },
-  {
-    id: 2,
-    kategori: "LITERASI", // ✅ Kategori ditambahkan
-    tipe: "PGK",
-    tingkatKesulitan: "Sedang",
-    rentangNilai: "8 – 10",
-    soal: `[ISI SOAL LITERASI NOMOR 2 DI SINI]<br><br>
-    <strong>Pilih semua jawaban benar!</strong>`,
-    gambar: null,
-    pilihan: [
-      "[Pilihan 1]",
-      "[Pilihan 2]",
-      "[Pilihan 3]",
-      "[Pilihan 4]"
-    ],
-    kunciJawaban: [0, 1]
-  },
-  {
-    id: 3,
-    kategori: "LITERASI", // ✅ Kategori ditambahkan
-    tipe: "PGK",
-    tingkatKesulitan: "Lumayan Sulit",
-    rentangNilai: "11 – 13",
-    soal: `[ISI SOAL LITERASI NOMOR 3 DI SINI]<br><br>
-    <strong>Pilih semua jawaban benar!</strong>`,
-    gambar: null,
-    pilihan: [
-      "[Pilihan 1]",
-      "[Pilihan 2]",
-      "[Pilihan 3]",
-      "[Pilihan 4]"
-    ],
-    kunciJawaban: [1, 3]
-  },
+      // ==========================================
+    // SOAL NOMOR 1 (PG) - Tingkat Kesulitan: Mudah
+    // ==========================================
+    {
+        id: 1,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Makna dari frasa <i>menyodok haru serta pilu</i> dalam paragraf kedua teks adalah ....",
+        pilihan: [
+            "menggambarkan perasaan duka yang mendalam",
+            "menggambarkan perasaan sedih yang mendalam",
+            "menggambarkan perasaan bangga yang mendalam",
+            "menggambarkan perasaan kecewa yang mendalam"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 2 (PG) - Tingkat Kesulitan: Sedang
+    // ==========================================
+    {
+        id: 2,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Prediksi apa yang paling mungkin terjadi pada kehidupan tokoh Aku setelah menjual kedua foto tersebut?",
+        pilihan: [
+            "Ia akan lebih menghargai objek fotonya dan tidak lagi bersikap abai.",
+            "Ia akan berhenti menjadi fotografer karena sudah memiliki banyak uang.",
+            "Ia akan pindah ke negara lain dan hidup mewah dengan uang hasil penjualan foto.",
+            "Ia akan terus mencari objek foto yang bisa menyelamatkan hidupnya lagi."
+        ],
+        kunciJawaban: "A"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 3 (PGK) - Tingkat Kesulitan: Sulit
+    // ==========================================
+    {
+        id: 3,
+        kategori: "LITERASI",
+        rentangNilai: "0-4",
+        tipe: "PGK",
+        soal: "Apa saja informasi yang dapat disimpulkan tentang situasi negara dalam cerpen ini?<br><br>Pilihlah jawaban benar! Jawaban benar lebih dari satu.",
+        pilihan: [
+            "Kondisi keamanan negara sangat kacau.",
+            "Negara mengalami krisis ekonomi yang parah.",
+            "Banyak penduduk yang kesulitan mendapatkan uang.",
+            "Kematian menjadi hal yang lumrah dan dianggap biasa saja."
+        ],
+        kunciJawaban: [1, 2]
+    },
   {
     id: 4,
     kategori: "LITERASI", // ✅ Kategori ditambahkan
