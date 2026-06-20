@@ -107,93 +107,96 @@ window.daftarSoal = [
     kunciJawaban: ""
   },
 
-  {
-    id: 31,
-    kategori: "NUMERASI", // ✅ Kategori ditambahkan
-    tipe: "PG",
-    tingkatKesulitan: "Sangat Mudah",
-    rentangNilai: "4 – 5",
-    soal: `Ani membeli 2 pulpen dan 2 pensil di sebuah toko alat tulis. Harga satuan pulpen adalah Rp12.000,00 dan harga satuan pensil adalah Rp8.000,00. Kebetulan, toko tersebut sedang memberikan promo "Hemat Berempat" dengan ketentuan sebagai berikut:<br><br>
-    <em>"Setiap pembelian 4 barang (boleh campur) akan mendapat potongan harga sebesar harga 1 barang termurah yang dibeli".</em><br><br>
-    Berapa total harga yang harus dibayar Ani dari semua barang yang dibeli?`,
-    gambar: null,
-    pilihan: [
-      "A. Rp32.000,00",
-      "B. Rp36.000,00",
-      "C. Rp40.000,00",
-      "D. Rp44.000,00"
-    ],
-    kunciJawaban: "A"
-  },
-  {
-    id: 32,
-    kategori: "NUMERASI", // ✅ Kategori ditambahkan
-    tipe: "PGK",
-    tingkatKesulitan: "Sedang",
-    rentangNilai: "8 – 10",
-    soal: `Sebuah toko menjual 1 kg beras seharga Rp12.750,00. Jika seseorang membeli 19,6 kg untuk jenis beras yang sama, berapa perkiraan total harga yang mungkin?<br>
-    <strong>Pilih semua jawaban benar!</strong>`,
-    gambar: null,
-    pilihan: [
-      "Kurang dari Rp260.000,00",
-      "Lebih besar dari Rp240.000,00",
-      "Dapat diperkirakan dengan 20 × 12.500,00",
-      "Mendekati Rp230.000,00"
-    ],
-    kunciJawaban: [0, 1, 2]
-  },
-  {
-    id: 33,
-    kategori: "NUMERASI", // ✅ Kategori ditambahkan
-    tipe: "PGK",
-    tingkatKesulitan: "Lumayan Sulit",
-    rentangNilai: "11 – 13",
-    soal: `Terdapat tiga bilangan yang dinyatakan dengan (33² − 3²), (8² + 296), dan (36 × 35).<br>
-    Bilangan apa saja yang merupakan faktor persekutuan ketiga bilangan tersebut?<br>
-    <strong>Pilih semua jawaban benar!</strong>`,
-    gambar: null,
-    pilihan: [
-      "2³ × 3³ × 7",
-      "2² × 3² × 7",
-      "2² × 3² × 5",
-      "2 × 3² × 5"
-    ],
-    kunciJawaban: [2, 3]
-  },
-  {
-    id: 34,
-    kategori: "NUMERASI", // ✅ Kategori ditambahkan
-    tipe: "PG",
-    tingkatKesulitan: "Mudah",
-    rentangNilai: "6 – 7",
-    soal: `Untuk membuat larutan desinfektan atau larutan pembasmi kuman, dibutuhkan cairan A dan B dengan perbandingan A : B = 3 : 5.<br><br>
-    Jika tersedia 2,5 liter cairan B, maka volume maksimum larutan yang dapat dibuat adalah ....`,
-    gambar: null,
-    pilihan: [
-      "A. 3,6 liter",
-      "B. 4,0 liter",
-      "C. 4,8 liter",
-      "D. 6,4 liter"
-    ],
-    kunciJawaban: "B"
-  },
-  {
-    id: 35,
-    kategori: "NUMERASI", // ✅ Kategori ditambahkan
-    tipe: "PG",
-    tingkatKesulitan: "Mudah",
-    rentangNilai: "6 – 7",
-    soal: `Harga setengah kilogram cabe rawit pada hari ini adalah Rp35.000,00.<br><br>
-    Jika hari ini Ibu membeli cabe rawit seberat 2¼ kilogram, total harga yang harus dibayar Ibu adalah ....`,
-    gambar: null,
-    pilihan: [
-      "A. Rp126.000,00",
-      "B. Rp157.500,00",
-      "C. Rp175.000,00",
-      "D. Rp192.500,00"
-    ],
-    kunciJawaban: "B"
-  },
+  // ==========================================
+    // SOAL NOMOR 31 (CONTOH/TEMPLATE PG)
+    // ==========================================
+    {
+        id: 31,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Tuliskan teks atau stimulus soal Numerasi nomor 31 di sini. Gunakan tag &lt;br&gt;&lt;br&gt; untuk membuat baris baru jika teksnya panjang.",
+        pilihan: [
+            "Pilihan Jawaban A",
+            "Pilihan Jawaban B",
+            "Pilihan Jawaban C",
+            "Pilihan Jawaban D"
+        ],
+        kunciJawaban: "A" // Ubah sesuai kunci asli (A, B, C, atau D)
+    },
+
+    // ==========================================
+    // SOAL NOMOR 32 (CONTOH/TEMPLATE BS)
+    // ==========================================
+    {
+        id: 32,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "BS",
+        soal: "Tuliskan perintah soal Benar-Salah nomor 32 di sini. Contoh: Tentukan Benar atau Salah untuk setiap pernyataan berikut!",
+        pilihan: [
+            "Pernyataan pertama yang harus dianalisis siswa.",
+            "Pernyataan kedua yang harus dianalisis siswa.",
+            "Pernyataan ketiga yang harus dianalisis siswa."
+        ],
+        // Ubah sesuai kunci asli ("B" untuk Benar, "S" untuk Salah)
+        kunciJawaban: ["B", "S", "B"] 
+    },
+
+    // ==========================================
+    // SOAL NOMOR 33 (CONTOH/TEMPLATE PGK)
+    // ==========================================
+    {
+        id: 33,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PGK",
+        soal: "Tuliskan perintah soal Pilihan Ganda Kompleks nomor 33 di sini. Contoh: Pilih semua jawaban yang benar! Jawaban benar lebih dari satu.",
+        pilihan: [
+            "Pernyataan atau pilihan jawaban ke-1",
+            "Pernyataan atau pilihan jawaban ke-2",
+            "Pernyataan atau pilihan jawaban ke-3",
+            "Pernyataan atau pilihan jawaban ke-4"
+        ],
+        // Masukkan indeks pilihan yang benar (dimulai dari 0 untuk pilihan paling atas)
+        kunciJawaban: [0, 2] // Contoh jika pilihan 1 dan 3 benar
+    },
+
+    // ==========================================
+    // SOAL NOMOR 34 (CONTOH/TEMPLATE PG)
+    // ==========================================
+    {
+        id: 34,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Tuliskan teks atau stimulus soal Numerasi nomor 34 di sini.",
+        pilihan: [
+            "Pilihan Jawaban A",
+            "Pilihan Jawaban B",
+            "Pilihan Jawaban C",
+            "Pilihan Jawaban D"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 35 (CONTOH/TEMPLATE PG)
+    // ==========================================
+    {
+        id: 35,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Tuliskan teks atau stimulus soal Numerasi nomor 35 di sini.",
+        pilihan: [
+            "Pilihan Jawaban A",
+            "Pilihan Jawaban B",
+            "Pilihan Jawaban C",
+            "Pilihan Jawaban D"
+        ],
+        kunciJawaban: "C"
+    },
   // ==========================================
     // SOAL NOMOR 36 (PG)
     // ==========================================
