@@ -564,97 +564,96 @@ window.daftarSoal = [
         kunciJawaban: "B"
     },
   // ==========================================
-    // SOAL NOMOR 51 (PG)
+    // SOAL NOMOR 56 (PG)
     // ==========================================
     {
-        id: 51,
+        id: 56,
         kategori: "NUMERASI",
         rentangNilai: "0-20",
         tipe: "PG",
-        soal: "<b>Pengecatan Rumah</b><br><br>Pak Doni mempunyai rumah dengan tampak samping kanan sebagai berikut.<br><br>Pak Doni ingin mengecat dinding samping kanan rumah tersebut. Terdapat empat merek cat di pasaran yang dapat digunakan Pak Doni seperti ditunjukkan pada tabel berikut.<br><br><table style='width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; font-size: 14px;'><thead><tr style='background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;'><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: left;'>Merek Cat</th><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>1 kg Dapat Mengecat</th><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: left;'>Kemasan yang Tersedia di Toko</th></tr></thead><tbody><tr><td style='padding: 10px; border: 1px solid #cbd5e1;'>Momilex</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$7\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>5 kg-an dan 10 kg-an</td></tr><tr style='background-color: #f8fafc;'><td style='padding: 10px; border: 1px solid #cbd5e1;'>Josun</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$8\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>2 kg-an dan 10 kg-an</td></tr><tr><td style='padding: 10px; border: 1px solid #cbd5e1;'>Bulux</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$10\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>2 kg-an dan 5 kg-an</td></tr><tr style='background-color: #f8fafc;'><td style='padding: 10px; border: 1px solid #cbd5e1;'>Noppin</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>$9\\text{ m}^2$</td><td style='padding: 10px; border: 1px solid #cbd5e1;'>1 kg-an dan 5 kg-an</td></tr></tbody></table><br>Pak Doni ingin membeli cat dengan merek yang sama. Supaya sisa cat yang dibeli paling sedikit, cat merek apakah yang sebaiknya dipilih?",
-        gambar: "21.png",
+        soal: "Petugas perpustakaan di suatu sekolah melakukan pendataan jumlah buku yang dipinjam siswa kelas IX selama 5 hari berturut-turut. Hasil pendataan disajikan dalam diagram berikut.<br><br>Pernyataan yang tepat tentang informasi pada diagram batang tersebut adalah...",
+        gambar: "26.png",
         pilihan: [
-            "Momilex",
-            "Josun",
-            "Bulux",
-            "Noppin"
+            "Jumlah buku yang dipinjam setiap hari selalu meningkat.",
+            "Jumlah peminjaman buku pada Kamis lebih sedikit daripada pada Selasa.",
+            "Selisih jumlah peminjaman buku antara Senin dan Jumat lebih dari 10 buku.",
+            "Hari dengan jumlah peminjaman buku terbanyak adalah Rabu."
         ],
-        kunciJawaban: "C"
+        kunciJawaban: "D"
     },
 
     // ==========================================
-    // SOAL NOMOR 52 (PG)
+    // SOAL NOMOR 57 (PGK)
     // ==========================================
     {
-        id: 52,
+        id: 57,
         kategori: "NUMERASI",
         rentangNilai: "0-20",
-        tipe: "PG",
-        soal: "Sebuah usaha rumahan akan mengemas produk makanan menggunakan kemasan berbentuk prisma segitiga yang dibuat dari karton. Setiap kemasan dibuat dari satu jaring-jaring utuh. Berikut gambar kemasan dan sketsa jaring-jaringnya.<br><br>Karton yang tersedia untuk produksi hari itu memiliki ukuran 50 cm x 100 cm. Pemotongan karton dilakukan dengan rapi dan memperhatikan tata letak. Jaring-jaring kemasan dibuat dengan kertas yang saling terhubung dan bukan menggabungkan hasil potongan lain.<br><br>Banyak kemasan maksimum yang dapat dibuat adalah ....",
-        gambar: "22.png",
+        tipe: "PGK",
+        soal: "Sebuah koperasi sekolah ingin mengevaluasi penjualan alat tulis selama 5 bulan terakhir. Berikut disajikan data jumlah pengunjung koperasi sekolah selama 5 bulan dan data persentase alat tulis yang terjual.<br><br>Berdasarkan kedua data tersebut, tentukan manakah pernyataan yang benar untuk setiap pernyataan berikut?<br>Pilih semua jawaban benar! Jawaban benar lebih dari satu.",
+        gambar: ["27.png", "27.1.png"],
         pilihan: [
-            "4 kemasan",
-            "8 kemasan",
-            "9 kemasan",
-            "14 kemasan"
+            "Peningkatan jumlah pengunjung paling signifikan (paling besar) terjadi pada periode bulan April ke Mei.",
+            "Jika setiap pengunjung di bulan Mei membeli satu alat tulis, maka jumlah pulpen yang terjual adalah 64 buah.",
+            "Berdasarkan tren pada diagram garis, jumlah pengunjung koperasi selalu mengalami kenaikan secara konsisten setiap bulannya.",
+            "Pada bulan Mei, jumlah buku tulis yang terjual adalah 50 buah."
         ],
-        kunciJawaban: "B"
+        // Kunci: Pernyataan 1 dan Pernyataan 2 (Indeks 0 dan 1)
+        kunciJawaban: [0, 1]
     },
 
     // ==========================================
-    // SOAL NOMOR 53 (PG)
+    // SOAL NOMOR 58 (PG)
     // ==========================================
     {
-        id: 53,
+        id: 58,
         kategori: "NUMERASI",
         rentangNilai: "0-20",
         tipe: "PG",
-        soal: "Perhatikan posisi robot pembersih pada gambar berikut!<br><br>Robot tersebut kemudian akan bergerak mengikuti translasi $T(4, -2)$.<br><br>Posisi robot setelah berpindah sesuai translasi tersebut adalah....",
-        gambar: "23.png",
+        soal: "Berdasarkan data diketahui bahwa rata-rata berat satu butir telur kecil 45 gram, satu telur sedang 55 gram, dan satu telur besar 65 gram. Seorang karyawan toko bahan pangan sedang mengemas setiap 10 butir telur ke dalam satu kemasan dengan ketentuan bahwa rata-rata berat per telur dalam setiap kemasan tersebut adalah 55 gram.<br><br>Jika dalam satu kemasan sudah berisi 1 telur besar, 5 telur sedang, dan 2 telur kecil, maka dua telur tambahan yang harus dipilih supaya tetap memenuhi aturan pengemasan adalah ....",
         pilihan: [
-            "titik A",
-            "titik B",
-            "titik C",
-            "titik D"
+            "2 telur sedang",
+            "2 telur besar",
+            "1 telur besar dan 1 telur kecil",
+            "1 telur besar dan 1 telur sedang"
         ],
-        kunciJawaban: "C"
+        kunciJawaban: "D"
     },
 
     // ==========================================
-    // SOAL NOMOR 54 (PG)
+    // SOAL NOMOR 59 (PG)
     // ==========================================
     {
-        id: 54,
+        id: 59,
         kategori: "NUMERASI",
         rentangNilai: "0-20",
         tipe: "PG",
-        soal: "Perhatikan gambar berikut!<br><br>Transformasi tunggal yang paling tepat untuk mengubah posisi segitiga ABC menjadi segitiga A'B'C' adalah ....",
-        gambar: "24.png",
+        soal: "Untuk menjaga dan meningkatkan kualitas produksi, tim bagian quality control memeriksa kualitas lampu yang diproduksi pada suatu waktu. Berdasarkan pemeriksaan yang dilakukan, diperoleh data sebagai berikut:<br>• Jumlah lampu dengan kondisi baik: 980 buah<br>• Jumlah lampu dengan kondisi rusak: 20 buah<br><br>Tim tersebut melakukan kesalahan dengan meletakkan keseluruhan lampu tersebut di dalam suatu wadah.<br><br>Jika satu lampu dipilih secara acak dari wadah tersebut, peluang bahwa lampu yang terpilih adalah lampu dengan kondisi rusak adalah ...",
         pilihan: [
-            "translasi $(-3, 1)$",
-            "refleksi terhadap garis $y = x$",
-            "rotasi 90° berlawanan arah jarum jam dengan pusat di titik asal",
-            "refleksi terhadap sumbu-Y"
+            "1/50",
+            "1/49",
+            "2/49",
+            "49/50"
         ],
-        kunciJawaban: "C"
+        kunciJawaban: "A"
     },
 
     // ==========================================
-    // SOAL NOMOR 55 (PG)
+    // SOAL NOMOR 60 (PGK)
     // ==========================================
     {
-        id: 55,
+        id: 60,
         kategori: "NUMERASI",
         rentangNilai: "0-20",
-        tipe: "PG",
-        soal: "Dalam pembangunan sebuah monumen peringatan, kontraktor menggunakan bata ringan berbentuk balok untuk menyusun bagian dalam monumen. Desain monumen peringatan diberikan pada gambar.<br><br>Setiap bata ringan yang digunakan berukuran 60 cm × 20 cm × 10 cm. Susunan bata ringan pada monumen tersebut dianggap tersusun rapat tanpa celah.<br><br>Berapakah jumlah minimal bata ringan yang diperlukan untuk membangun monumen tersebut?",
-        gambar: "25.png",
+        tipe: "PGK",
+        soal: "Sebuah sensor otomatis diuji untuk mendeteksi kendaraan yang melintas. Pengujian dilakukan dalam tiga tahap dengan hasil sebagai berikut:<br><br><table style='width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; font-size: 14px;'><thead><tr style='background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;'><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>Tahap</th><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>Jumlah Uji</th><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>Sensor Berhasil</th><th style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>Sensor Gagal</th></tr></thead><tbody><tr><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>I</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>100</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>91</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>9</td></tr><tr style='background-color: #f8fafc;'><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>II</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>150</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>132</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>18</td></tr><tr><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>III</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>250</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>215</td><td style='padding: 10px; border: 1px solid #cbd5e1; text-align: center;'>35</td></tr></tbody></table><br>Data tersebut digunakan untuk memperkirakan peluang kegagalan sensor pada satu kali deteksi berikutnya.<br><br>Berdasarkan hasil pengujian sensor pada tabel, manakah pernyataan yang benar tentang pengujian sensor tersebut?<br>Pilih semua jawaban benar! Jawaban benar lebih dari satu.",
         pilihan: [
-            "16.800 buah",
-            "18.000 buah",
-            "19.200 buah",
-            "21.600 buah"
+            "Frekuensi relatif atau peluang kegagalan sensor dari seluruh pengujian adalah 0,124.",
+            "Frekuensi relatif atau peluang kegagalan pada Tahap III lebih besar daripada pada Tahap I.",
+            "Jika dilakukan 1.000 pengujian tambahan, frekuensi harapan sensor tersebut akan gagal adalah sebanyak 124 kali.",
+            "Peluang sensor berhasil pada satu kali deteksi berikutnya adalah sebesar 0,91."
         ],
-        kunciJawaban: "B"
+        // Kunci: Pernyataan 1, 2, dan 3 (Indeks 0, 1, dan 2)
+        kunciJawaban: [0, 1, 2]
     }
 ];
