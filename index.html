@@ -854,10 +854,17 @@
             }
         });
         
-        // Membulatkan total skor akhir keseluruhan
-        hasil.totalNilai = Math.round(hasil.totalNilai * 100) / 100;
-        hasil.litSkor = Math.round(hasil.litSkor * 100) / 100;
-        hasil.numSkor = Math.round(hasil.numSkor * 100) / 100;
+        // ✅ GANTI DENGAN KODE INI (Konversi langsung ke skala 100)
+let litMaksAsli = hasil.litMaks;
+let numMaksAsli = hasil.numMaks;
+
+// Rumus: (Skor Diperoleh / Skor Maksimal Asli) * 100
+hasil.litSkor = litMaksAsli > 0 ? Math.round((hasil.litSkor / litMaksAsli) * 100) : 0;
+hasil.numSkor = numMaksAsli > 0 ? Math.round((hasil.numSkor / numMaksAsli) * 100) : 0;
+
+// Paksa nilai maksimal tampilan di halaman hasil menjadi 100
+hasil.litMaks = 100;
+hasil.numMaks = 100;
         
         return hasil;
     }
