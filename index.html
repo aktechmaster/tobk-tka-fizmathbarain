@@ -464,7 +464,7 @@
             setTimeout(() => {
                 if (window.daftarSoal && Array.isArray(window.daftarSoal) && window.daftarSoal.length > 0) {
                     window.waktuMulaiUjian = Date.now();
-                    window.durasiTotal = 10800; // 180 Menit
+                    window.durasiTotal = 3600; // 60 Menit
                     window.violationCount = 0;
 
                     mulaiUjian();
@@ -657,26 +657,10 @@
                 });
                 htmlSoal += `</div>`;
             }
-            // ✅ DI SINI TEMPATNYA: TAMBAHKAN KODE TIPE BS DI BAWAH INI
-            else if(soal.tipe === 'BS') {
-                htmlSoal += `<div class="choices">`;
-                soal.pilihan.forEach((pil, noPil) => {
-                    const terpilih = jawabanSiswa[idx]?.includes(noPil) ? 'selected' : '';
-                    htmlSoal += `
-                        <label class="choice ${terpilih}">
-                            <input type="checkbox" name="jawaban${idx}" value="${noPil}" 
-                                ${jawabanSiswa[idx]?.includes(noPil) ? 'checked' : ''} 
-                                onchange="tambahJawabanPGK(${idx}, ${noPil}, this.checked)">
-                            ${pil}
-                        </label>
-                    `;
-                });
-                htmlSoal += `</div>`;
-            }
-            // ✅ SAMPAI DI SINI
         }
 
         quizArea.innerHTML = htmlSoal;
+
         // Perbaruan Indikator Warna Kotak Navigasi
         document.querySelectorAll('.nav-item').forEach(el => {
             const nomorDiKotak = parseInt(el.textContent);
@@ -728,142 +712,69 @@
         }
         tampilkanSoal(currentIndex);
     }
-   function simpanJawabanBS(indexSoal, indexPernyataan, nilai) {
-    if (!jawabanSiswa[indexSoal]) {
-        jawabanSiswa[indexSoal] = []; 
+
+    function hitungSkor() {
+        let benar = 0;
+        let totalNilai = 0;
+        window.daftarSoal.forEach((soal, idx) => {
+            if (soal.tipe === 'INFO' || soal.id === 99) return; 
+            
+            const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]) || 0;
+            if(soal.tipe === 'PG') {
+                if(jawabanSiswa[idx] === soal.kunciJawaban) {
+                    benar++;
+                    totalNilai += nilaiSoal;
+                }
+            }
+            if(soal.tipe === 'PGK') {
+                const jawabanUser = jawabanSiswa[idx] || [];
+                const kunci = soal.kunciJawaban || [];
+                if(JSON.stringify(jawabanUser.sort()) === JSON.stringify(kunci.sort())) {
+                    benar++;
+                    totalNilai += nilaiSoal;
+                }
+            }
+        });
+        
+        const totalSoalValid = window.daftarSoal.filter(s => s.tipe !== 'INFO' && s.id !== 99).length;
+        const maksNilai = window.daftarSoal.reduce((sum, s) => {
+            if(s.tipe === 'INFO' || s.id === 99) return sum; 
+            return sum + (parseInt(s.rentangNilai.split('–')[1]) || 0);
+        }, 0);
+        
+        return {benar, totalNilai, maksNilai, totalSoalValid};
     }
-    jawabanSiswa[indexSoal][indexPernyataan] = nilai;
-}
-    
-    // Opsional: Panggil fungsi untuk mengubah warna tombol navigasi soal jika ada
-    // updateNavigasi(indexSoal); 
-}
 
     // ==================================================
-// ✅ FUNGSI HITUNG SKOR (RINCIAN LENGKAP KATEGORI)
-// ==================================================
-
-function hitungSkor() {
-    let hasil = {
-        totalBenar: 0, totalNilai: 0, maksNilai: 0, totalSoalValid: 0,
-        litBenar: 0, litSkor: 0, litMaks: 0, litTotalSoal: 0,
-        numBenar: 0, numSkor: 0, numMaks: 0, numTotalSoal: 0
+    // ✅ FUNGSI KONFIRMASI SEBELUM SELESAI UJIAN
+    // ==================================================
+    
+    window.konfirmasiSelesai = function() {
+        const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
+        
+        if (yakin) {
+            tampilkanHasil(); 
+        }
     };
 
-    window.daftarSoal.forEach((soal, idx) => {
-        if (soal.tipe === 'INFO' || soal.id === 99) return; 
-        hasil.totalSoalValid++;
-        
-        const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]) || 0;
-        hasil.maksNilai += nilaiSoal;
-
-        // Membaca kategori soal
-        const kategori = (soal.kategori || '').toUpperCase();
-        if (kategori === 'LITERASI') {
-            hasil.litTotalSoal++;
-            hasil.litMaks += nilaiSoal;
-        } else if (kategori === 'NUMERASI') {
-            hasil.numTotalSoal++;
-            hasil.numMaks += nilaiSoal;
-        }
-
-        // Mengecek jawaban benar/salah berdasarkan Tipe
-        let isBenar = false;
-        
-        if (soal.tipe === 'PG') {
-            if (jawabanSiswa[idx] === soal.kunciJawaban) isBenar = true;
-            
-        } else if (soal.tipe === 'PGK') {
-            const jawabanUser = jawabanSiswa[idx] || [];
-            const kunci = soal.kunciJawaban || [];
-            if (JSON.stringify(jawabanUser.sort()) === JSON.stringify(kunci.sort())) isBenar = true;
-            
-        } else if (soal.tipe === 'BS') {
-            // --- PERBAIKAN LOGIKA SKOR UNTUK 'BS' ---
-            const jawabanUser = jawabanSiswa[idx] || []; // Contoh output: [1, 0, 1]
-            const kunci = soal.kunciJawaban || [];       // Contoh kunci: [1, 0, 0]
-            
-            // Cek apakah siswa sudah menjawab SEMUA pernyataan di soal BS tersebut
-            if (jawabanUser.length === kunci.length) {
-                let benarSemua = true;
-                
-                for (let j = 0; j < kunci.length; j++) {
-                    // Jika ada satu saja jawaban yang beda dengan kunci, atau ada yang belum dijawab (undefined)
-                    if (jawabanUser[j] != kunci[j] || jawabanUser[j] === undefined) {
-                        benarSemua = false;
-                        break; // Langsung hentikan pengecekan jika ada yang salah
-                    }
-                }
-                
-                if (benarSemua) isBenar = true;
-            }
-        }
-
-        // Memasukkan nilai jika jawaban terbukti benar
-        if (isBenar) {
-            hasil.totalBenar++;
-            hasil.totalNilai += nilaiSoal;
-            
-            if (kategori === 'LITERASI') {
-                hasil.litBenar++;
-                hasil.litSkor += nilaiSoal;
-            } else if (kategori === 'NUMERASI') {
-                hasil.numBenar++;
-                hasil.numSkor += nilaiSoal;
-            }
-        }
-    });
-    
-    return hasil;
-}
-
     // ==================================================
-    // ✅ TAMPILAN HASIL AKHIR (DESAIN LEBIH INFORMATIF)
+    // ✅ TAMPILAN HASIL AKHIR & TOMBOL KEMBALI
     // ==================================================
 
     function tampilkanHasil() {
-        const h = hitungSkor();
+        const hasil = hitungSkor();
         quizArea.innerHTML = `
             <div class="result-box">
-                <div class="result-score-label">Skor Keseluruhan</div>
-                <div class="result-score-value">${h.totalNilai} <span style="font-size: 20px; color: #94a3b8;">/ ${h.maksNilai}</span></div>
-                
-                <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
-                
-                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center;">
-                    
-                    <div style="flex: 1; border-right: 1px solid #e2e8f0; padding: 0 10px;">
-                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Literasi</div>
-                        <div style="font-size: 28px; font-weight: 900; color: #0056b3; margin: 5px 0;">
-                            ${h.litSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.litMaks}</span>
-                        </div>
-                        <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
-                            ✅ Benar ${h.litBenar} dari ${h.litTotalSoal} soal
-                        </div>
-                    </div>
-                    
-                    <div style="flex: 1; padding: 0 10px;">
-                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Numerasi</div>
-                        <div style="font-size: 28px; font-weight: 900; color: #d97706; margin: 5px 0;">
-                            ${h.numSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.numMaks}</span>
-                        </div>
-                        <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
-                            ✅ Benar ${h.numBenar} dari ${h.numTotalSoal} soal
-                        </div>
-                    </div>
-
-                </div>
-
-                <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
-
+                <div class="result-score-label">Skor Akhir</div>
+                <div class="result-score-value">${hasil.totalNilai} / ${hasil.maksNilai}</div>
                 <div class="result-details">
                     <div class="result-item correct">
-                        <span class="result-val">${h.totalBenar}</span>
-                        <span>Total Benar Keseluruhan</span>
+                        <span class="result-val">${hasil.benar}</span>
+                        <span>Benar</span>
                     </div>
                     <div class="result-item wrong">
-                        <span class="result-val">${h.totalSoalValid - h.totalBenar}</span> 
-                        <span>Total Salah Keseluruhan</span>
+                        <span class="result-val">${hasil.totalSoalValid - hasil.benar}</span> 
+                        <span>Salah</span>
                     </div>
                 </div>
                 
@@ -1042,71 +953,6 @@ function hitungSkor() {
             }
         }, 150);
     });
-
-   // ==================================================
-// 🛡️ SISTEM ANTI-COPAS, ANTI-KLIK KANAN & INSPECT (PRO)
-// ==================================================
-(function amankanUjian() {
-    // 1. Suntik CSS Otomatis agar teks tidak bisa diblok/diseleksi sama sekali
-    const style = document.createElement('style');
-    style.innerHTML = `
-        body, html, #quizArea, .question, .choice, label {
-            -webkit-user-select: none !important;
-            -moz-user-select: none !important;
-            -ms-user-select: none !important;
-            user-select: none !important;
-            -webkit-user-drag: none !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // 2. Blokir Menu Klik Kanan (Context Menu)
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        alert("⚠️ Demi keamanan, fitur klik kanan dinonaktifkan selama ujian!");
-    });
-
-    // 3. Blokir Kombinasi Tombol Keyboard (Shortcuts) Contek-Mencontek
-    document.addEventListener('keydown', function(e) {
-        // Cek apakah tombol Ctrl (Windows) atau Cmd (Mac) sedang ditekan
-        const ctrlAtauCmd = e.ctrlKey || e.metaKey;
-
-        // Blokir Ctrl+C (Copy), Ctrl+V (Paste), Ctrl+X (Cut)
-        if (ctrlAtauCmd && (e.key === 'c' || e.key === 'C' || e.key === 'v' || e.key === 'V' || e.key === 'x' || e.key === 'X')) {
-            e.preventDefault();
-            alert("⚠️ Sistem Mendeteksi Tindakan Ilegal: Dilarang Copy-Paste!");
-            return false;
-        }
-
-        // Blokir Ctrl+S (Save Page) dan Ctrl+P (Print Page)
-        if (ctrlAtauCmd && (e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P')) {
-            e.preventDefault();
-            alert("⚠️ Dilarang menyimpan atau mencetak halaman ini!");
-            return false;
-        }
-
-        // Blokir Ctrl+U (View Source - Mencegah siswa mengintip kode HTML & kunci jawaban)
-        if (ctrlAtauCmd && (e.key === 'u' || e.key === 'U')) {
-            e.preventDefault();
-            alert("⚠️ Akses ke source code ujian ditolak!");
-            return false;
-        }
-
-        // Blokir F12 dan Ctrl+Shift+I / Ctrl+Shift+J (Inspect Element / Developer Tools)
-        if (
-            e.key === 'F12' || 
-            (ctrlAtauCmd && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c'))
-        ) {
-            e.preventDefault();
-            alert("⚠️ Developer Tools diblokir! Fokus pada ujian Anda.");
-            return false;
-        }
-    });
-
-    // 4. Blokir Fitur Drag & Drop (Mencegah teks diseret langsung ke tab browser lain)
-    document.addEventListener('dragstart', function(e) { e.preventDefault(); });
-    document.addEventListener('drop', function(e) { e.preventDefault(); });
-})();
 </script>
 
 </body>
