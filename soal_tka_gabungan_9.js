@@ -376,5 +376,96 @@ window.daftarSoal = [
             "70 kg."
         ],
         kunciJawaban: "B"
+    },
+  // ==========================================
+    // SOAL NOMOR 41 (BENAR-SALAH)
+    // ==========================================
+    {
+        id: 41,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "BS",
+        soal: "<b>Alur Pelayanan Donor Darah</b><br><br>Kegiatan donor adalah salah satu bentuk aksi kemanusiaan yang sangat bermanfaat untuk diri sendiri dan orang lain. Setetes darah yang disumbangkan dapat memberikan harapan hidup bagi orang lain yang membutuhkan, terutama mereka yang mengalami kecelakaan, setelah menjalani operasi, atau menderita penyakit yang serius. Tak hanya untuk penerima, pendonor juga bisa mendapatkan manfaat. Diantaranya bermanfaat untuk mendeteksi penyakit, meningkatkan produksi sel darah, dan menjaga kesehatan jantung. Oleh karena itu disarankan untuk melakukan donor darah tiga bulan setelah donor darah terakhir.<br><br>Biasanya aksi donor darah difasilitasi oleh Palang Merah Indonesia (PMI). Berikut adalah alur kegiatan donor darah di sebuah posko PMI.<br><br>Posko PMI menambahkan satu tempat lagi untuk proses pengambilan darah dan di tahap pemulihan. Sehingga dapat melayani 2 orang sekaligus pada proses pengambilan darah. Pada hari ini saat pukul 11.30 terlihat sudah ada 2 orang yang sedang berada di ruang pemulihan. Salah seorang baru saja memulai tahap pemulihan dan satu orang lainnya sudah berjalan 15 menit. Adapula 1 orang calon pendonor yang akan melakukan pendaftaran, 1 orang akan melakukan pemeriksaan kesehatan, 1 orang di kursi tunggu, 2 orang sedang proses pengambilan darah.<br><br>Tentukan Benar atau Salah untuk setiap pernyataan berikut tentang situasi di lokasi donor darah pada hari tersebut!",
+        gambar: "9,10,11.png",
+        pilihan: [
+            "Posko PMI mulai didatangi calon pendonor sejak pukul 10.30.",
+            "Ada kemungkinan terdapat 3 orang di ruang tunggu.",
+            "Pada pukul 11.00 belum ada pendonor yang memasuki tahap pemulihan."
+        ],
+        // Kunci: Benar - Salah - Benar
+        kunciJawaban: ["B", "S", "B"]
+    },
+
+    // ==========================================
+    // SOAL NOMOR 42 (PG)
+    // ==========================================
+    {
+        id: 42,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Perhatikan bentuk aljabar berikut.<br><br>$$\n(x + 2)(3 + y) + (x + 2)(1 - y)\n$$<br>Bentuk sederhana dari bentuk aljabar tersebut adalah ....",
+        pilihan: [
+            "4(x + 2)",
+            "x + 2 + 4y",
+            "4(x + 8)",
+            "4x + 2y"
+        ],
+        kunciJawaban: "A"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 43 (PGK)
+    // ==========================================
+    {
+        id: 43,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PGK",
+        soal: "Sebuah jasa pengantaran barang mengenakan biaya sebagai berikut:<br>• Biaya tetap pemesanan sebesar Rp12.000,00.<br>• Biaya pengantaran Rp4.000,00 per kilometer.<br><br>Seorang pelanggan memiliki anggaran tidak lebih dari Rp40.000,00 untuk satu kali pemesanan jasa antar.<br><br>Berikut ini, manakah pernyataan yang benar tentang permasalahan tersebut?<br>Pilih semua jawaban benar! Jawaban benar lebih dari satu.",
+        pilihan: [
+            "Apabila $x$ menyatakan jarak pengantaran (dalam km), maka permasalahan dapat dimodelkan dengan $4.000x + 12.000 \\le 40.000$.",
+            "Jarak pengantaran maksimum yang masih dapat dipilih pelanggan adalah 7 km.",
+            "Jika jarak pengantaran 8 km, maka biaya total melebihi anggaran.",
+            "Penambahan jarak antar 1 km akan menambah biaya sebesar Rp16.000,00."
+        ],
+        // Kunci: Pernyataan 1, 2, dan 3 (Indeks 0, 1, dan 2)
+        kunciJawaban: [0, 1, 2]
+    },
+
+    // ==========================================
+    // SOAL NOMOR 44 (BENAR-SALAH)
+    // ==========================================
+    {
+        id: 44,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "BS",
+        soal: "Misalkan $a$ dan $b$ merupakan dua bilangan real sehingga sistem persamaan linear (SPL)<br><br>$$\n\\begin{cases} \n2x + ay = 4, \\\\ \nbx - 2y = -1 \n\\end{cases}\n$$<br>mempunyai solusi $(x, y) = (5, -2)$.<br><br>Tentukan Benar atau Salah untuk setiap pernyataan berikut terkait dengan nilai $a$ dan $b$!",
+        pilihan: [
+            "$a$ merupakan bilangan prima.",
+            "$b$ merupakan bilangan ganjil.",
+            "$10a + b = 31$."
+        ],
+        // Kunci: Benar - Benar - Salah
+        kunciJawaban: ["B", "B", "S"]
+    },
+
+    // ==========================================
+    // SOAL NOMOR 45 (PG)
+    // ==========================================
+    {
+        id: 45,
+        kategori: "NUMERASI",
+        rentangNilai: "0-20",
+        tipe: "PG",
+        soal: "Sebuah pabrik memproduksi batang logam. Fungsi $f(x) = 5x + 10$ menyatakan berat total (kg) untuk $x$ batang logam.<br><br>Jika pabrik memproduksi 7 batang logam, berapa total berat logam yang dihasilkan?",
+        pilihan: [
+            "35 kg.",
+            "45 kg.",
+            "50 kg.",
+            "70 kg."
+        ],
+        kunciJawaban: "B"
     }
 ];
