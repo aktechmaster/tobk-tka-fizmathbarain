@@ -322,15 +322,16 @@ window.daftarSoal = [
     id: 41,
     kategori: "NUMERASI",
     tipe: "BS", 
-    tingkatKesulitan: "Sedang", // ✅ Tingkat kesulitan berhasil ditambahkan
+    tingkatKesulitan: "Sedang", // ✅ DIISI SESUAI STANDAR
     soal: "Tentukan Benar atau Salah untuk setiap pernyataan berikut tentang situasi di lokasi donor darah pada hari tersebut!",
-    rentangNilai: "0–10",
-    pernyataan: [
+    rentangNilai: "0 – 10", // ✅ TANDA HUBUNG DIPERBAIKI
+    gambar: null, // ✅ DITAMBAHKAN AGAR LENGKAP
+    pilihan: [ // ✅ NAMA DIUBAH DARI "pernyataan" MENJADI "pilihan"
         "Posko PMI mulai didatangi calon pendonor sejak pukul 10.30.",
         "Ada kemungkinan terdapat 3 orang di ruang tunggu.",
         "Pada pukul 11.00 belum ada pendonor yang memasuki tahap pemulihan."
     ],
-    kunciJawaban: ["B", "S", "B"]
+    kunciJawaban: [0, 1, 0] // ✅ ISI DIUBAH JADI ANGKA: 0=Benar, 1=Salah
 },
   {
     id: 42,
@@ -383,7 +384,7 @@ window.daftarSoal = [
   {
     id: 44,
     kategori: "NUMERASI",
-    tipe: "PGK",
+    tipe: "BS",
     tingkatKesulitan: "Sulit",
     rentangNilai: "14 – 16",
     soal: `
@@ -450,7 +451,7 @@ window.daftarSoal = [
   {
     id: 47,
     kategori: "NUMERASI",
-    tipe: "PGK",
+    tipe: "BS",
     tingkatKesulitan: "Sedang",
     rentangNilai: "8 – 10",
     soal: `
@@ -471,7 +472,7 @@ window.daftarSoal = [
   {
     id: 48,
     kategori: "NUMERASI",
-    tipe: "PGK",
+    tipe: "BS",
     tingkatKesulitan: "Lumayan Sulit",
     rentangNilai: "11 – 13",
     soal: `
@@ -495,7 +496,7 @@ window.daftarSoal = [
   {
     id: 49,
     kategori: "NUMERASI",
-    tipe: "PGK",
+    tipe: "BS",
     tingkatKesulitan: "Sulit",
     rentangNilai: "14 – 16",
     soal: `
@@ -517,7 +518,7 @@ window.daftarSoal = [
   {
     id: 50,
     kategori: "NUMERASI",
-    tipe: "PGK",
+    tipe: "BS",
     tingkatKesulitan: "Sangat Sulit",
     rentangNilai: "17 – 20",
     soal: `
