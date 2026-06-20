@@ -728,62 +728,94 @@
         }
         tampilkanSoal(currentIndex);
     }
-
-    // ==================================================
-    // ✅ FUNGSI HITUNG SKOR (RINCIAN LENGKAP KATEGORI)
-    // ==================================================
-    
-    function hitungSkor() {
-        let hasil = {
-            totalBenar: 0, totalNilai: 0, maksNilai: 0, totalSoalValid: 0,
-            litBenar: 0, litSkor: 0, litMaks: 0, litTotalSoal: 0,
-            numBenar: 0, numSkor: 0, numMaks: 0, numTotalSoal: 0
-        };
-
-        window.daftarSoal.forEach((soal, idx) => {
-            if (soal.tipe === 'INFO' || soal.id === 99) return; 
-            hasil.totalSoalValid++;
-            
-            const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]) || 0;
-            hasil.maksNilai += nilaiSoal;
-
-            // Membaca kategori soal (pastikan di data soal ada properti "kategori")
-            const kategori = (soal.kategori || '').toUpperCase();
-            if (kategori === 'LITERASI') {
-                hasil.litTotalSoal++;
-                hasil.litMaks += nilaiSoal;
-            } else if (kategori === 'NUMERASI') {
-                hasil.numTotalSoal++;
-                hasil.numMaks += nilaiSoal;
-            }
-
-            // Mengecek jawaban benar/salah
-            let isBenar = false;
-            if(soal.tipe === 'PG') {
-                if(jawabanSiswa[idx] === soal.kunciJawaban) isBenar = true;
-            } else if(soal.tipe === 'PGK') {
-                const jawabanUser = jawabanSiswa[idx] || [];
-                const kunci = soal.kunciJawaban || [];
-                if(JSON.stringify(jawabanUser.sort()) === JSON.stringify(kunci.sort())) isBenar = true;
-            }
-
-            // Memasukkan nilai jika jawaban benar
-            if (isBenar) {
-                hasil.totalBenar++;
-                hasil.totalNilai += nilaiSoal;
-                
-                if (kategori === 'LITERASI') {
-                    hasil.litBenar++;
-                    hasil.litSkor += nilaiSoal;
-                } else if (kategori === 'NUMERASI') {
-                    hasil.numBenar++;
-                    hasil.numSkor += nilaiSoal;
-                }
-            }
-        });
-        
-        return hasil;
+   function simpanJawabanBS(indexSoal, indexPernyataan, nilai) {
+    if (!jawabanSiswa[indexSoal]) {
+        jawabanSiswa[indexSoal] = []; 
     }
+    jawabanSiswa[indexSoal][indexPernyataan] = nilai;
+}
+    
+    // Opsional: Panggil fungsi untuk mengubah warna tombol navigasi soal jika ada
+    // updateNavigasi(indexSoal); 
+}
+
+    // ==================================================
+// ✅ FUNGSI HITUNG SKOR (RINCIAN LENGKAP KATEGORI)
+// ==================================================
+
+function hitungSkor() {
+    let hasil = {
+        totalBenar: 0, totalNilai: 0, maksNilai: 0, totalSoalValid: 0,
+        litBenar: 0, litSkor: 0, litMaks: 0, litTotalSoal: 0,
+        numBenar: 0, numSkor: 0, numMaks: 0, numTotalSoal: 0
+    };
+
+    window.daftarSoal.forEach((soal, idx) => {
+        if (soal.tipe === 'INFO' || soal.id === 99) return; 
+        hasil.totalSoalValid++;
+        
+        const nilaiSoal = parseInt(soal.rentangNilai.split('–')[1]) || 0;
+        hasil.maksNilai += nilaiSoal;
+
+        // Membaca kategori soal
+        const kategori = (soal.kategori || '').toUpperCase();
+        if (kategori === 'LITERASI') {
+            hasil.litTotalSoal++;
+            hasil.litMaks += nilaiSoal;
+        } else if (kategori === 'NUMERASI') {
+            hasil.numTotalSoal++;
+            hasil.numMaks += nilaiSoal;
+        }
+
+        // Mengecek jawaban benar/salah berdasarkan Tipe
+        let isBenar = false;
+        
+        if (soal.tipe === 'PG') {
+            if (jawabanSiswa[idx] === soal.kunciJawaban) isBenar = true;
+            
+        } else if (soal.tipe === 'PGK') {
+            const jawabanUser = jawabanSiswa[idx] || [];
+            const kunci = soal.kunciJawaban || [];
+            if (JSON.stringify(jawabanUser.sort()) === JSON.stringify(kunci.sort())) isBenar = true;
+            
+        } else if (soal.tipe === 'BS') {
+            // --- PERBAIKAN LOGIKA SKOR UNTUK 'BS' ---
+            const jawabanUser = jawabanSiswa[idx] || []; // Contoh output: [1, 0, 1]
+            const kunci = soal.kunciJawaban || [];       // Contoh kunci: [1, 0, 0]
+            
+            // Cek apakah siswa sudah menjawab SEMUA pernyataan di soal BS tersebut
+            if (jawabanUser.length === kunci.length) {
+                let benarSemua = true;
+                
+                for (let j = 0; j < kunci.length; j++) {
+                    // Jika ada satu saja jawaban yang beda dengan kunci, atau ada yang belum dijawab (undefined)
+                    if (jawabanUser[j] != kunci[j] || jawabanUser[j] === undefined) {
+                        benarSemua = false;
+                        break; // Langsung hentikan pengecekan jika ada yang salah
+                    }
+                }
+                
+                if (benarSemua) isBenar = true;
+            }
+        }
+
+        // Memasukkan nilai jika jawaban terbukti benar
+        if (isBenar) {
+            hasil.totalBenar++;
+            hasil.totalNilai += nilaiSoal;
+            
+            if (kategori === 'LITERASI') {
+                hasil.litBenar++;
+                hasil.litSkor += nilaiSoal;
+            } else if (kategori === 'NUMERASI') {
+                hasil.numBenar++;
+                hasil.numSkor += nilaiSoal;
+            }
+        }
+    });
+    
+    return hasil;
+}
 
     // ==================================================
     // ✅ TAMPILAN HASIL AKHIR (DESAIN LEBIH INFORMATIF)
