@@ -2,7 +2,7 @@
 // BANK SOAL TKA GABUNGAN: LITERASI & NUMERASI KELAS 9
 // ==================================================
 window.daftarSoal = [
-      // ==========================================
+          // ==========================================
     // SOAL NOMOR 1 (PG) - Tingkat Kesulitan: Mudah
     // ==========================================
     {
@@ -10,7 +10,7 @@ window.daftarSoal = [
         kategori: "LITERASI",
         rentangNilai: "0-3",
         tipe: "PG",
-        soal: "Makna dari frasa <i>menyodok haru serta pilu</i> dalam paragraf kedua teks adalah ....",
+        soal: "Bacalah teks berikut dengan saksama!<br><br>Sepertinya aku sudah tidur lama sekali. Aku seperti tertidur selama 300 tahun saja. Ketika bangun tidur, badanku juga terasa segar sekali. Seperti yang kuduga, saat aku bangun tidur dan membuka ponsel, sudah ada balasan menggembirakan dari kolektor foto penggemarku.<br><br>Dari 50 foto yang kukirim, ada dua biji foto yang dihargai mahal karena menurut dia momen orang di dalam foto itu sulit didapat oleh siapa pun. Menurut dia, hanya fotografer yang sangat sensitif yang mampu membidik dengan jitu dan tepat pasti dengan nuansa yang menyodok haru serta pilu.<br><br>Pastilah langsung kusetujui harga pembelian foto itu dan memang cukup untuk hidup sehari-hari bahkan andai saja hingga negaraku benar-benar bubar. Bahkan jika sampai aku mati, pindah entah ke negara lain atau negaraku kemudian dicaplok negara lain juga, uangku tetap cukup untuk bertahan hidup.<br><br>Tentu saja Anda, para pembaca cerita ini yang budiman dan baik hati, cukup penasaran dengan dua foto yang kuceritakan itu, bukan? Seperti apakah dua foto yang mampu menggugah kolektor foto penggemar karyaku untuk segera membelinya dengan harga yang cukup memukau?<br><br>Bahkan kedua foto karyaku itu menurut kolektor penggemar karyaku juga akan menggegerkan balai lelang di kancah internasional. Foto-foto itu juga dia anggap unik dan berposisi setara kualitasnya dengan lukisan eksotik nan menggetarkan siapa pun yang memandang.<br><br>Pertama adalah foto tentang dua orang lansia, sepasang suami istri, yang ikut mengantre panjang di depan ATM dengan satu kursi roda. Keduanya pun bergantian duduk di kursi roda itu. Setiap lima belas menit sekali mereka bergantian duduk di kursi roda itu. Hingga beberapa kali bergantian duduk dan saling menjaga di antara keduanya.<br><br>Lalu foto kedua. Tentang seorang ibu hamil besar yang ikut mengantre dan ternyata juga seorang disabilitas netra. Dengan tongkatnya tanpa ditemani siapa pun ia mengantre. Sempat aku menelisik kabar dia adalah seorang janda.<br><br>Aku tertegun. Dalam hati aku mengucapkan terima kasih tak terhingga kepada orang-orang yang ada di dalam foto itu. Orang-orang yang jelas menyelamatkan hidupku. Tidak seperti biasanya sebagai fotografer yang cuek, abai dengan objek foto yang dipotretnya, kali ini aku merasa merinding.<br><br><b>Makna dari frasa <i>menyodok haru serta pilu</i> dalam paragraf kedua teks adalah ....</b>",
         pilihan: [
             "menggambarkan perasaan duka yang mendalam",
             "menggambarkan perasaan sedih yang mendalam",
