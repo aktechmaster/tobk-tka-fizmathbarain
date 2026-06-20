@@ -193,5 +193,26 @@ window.daftarSoal = [
       "D. Rp192.500,00"
     ],
     kunciJawaban: "B"
+  },
+  {
+    id: 11, // Sesuaikan nomor urut ID
+    kategori: "NUMERASI", 
+    tipe: "BS", // ✅ Pastikan tipenya 'BS'
+    tingkatKesulitan: "Sedang",
+    rentangNilai: "8 – 10",
+    soal: `Berdasarkan gambar uang yang dimiliki Adit, tentukan apakah pernyataan berikut Benar atau Salah!`,
+    gambar: "link_gambar_uang_adit.jpg", // Kosongkan (null) jika tidak ada gambar
+    
+    // ✅ GUNAKAN 'pernyataan', BUKAN 'pilihan'
+    pernyataan: [
+      "Nilai uang Adit setara dengan selembar uang lima puluh ribuan.",
+      "Nilai uang Adit setara dengan tiga lembar uang dua puluh ribuan.",
+      "Nilai uang Adit setara dengan lima lembar uang sepuluh ribuan.",
+      "Nilai uang Adit setara dengan sepuluh lembar uang dua ribuan."
+    ],
+    
+    // ✅ KUNCI JAWABAN MENGGUNAKAN ARRAY BERISI 'B' ATAU 'S'
+    // Urutannya harus sama persis dengan urutan pernyataan di atas
+    kunciJawaban: ["B", "S", "B", "S"] 
   }
 ];
