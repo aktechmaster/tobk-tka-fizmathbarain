@@ -302,6 +302,42 @@ window.daftarSoal = [
         ],
         kunciJawaban: [0, 1, 2]
     },
+          // ==========================================
+    // SOAL NOMOR 19 (PG) - Tingkat Kesulitan: Sedang
+    // ==========================================
+    {
+        id: 19,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Bacalah kedua puisi berikut dengan saksama!<br><br><b>Puisi I<br>Keterampilan Mendengar</b><br><i>Hasan Al Banna</i><br><br>bunga-bunga plastik terselip di daun telinga<br>telinga yang tidak menyediakan pintu dan jendela<br>tidak menyodorkan rindu dan beranda<br>semata senpi sepi<br>yang menyendera bunyi dengan menyendiri<br><br>suara-suara adalah frekuensi yang disuntik mimpi<br>mimpi yang mengajarkan bisu yang baik dan benar<br>yang buta intonasi dan artikulasi<br>sebatas sirene siluman<br>yang mahir menghilangkan resep-resep siuman<br><br><b>Puisi II<br>Keterampilan Berbicara</b><br><i>Hasan Al Banna</i><br><br>sejak kapan kepala orang-orang terdiri atas mulut?<br>cuma mulut<br>yang melindungi hutan lidah<br>lidah lindung yang menyimpan miliaran binatang<br>binatang bias<br>yang mengandung bisa<br>bisa basi<br><br>sejak kapan mulut orang-orang tak punya kepala?<br>tanpa kepala<br>yang merawat telaga hati<br>hati pati<br>yang disuling jemari ibu<br>ibu iba<br>yang mendoakan anak-anaknya<br>anak tunak<br><br><b>Makna dari larik “bunga-bunga plastik terselip di daun telinga” pada puisi I adalah ....</b>",
+        pilihan: [
+            "mendengar hal-hal yang tidak penting",
+            "mendengar secara pasif dan diam-diam",
+            "mendengar dengan tulus tanpa menghakimi",
+            "mendengar hal-hal yang indah dan menyenangkan"
+        ],
+        kunciJawaban: "A"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 20 (PGK) - Tingkat Kesulitan: Sulit
+    // ==========================================
+    {
+        id: 20,
+        kategori: "LITERASI",
+        rentangNilai: "0-4",
+        tipe: "PGK",
+        soal: "Bacalah kedua puisi berikut dengan saksama!<br><br><b>Puisi I<br>Keterampilan Mendengar</b><br><i>Hasan Al Banna</i><br><br>bunga-bunga plastik terselip di daun telinga<br>telinga yang tidak menyediakan pintu dan jendela<br>tidak menyodorkan rindu dan beranda<br>semata senpi sepi<br>yang menyendera bunyi dengan menyendiri<br><br>suara-suara adalah frekuensi yang disuntik mimpi<br>mimpi yang mengajarkan bisu yang baik dan benar<br>yang buta intonasi dan artikulasi<br>sebatas sirene siluman<br>yang mahir menghilangkan resep-resep siuman<br><br><b>Puisi II<br>Keterampilan Berbicara</b><br><i>Hasan Al Banna</i><br><br>sejak kapan kepala orang-orang terdiri atas mulut?<br>cuma mulut<br>yang melindungi hutan lidah<br>lidah lindung yang menyimpan miliaran binatang<br>binatang bias<br>yang mengandung bisa<br>bisa basi<br><br>sejak kapan mulut orang-orang tak punya kepala?<br>tanpa kepala<br>yang merawat telaga hati<br>hati pati<br>yang disuling jemari ibu<br>ibu iba<br>yang mendoakan anak-anaknya<br>anak tunak<br><br><b>Berdasarkan kedua puisi, manakah pernyataan yang menunjukkan kesamaan kritik terhadap cara manusia berkomunikasi?</b><br><br>Pilihlah jawaban benar! Jawaban benar lebih dari satu.",
+        pilihan: [
+            "Komunikasi sering kali dilakukan tanpa adanya hati dan akal yang tulus.",
+            "Manusia cenderung menjadi pendengar yang baik dan pembicara yang egois.",
+            "Keterampilan mendengar dan berbicara dapat dipelajari dengan mudah.",
+            "Baik berbicara maupun mendengar, sering kali manusia tidak memahami esensi maknanya."
+        ],
+        kunciJawaban: [0, 3]
+    },
+
 
   {
     id: 99,
