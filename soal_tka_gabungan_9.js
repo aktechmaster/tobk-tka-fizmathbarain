@@ -704,7 +704,7 @@ window.daftarSoal = [
         rentangNilai: "0-3",
         tipe: "PG",
         soal: "<b>Alur Pelayanan Donor Darah</b><br><br>Kegiatan donor adalah salah satu bentuk aksi kemanusiaan yang sangat bermanfaat untuk diri sendiri dan orang lain. Setetes darah yang disumbangkan dapat memberikan harapan hidup bagi orang lain yang membutuhkan, terutama mereka yang mengalami kecelakaan, setelah menjalani operasi, atau menderita penyakit yang serius. Tak hanya untuk penerima, pendonor juga bisa mendapatkan manfaat. Diantaranya bermanfaat untuk mendeteksi penyakit, meningkatkan produksi sel darah, dan menjaga kesehatan jantung. Oleh karena itu disarankan untuk melakukan donor darah tiga bulan setelah donor darah terakhir.<br><br>Biasanya aksi donor darah difasilitasi oleh Palang Merah Indonesia (PMI). Berikut adalah alur kegiatan donor darah di sebuah posko PMI.<br><br>Seorang pendonor darah mendatangi posko PMI. Kebetulan saat ini sedang tidak ada antrian sehingga orang tersebut dapat langsung dilayani.<br><br>Jika tidak ada kendala pada pelayanan donor darah, apa yang sedang dilakukan pendonor tersebut setelah 25 menit berlalu?",
-        gambar: "images_num_9/9,10,11.png",
+        gambar: "images_num_9/9,10,11.jpg",
         pilihan: [
             "Tahap pemeriksaan kesehatan",
             "Duduk di kursi tunggu",
