@@ -55,38 +55,76 @@ window.daftarSoal = [
         ],
         kunciJawaban: [1, 2]
     },
-  {
-    id: 4,
-    kategori: "LITERASI", // ✅ Kategori ditambahkan
-    tipe: "PG",
-    tingkatKesulitan: "Mudah",
-    rentangNilai: "6 – 7",
-    soal: `[ISI SOAL LITERASI NOMOR 4 DI SINI]`,
-    gambar: null,
-    pilihan: [
-      "A. [Pilihan A]",
-      "B. [Pilihan B]",
-      "C. [Pilihan C]",
-      "D. [Pilihan D]"
-    ],
-    kunciJawaban: "C"
-  },
-  {
-    id: 5,
-    kategori: "LITERASI", // ✅ Kategori ditambahkan
-    tipe: "PG",
-    tingkatKesulitan: "Mudah",
-    rentangNilai: "6 – 7",
-    soal: `[ISI SOAL LITERASI NOMOR 5 DI SINI]`,
-    gambar: null,
-    pilihan: [
-      "A. [Pilihan A]",
-      "B. [Pilihan B]",
-      "C. [Pilihan C]",
-      "D. [Pilihan D]"
-    ],
-    kunciJawaban: "B"
-  },
+      // ==========================================
+    // SOAL NOMOR 4 (BS) - Tingkat Kesulitan: Sedang
+    // ==========================================
+    {
+        id: 4,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "BS",
+        soal: "Tiga siswa mendiskusikan kesan mereka terhadap dua foto yang diceritakan oleh tokoh Aku:<br><br>Banu : Wah, foto-foto itu membuktikan bahwa di tengah kesulitan pun, masih ada kepedulian dan kekuatan yang luar biasa di dalam manusia.<br>Wina : Aku rasa, foto itu hanya menarik karena harganya mahal dan akan menggegerkan balai lelang internasional.<br>Fajar : Cerita di balik kedua foto itu justru lebih kuat dari foto itu sendiri. Ada pesan kemanusiaan yang mendalam.<br><br>Tentukan Benar atau Salah pernyataan berikut yang paling sesuai dengan opini penulis dalam teks!",
+        pilihan: [
+            "Pendapat Banu sesuai dengan pesan yang ingin disampaikan penulis bahwa di balik kesulitan ada kemanusiaan.",
+            "Pernyataan Wina tidak tepat karena penulis justru menunjukkan bahwa nilai foto tidak hanya terletak pada harganya.",
+            "Pernyataan Fajar sesuai dengan teks yang menunjukkan bahwa cerita di balik foto memberikan dampak emosional yang mendalam."
+        ],
+        kunciJawaban: ["B", "B", "B"]
+    },
+
+    // ==========================================
+    // SOAL NOMOR 5 (PG) - Tingkat Kesulitan: Mudah
+    // ==========================================
+    {
+        id: 5,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Hal yang dilakukan tokoh Aku saat membayangkan berada di makam ibunya adalah ....",
+        pilihan: [
+            "membacakan doa dan mengenang kebersamaan dengan sang ibu",
+            "berdiri menghadap langit, memejamkan mata, dan menghirup napas dalam-dalam",
+            "membersihkan makam, menyirami dengan air mawar, menabur bunga, dan mendaras doa",
+            "menceritakan kembali kenangan indah bersama sang ibu, lalu menyapu makam dengan pelukan"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 6 (PG) - Tingkat Kesulitan: Sedang
+    // ==========================================
+    {
+        id: 6,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Apa perasaan yang paling dominan dirasakan tokoh Aku di akhir cerita?",
+        pilihan: [
+            "Senang karena disambut oleh Yu Tinah di rumah.",
+            "Tenang dan damai karena sudah sampai di rumah.",
+            "Sedih karena tidak bisa melanjutkan perjalanan ke makam.",
+            "Lelah dan khawatir karena kondisi tubuhnya tiba-tiba melemah."
+        ],
+        kunciJawaban: "D"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 7 (PGK) - Tingkat Kesulitan: Sulit
+    // ==========================================
+    {
+        id: 7,
+        kategori: "LITERASI",
+        rentangNilai: "0-4",
+        tipe: "PGK",
+        soal: "Berdasarkan teks, manakah pernyataan yang menggambarkan kondisi fisik dan mental tokoh Aku selama perjalanan?<br><br>Pilihlah jawaban benar! Jawaban benar lebih dari satu.",
+        pilihan: [
+            "Merasa bersemangat dan gembira.",
+            "Merasa tidak nyaman karena kedinginan.",
+            "Merasa ada energi gelap yang menyerang.",
+            "Merasa segar dan ingin segera tiba di makam."
+        ],
+        kunciJawaban: [1, 2]
+    },
 
   {
     id: 99,
