@@ -493,6 +493,41 @@ window.daftarSoal = [
     ],
     kunciJawaban: "C"
 },
+          // ==========================================
+// SOAL NOMOR 29 - Tingkat Kesulitan: Mudah
+// ==========================================
+{
+    id: 29,
+    kategori: "LITERASI",
+    rentangNilai: "0-1",
+    tipe: "PG",
+    soal: "<b>Bacalah pantun berikut!</b><br><br>Burung beo burung dara<br>Terbang tinggi sambil bersiulan<br>Ayo kita ikut berlomba-lomba<br>Untuk merayakan hari kemerdekaan<br><br>Berdasarkan pantun tersebut, prediksi kegiatan yang paling mungkin dilakukan adalah ....",
+    pilihan: [
+        "A. penelitian dan penulisan ilmiah",
+        "B. balap karung dan makan kerupuk",
+        "C. matematika dan bahasa Indonesia",
+        "D. panjat tebing dan balap sepeda motor"
+    ],
+    kunciJawaban: "B"
+},
+
+// ==========================================
+// SOAL NOMOR 30 - Tingkat Kesulitan: Mudah
+// ==========================================
+{
+    id: 30,
+    kategori: "LITERASI",
+    rentangNilai: "0-1",
+    tipe: "PG",
+    soal: "<b>Simaklah pantun berikut!</b><br><br>Ke pasar membeli cincin<br>Cincin bagus di Toko Kiran<br>Menahan diri agar tak bersin<br>Malah kentut tak tertahankan<br><br>Perasaan yang timbul setelah membaca pantun tersebut adalah ....",
+    pilihan: [
+        "A. lucu karena peristiwa yang dialami",
+        "B. sedih karena tidak berhasil menahan bersin",
+        "C. terkejut karena ada toko emas bernama Kiran",
+        "D. bahagia karena merasa pernah mengalami hal yang sama"
+    ],
+    kunciJawaban: "A"
+},
           
   {
     id: 99,
