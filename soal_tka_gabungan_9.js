@@ -1033,7 +1033,6 @@ window.daftarSoal = [
         rentangNilai: "0-4",
         tipe: "PGK",
         soal: "Sebuah koperasi sekolah ingin mengevaluasi penjualan alat tulis selama 5 bulan terakhir. Berikut disajikan data jumlah pengunjung koperasi sekolah selama 5 bulan dan data persentase alat tulis yang terjual.<br><br><div style='display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;'><img src='images_num_9/27.jpg' style='max-width: 100%; height: auto; border: 1px solid #cbd5e1; border-radius: 5px;'><img src='images_num_9/27.1.jpg' style='max-width: 100%; height: auto; border: 1px solid #cbd5e1; border-radius: 5px;'></div><br>Berdasarkan kedua data tersebut, tentukan manakah pernyataan yang benar untuk setiap pernyataan berikut?<br>Pilih semua jawaban benar! Jawaban benar lebih dari satu.",
-        gambar:
         pilihan: [
             "Peningkatan jumlah pengunjung paling signifikan (paling besar) terjadi pada periode bulan April ke Mei.",
             "Jika setiap pengunjung di bulan Mei membeli satu alat tulis, maka jumlah pulpen yang terjual adalah 64 buah.",
