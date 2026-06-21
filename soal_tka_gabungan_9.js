@@ -249,6 +249,59 @@ window.daftarSoal = [
         ],
         kunciJawaban: "D"
     },
+              // ==========================================
+    // SOAL NOMOR 16 (PG) - Tingkat Kesulitan: Sedang
+    // ==========================================
+    {
+        id: 16,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Bacalah teks puisi berikut dengan saksama!<br><br><b>Keterampilan Menulis</b><br><i>Hasan Al Banna</i><br><br>hidup tak semudah menyatakan jatuh tinta<br>karena tinta tumbuh dari jalan curam keserbatahuan<br>dan ketidaktahuan<br>tinta mengalir di celah sempit keberterimaan<br>dan penolakan<br>jatuh tinta perihal ke kanan<br>bukan kekangan<br><br>apa yang dapat dihurupkan dari tinta mati<br>selain gemergelap mural-mural pengharapan<br>sekaligus keputusasaan<br>jarak pandang yang tak berkohesi dengan pokok pikiran<br>tak koheren dengan tujuan<br>tinta mati cuma surga sementara<br>batu primata<br><br><b>Makna dari larik “tinta tumbuh dari jalan curam keserbatahuan dan ketidaktahuan” adalah ...</b>",
+        pilihan: [
+            "Proses menulis selalu dimulai dari ketidaktahuan penulis.",
+            "Menulis adalah kegiatan yang spontan tanpa perlu banyak berpikir.",
+            "Menulis adalah proses yang sulit dan memerlukan pengetahuan luas.",
+            "Pengetahuan dan ketidaktahuan sama-sama penting dalam menulis sebuah bacaan."
+        ],
+        kunciJawaban: "C"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 17 (PG) - Tingkat Kesulitan: Mudah
+    // ==========================================
+    {
+        id: 17,
+        kategori: "LITERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Bacalah teks puisi berikut dengan saksama!<br><br><b>Keterampilan Menulis</b><br><i>Hasan Al Banna</i><br><br>hidup tak semudah menyatakan jatuh tinta<br>karena tinta tumbuh dari jalan curam keserbatahuan<br>dan ketidaktahuan<br>tinta mengalir di celah sempit keberterimaan<br>dan penolakan<br>jatuh tinta perihal ke kanan<br>bukan kekangan<br><br>apa yang dapat dihurupkan dari tinta mati<br>selain gemergelap mural-mural pengharapan<br>sekaligus keputusasaan<br>jarak pandang yang tak berkohesi dengan pokok pikiran<br>tak koheren dengan tujuan<br>tinta mati cuma surga sementara<br>batu primata<br><br><b>Apa yang disimbolkan oleh tinta mati dalam puisi?</b>",
+        pilihan: [
+            "Kematian seorang penulis.",
+            "Kegagalan penulis dalam berkarya.",
+            "Tulisan yang tidak bisa dibaca oleh orang lain.",
+            "Tulisan yang tidak memiliki makna atau tujuan."
+        ],
+        kunciJawaban: "D"
+    },
+
+    // ==========================================
+    // SOAL NOMOR 18 (PGK) - Tingkat Kesulitan: Sulit
+    // ==========================================
+    {
+        id: 18,
+        kategori: "LITERASI",
+        rentangNilai: "0-4",
+        tipe: "PGK",
+        soal: "Bacalah teks puisi berikut dengan saksama!<br><br><b>Keterampilan Menulis</b><br><i>Hasan Al Banna</i><br><br>hidup tak semudah menyatakan jatuh tinta<br>karena tinta tumbuh dari jalan curam keserbatahuan<br>dan ketidaktahuan<br>tinta mengalir di celah sempit keberterimaan<br>dan penolakan<br>jatuh tinta perihal ke kanan<br>bukan kekangan<br><br>apa yang dapat dihurupkan dari tinta mati<br>selain gemergelap mural-mural pengharapan<br>sekaligus keputusasaan<br>jarak pandang yang tak berkohesi dengan pokok pikiran<br>tak koheren dengan tujuan<br>tinta mati cuma surga sementara<br>batu primata<br><br><b>Puisi ini secara keseluruhan menggambarkan bahwa proses menulis ....</b><br><br>Pilihlah jawaban benar! Jawaban benar lebih dari satu.",
+        pilihan: [
+            "lebih rumit dari sekadar menorehkan tinta",
+            "melibatkan berbagai emosi yang kontradiktif",
+            "memerlukan pemahaman yang dalam terhadap tujuan",
+            "dapat dilakukan dengan mengandalkan inspirasi semata"
+        ],
+        kunciJawaban: [0, 1, 2]
+    },
 
   {
     id: 99,
