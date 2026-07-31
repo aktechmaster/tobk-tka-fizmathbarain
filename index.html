@@ -873,6 +873,41 @@ hasil.numMaks = 100;
     // ✅ TAMPILAN HASIL AKHIR (DESAIN LEBIH INFORMATIF)
     // ==================================================
 
+   // ==== GANTI DENGAN URL ANDA ====
+const URL_WEBAPP = "https://script.google.com/macros/s/AKfycbyJuWx09Ow8e1P95SZd9-9Db53wz2kBOAB9FzYJJHbbFwnTqmwGU4IL2878r6VUqv86/exec; // <-- Tempel URL Anda di sini
+
+async function tampilkanHasil() {
+  const h = hitungSkor();
+
+  // ✅ KIRIM DATA KE GOOGLE SHEET SEBELUM TAMPILKAN HASIL
+  try {
+    const durasiUjian = window.durasiTotal 
+      ? `${Math.round((Date.now() - window.waktuMulaiUjian)/60000)} menit` 
+      : "-";
+
+    await fetch(URL_WEBAPP, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        nama: document.getElementById('nama').value,
+        kelas: document.getElementById('kelas').value,
+        asal: document.getElementById('asal').value,
+        nomor: document.getElementById('nomor').value,
+        mapel: document.getElementById('mapel').value,
+        skor: h.litSkor + h.numSkor, // Atau sesuaikan jika ingin total lain
+        pelanggaran: window.violationCount || 0,
+        durasi: durasiUjian,
+        jawaban: jawabanSiswa
+      })
+    });
+  } catch (err) {
+    console.warn("Gagal kirim ke sheet:", err);
+  }
+
+  // ==================================================
+    // ✅ FUNGSI TAMPILKAN HASIL
+    // ==================================================
     function tampilkanHasil() {
         const h = hitungSkor();
         quizArea.innerHTML = `
