@@ -874,47 +874,21 @@ hasil.numMaks = 100;
     // ==================================================
 
    // ==== GANTI DENGAN URL ANDA ====
-const URL_WEBAPP = "https://script.google.com/macros/s/AKfycbyJuWx09Ow8e1P95SZd9-9Db53wz2kBOAB9FzYJJHbbFwnTqmwGU4IL2878r6VUqv86/exec"; // <-- Tempel URL Anda di sini
+const URL_WEBAPP = "https://script.google.com/macros/s/AKfycbyJuWx09Ow8e1P95SZd9-9Db53wz2kBOAB9FzYJJHbbFwnTqmwGU4IL2878r6VUqv86/exec";
 
-async function tampilkanHasil() {
-  const h = hitungSkor();
+// Deklarasi variabel agar tidak error saat tombol diklik dua kali
+let sudahDikirim = false;
 
-  // ✅ KIRIM DATA KE GOOGLE SHEET SEBELUM TAMPILKAN HASIL
-  try {
-    const durasiUjian = window.durasiTotal 
-      ? `${Math.round((Date.now() - window.waktuMulaiUjian)/60000)} menit` 
-      : "-";
-
-    await fetch(URL_WEBAPP, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        nama: document.getElementById('nama').value,
-        kelas: document.getElementById('kelas').value,
-        asal: document.getElementById('asal').value,
-        nomor: document.getElementById('nomor').value,
-        mapel: document.getElementById('mapel').value,
-        skor: h.litSkor + h.numSkor, // Atau sesuaikan jika ingin total lain
-        pelanggaran: window.violationCount || 0,
-        durasi: durasiUjian,
-        jawaban: jawabanSiswa
-      })
-    });
-  } catch (err) {
-    console.warn("Gagal kirim ke sheet:", err);
-  }
-
-  // ==================================================
-    // ✅ FUNGSI TAMPILKAN HASIL
-    // ==================================================
-    // WAJIB DIAWALI window. AGAR BISA DIPANGGIL DARI MANAPUN
+// ==================================================
+// ✅ FUNGSI TAMPILKAN HASIL (SUDAH DIGABUNG & DIPERBAIKI)
+// ==================================================
 window.tampilkanHasil = async function() {
-    if (sudahDikirim) return;
+    if (sudahDikirim) return; // Cegah pengiriman ganda
     sudahDikirim = true;
 
     const h = hitungSkor();
 
+    // 1. KIRIM DATA KE GOOGLE SHEET
     try {
         const durasiUjian = window.durasiTotal 
             ? `${Math.round((Date.now() - window.waktuMulaiUjian)/60000)} menit` 
@@ -925,11 +899,11 @@ window.tampilkanHasil = async function() {
             mode: "no-cors",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                nama: document.getElementById('nama').value,
-                kelas: document.getElementById('kelas').value,
-                asal: document.getElementById('asal').value,
-                nomor: document.getElementById('nomor').value,
-                mapel: document.getElementById('mapel').value,
+                nama: document.getElementById('nama') ? document.getElementById('nama').value : '',
+                kelas: document.getElementById('kelas') ? document.getElementById('kelas').value : '',
+                asal: document.getElementById('asal') ? document.getElementById('asal').value : '',
+                nomor: document.getElementById('nomor') ? document.getElementById('nomor').value : '',
+                mapel: document.getElementById('mapel') ? document.getElementById('mapel').value : '',
                 skor: h.litSkor + h.numSkor,
                 pelanggaran: window.violationCount || 0,
                 durasi: durasiUjian,
@@ -937,11 +911,12 @@ window.tampilkanHasil = async function() {
             })
         });
     } catch (err) {
-        console.warn("Gagal kirim:", err);
+        console.warn("Gagal kirim ke sheet:", err);
     }
 
-    // ✅ BARU TAMPILKAN HASIL DI LAYAR
-    quizArea.innerHTML = `
+    // 2. BARU TAMPILKAN HASIL DI LAYAR
+    const containerKuis = document.getElementById('quizArea') || quizArea;
+    containerKuis.innerHTML = `
         <div class="result-box">
             <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center;">
                 <div style="flex: 1; border-right: 1px solid #e2e8f0; padding: 0 10px;">
@@ -980,22 +955,31 @@ window.tampilkanHasil = async function() {
         </div>
     `;
 
-    controls.style.display = 'none';
-    questionNav.style.display = 'none';
+    // 3. SEMBUNYIKAN NAVIGASI & TOMBOL LAINNYA
+    const elControls = document.getElementById('controls') || document.querySelector('.controls');
+    if (elControls) elControls.style.display = 'none';
+
+    const elNav = document.getElementById('questionNav') || document.querySelector('.question-nav');
+    if (elNav) elNav.style.display = 'none';
+
     const timerBadge = document.getElementById('timerBadge');
     if (timerBadge) timerBadge.classList.add('hidden');
-    bersihkanDataUjian();
+    
+    // 4. BERSIHKAN DATA
+    if (typeof bersihkanDataUjian === "function") bersihkanDataUjian();
     sessionStorage.setItem('ujianSelesai', 'true');
 };
 
-    // ✅ FUNGSI UNTUK MERESET KE HALAMAN LOGIN / AWAL
-    window.kembaliKeAwal = function() {
-        sessionStorage.removeItem('ujianSelesai'); 
-        window.location.reload(); 
-    };
+// ==================================================
+// ✅ FUNGSI UNTUK MERESET KE HALAMAN LOGIN / AWAL
+// ==================================================
+window.kembaliKeAwal = function() {
+    sessionStorage.removeItem('ujianSelesai'); 
+    window.location.reload(); 
+};
 
-    // (Kode lanjutan Anda yang sudah ada sebelumnya)
-    prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
+// (Kode lanjutan Anda yang sudah ada sebelumnya)
+prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
 
    // ==================================================
     // ✅ FITUR DETEKSI PELANGGARAN (DENGAN CUSTOM ALERT SHOCK)
