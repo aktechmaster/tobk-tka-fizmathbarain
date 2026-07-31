@@ -873,18 +873,13 @@ hasil.numMaks = 100;
     // ✅ TAMPILAN HASIL AKHIR (DESAIN LEBIH INFORMATIF)
     // ==================================================
 
-   // ==== GANTI DENGAN URL ANDA ====
-const URL_WEBAPP = "https://script.google.com/macros/s/AKfycbyJuWx09Ow8e1P95SZd9-9Db53wz2kBOAB9FzYJJHbbFwnTqmwGU4IL2878r6VUqv86/exec";
-
-// Deklarasi variabel agar tidak error saat tombol diklik dua kali
-var sudahDikirim = false;
-
-// ==================================================
-// ✅ FUNGSI TAMPILKAN HASIL (SUDAH DIGABUNG & DIPERBAIKI)
+   // ==================================================
+// ✅ FUNGSI TAMPILKAN HASIL (ANTI-BENTROK VARIABEL)
 // ==================================================
 window.tampilkanHasil = async function() {
-    if (sudahDikirim) return; // Cegah pengiriman ganda
-    sudahDikirim = true;
+    // Kita gunakan window. untuk menghindari error variabel duplikat
+    if (window.statusSudahDikirim) return; 
+    window.statusSudahDikirim = true;
 
     const h = hitungSkor();
 
@@ -894,7 +889,8 @@ window.tampilkanHasil = async function() {
             ? `${Math.round((Date.now() - window.waktuMulaiUjian)/60000)} menit` 
             : "-";
 
-        await fetch(URL_WEBAPP, {
+        // URL langsung dimasukkan ke dalam fetch tanpa const
+        await fetch("https://script.google.com/macros/s/AKfycbyJuWx09Ow8e1P95SZd9-9Db53wz2kBOAB9FzYJJHbbFwnTqmwGU4IL2878r6VUqv86/exec", {
             method: "POST",
             mode: "no-cors",
             headers: {"Content-Type": "application/json"},
