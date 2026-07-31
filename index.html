@@ -331,6 +331,7 @@
     let jawabanSiswa = {};
     let skorTotal = 0;
     let timerInterval = null; // Untuk menghitung mundur waktu ujian
+     let sudahDikirim = false;
 
     // Elemen HTML
     const startScreen = document.getElementById('start-screen');
@@ -569,12 +570,17 @@
     }
 
    window.konfirmasiSelesai = function() {
+    // Jika sudah pernah dikirim, tolak semua klik berikutnya
+    if (sudahDikirim) return;
+
     const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
+    
     if (yakin) {
-        window.tampilkanHasil(); // PAKAI window. AGAR PASTI TERBACA
+        sudahDikirim = true; // Kunci agar tidak bisa dikirim lagi
+        tampilkanHasil(); 
     }
 };
-
+   
    // Menampilkan soal berdasarkan index
     function tampilkanSoal(idx) {
         currentIndex = idx;
@@ -703,16 +709,12 @@
             }
         });
 
-        if (window.MathJax) {
-            MathJax.typesetPromise && MathJax.typesetPromise([quizArea]);
-        }
-
-        prevBtn.disabled = idx === 0;
-        
-        // ✅ INI DIA LETAK TOMBOL SELESAINYA
         if(idx === window.daftarSoal.length - 1) {
     nextBtn.textContent = 'SELESAI & NILAI';
-    nextBtn.onclick = window.konfirmasiSelesai;
+    nextBtn.onclick = function() {
+        this.disabled = true; // Langsung kunci tombol setelah diklik sekali
+        window.konfirmasiSelesai();
+    };
 } else {
     nextBtn.textContent = 'Selanjutnya';
     nextBtn.onclick = () => tampilkanSoal(idx + 1);
@@ -906,64 +908,85 @@ async function tampilkanHasil() {
     // ✅ FUNGSI TAMPILKAN HASIL
     // ==================================================
     // WAJIB DIAWALI window. AGAR BISA DIPANGGIL DARI MANAPUN
-window.tampilkanHasil = function() {
+window.tampilkanHasil = async function() {
+    // KUNCI: JANGAN PERNAH JALANKAN KEDUA KALI
+    if (sudahDikirim) return;
+    sudahDikirim = true;
+
     const h = hitungSkor();
+
+    // ✅ KIRIM DATA KE GOOGLE SHEET DULU
+    try {
+        const durasiUjian = window.durasiTotal 
+            ? `${Math.round((Date.now() - window.waktuMulaiUjian)/60000)} menit` 
+            : "-";
+
+        await fetch(URL_WEBAPP, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                nama: document.getElementById('nama').value,
+                kelas: document.getElementById('kelas').value,
+                asal: document.getElementById('asal').value,
+                nomor: document.getElementById('nomor').value,
+                mapel: document.getElementById('mapel').value,
+                skor: h.litSkor + h.numSkor,
+                pelanggaran: window.violationCount || 0,
+                durasi: durasiUjian,
+                jawaban: jawabanSiswa
+            })
+        });
+    } catch (err) {
+        console.warn("Gagal kirim:", err);
+    }
+
+    // ✅ BARU TAMPILKAN HASIL DI LAYAR
     quizArea.innerHTML = `
-            <div class="result-box">
-                                
-                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center;">
-                    
-                    <div style="flex: 1; border-right: 1px solid #e2e8f0; padding: 0 10px;">
-                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Literasi</div>
-                        <div style="font-size: 28px; font-weight: 900; color: #0056b3; margin: 5px 0;">
-                            ${h.litSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.litMaks}</span>
-                        </div>
-                        <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
-                            ✅ Benar ${h.litBenar} dari ${h.litTotalSoal} soal
-                        </div>
+        <div class="result-box">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center;">
+                <div style="flex: 1; border-right: 1px solid #e2e8f0; padding: 0 10px;">
+                    <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Literasi</div>
+                    <div style="font-size: 28px; font-weight: 900; color: #0056b3; margin: 5px 0;">
+                        ${h.litSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.litMaks}</span>
                     </div>
-                    
-                    <div style="flex: 1; padding: 0 10px;">
-                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Numerasi</div>
-                        <div style="font-size: 28px; font-weight: 900; color: #d97706; margin: 5px 0;">
-                            ${h.numSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.numMaks}</span>
-                        </div>
-                        <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
-                            ✅ Benar ${h.numBenar} dari ${h.numTotalSoal} soal
-                        </div>
-                    </div>
-
-                </div>
-
-                <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
-
-                <div class="result-details">
-                    <div class="result-item correct">
-                        <span class="result-val">${h.totalBenar}</span>
-                        <span>Total Benar Keseluruhan</span>
-                    </div>
-                    <div class="result-item wrong">
-                        <span class="result-val">${h.totalSoalValid - h.totalBenar}</span> 
-                        <span>Total Salah Keseluruhan</span>
+                    <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
+                        ✅ Benar ${h.litBenar} dari ${h.litTotalSoal} soal
                     </div>
                 </div>
-                
-                <button onclick="kembaliKeAwal()" style="margin-top: 25px; padding: 12px 20px; background: #0056b3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: background 0.3s;">
-                    🏠 Kembali ke Halaman Awal
-                </button>
+                <div style="flex: 1; padding: 0 10px;">
+                    <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Numerasi</div>
+                    <div style="font-size: 28px; font-weight: 900; color: #d97706; margin: 5px 0;">
+                        ${h.numSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.numMaks}</span>
+                    </div>
+                    <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
+                        ✅ Benar ${h.numBenar} dari ${h.numTotalSoal} soal
+                    </div>
+                </div>
             </div>
-        `;
-        
-        controls.style.display = 'none';
-        questionNav.style.display = 'none';
-        
-        const timerBadge = document.getElementById('timerBadge');
-        if (timerBadge) {
-            timerBadge.classList.add('hidden');
-        }
-        
-        bersihkanDataUjian(); 
-        sessionStorage.setItem('ujianSelesai', 'true');
+            <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
+            <div class="result-details">
+                <div class="result-item correct">
+                    <span class="result-val">${h.totalBenar}</span>
+                    <span>Total Benar Keseluruhan</span>
+                </div>
+                <div class="result-item wrong">
+                    <span class="result-val">${h.totalSoalValid - h.totalBenar}</span> 
+                    <span>Total Salah Keseluruhan</span>
+                </div>
+            </div>
+            <button onclick="kembaliKeAwal()" style="margin-top: 25px; padding: 12px 20px; background: #0056b3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: background 0.3s;">
+                🏠 Kembali ke Halaman Awal
+            </button>
+        </div>
+    `;
+
+    controls.style.display = 'none';
+    questionNav.style.display = 'none';
+    const timerBadge = document.getElementById('timerBadge');
+    if (timerBadge) timerBadge.classList.add('hidden');
+    bersihkanDataUjian();
+    sessionStorage.setItem('ujianSelesai', 'true');
 };
 
     // ✅ FUNGSI UNTUK MERESET KE HALAMAN LOGIN / AWAL
