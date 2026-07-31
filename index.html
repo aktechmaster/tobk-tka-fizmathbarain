@@ -712,7 +712,8 @@
         if(idx === window.daftarSoal.length - 1) {
     nextBtn.textContent = 'SELESAI & NILAI';
     nextBtn.onclick = function() {
-        this.disabled = true; // Langsung kunci tombol setelah diklik sekali
+        this.disabled = true;
+        this.style.pointerEvents = 'none'; // Tambahan agar tak bisa diklik sama sekali
         window.konfirmasiSelesai();
     };
 } else {
@@ -909,13 +910,11 @@ async function tampilkanHasil() {
     // ==================================================
     // WAJIB DIAWALI window. AGAR BISA DIPANGGIL DARI MANAPUN
 window.tampilkanHasil = async function() {
-    // KUNCI: JANGAN PERNAH JALANKAN KEDUA KALI
     if (sudahDikirim) return;
     sudahDikirim = true;
 
     const h = hitungSkor();
 
-    // ✅ KIRIM DATA KE GOOGLE SHEET DULU
     try {
         const durasiUjian = window.durasiTotal 
             ? `${Math.round((Date.now() - window.waktuMulaiUjian)/60000)} menit` 
