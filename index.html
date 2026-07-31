@@ -714,7 +714,7 @@
         if(idx === window.daftarSoal.length - 1) {
             nextBtn.textContent = 'SELESAI & NILAI';
             // ✅ SUDAH DIGANTI MENJADI PANGGILAN KONFIRMASI
-            nextBtn.onclick = konfirmasiSelesai; 
+            nextBtn.onclick = window.konfirmasiSelesai; 
         } else {
             nextBtn.textContent = 'Selanjutnya';
             nextBtn.onclick = () => tampilkanSoal(idx + 1);
