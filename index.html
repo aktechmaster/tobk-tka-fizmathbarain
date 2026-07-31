@@ -929,7 +929,6 @@ hasil.numMaks = 100;
             timerBadge.classList.add('hidden');
         }
         
-        bersihkanDataUjian(); 
         sessionStorage.setItem('ujianSelesai', 'true');
     }
 
@@ -1048,6 +1047,7 @@ hasil.numMaks = 100;
 
     // 3. Logika Pencatatan Pelanggaran
     function catatPelanggaran() {
+      if (sessionStorage.getItem('ujianSelesai') === 'true') return;
         if (quizArea.style.display === 'block') {
             window.violationCount = (window.violationCount || 0) + 1;
             
