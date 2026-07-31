@@ -569,12 +569,11 @@
     }
 
    window.konfirmasiSelesai = function() {
-        const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
-        
-        if (yakin) {
-            tampilkanHasil(); 
-        }
-    };
+    const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
+    if (yakin) {
+        window.tampilkanHasil(); // PAKAI window. AGAR PASTI TERBACA
+    }
+};
 
    // Menampilkan soal berdasarkan index
     function tampilkanSoal(idx) {
@@ -712,14 +711,12 @@
         
         // ✅ INI DIA LETAK TOMBOL SELESAINYA
         if(idx === window.daftarSoal.length - 1) {
-            nextBtn.textContent = 'SELESAI & NILAI';
-            // ✅ SUDAH DIGANTI MENJADI PANGGILAN KONFIRMASI
-            nextBtn.onclick = window.konfirmasiSelesai; 
-        } else {
-            nextBtn.textContent = 'Selanjutnya';
-            nextBtn.onclick = () => tampilkanSoal(idx + 1);
-        }
-
+    nextBtn.textContent = 'SELESAI & NILAI';
+    nextBtn.onclick = window.konfirmasiSelesai;
+} else {
+    nextBtn.textContent = 'Selanjutnya';
+    nextBtn.onclick = () => tampilkanSoal(idx + 1);
+}
         simpanDataKeStorage();
     }
 
@@ -908,9 +905,10 @@ async function tampilkanHasil() {
   // ==================================================
     // ✅ FUNGSI TAMPILKAN HASIL
     // ==================================================
-    function tampilkanHasil() {
-        const h = hitungSkor();
-        quizArea.innerHTML = `
+    // WAJIB DIAWALI window. AGAR BISA DIPANGGIL DARI MANAPUN
+window.tampilkanHasil = function() {
+    const h = hitungSkor();
+    quizArea.innerHTML = `
             <div class="result-box">
                                 
                 <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center;">
@@ -966,7 +964,7 @@ async function tampilkanHasil() {
         
         bersihkanDataUjian(); 
         sessionStorage.setItem('ujianSelesai', 'true');
-    }
+};
 
     // ✅ FUNGSI UNTUK MERESET KE HALAMAN LOGIN / AWAL
     window.kembaliKeAwal = function() {
