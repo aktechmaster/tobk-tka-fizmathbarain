@@ -324,13 +324,29 @@
 
 
     <!-- ============================================== -->
-  <!-- ✅ BAGIAN SCRIPT YANG SUDAH DIPERBAIKI TOTAL ✅ -->
-  <!-- ============================================== -->
- <script>
+<!-- ✅ SCRIPT UJIAN UTUH (GABUNGAN B1 + B2 + SPREADSHEET) ✅ -->
+<!-- ============================================== -->
+<script>
+    // ==================================================
+    // 🔑 1. KONFIGURASI URL GOOGLE APPS SCRIPT & PASSWORD
+    // ==================================================
+    // Ganti URL di bawah dengan URL Web App Apps Script kamu!
+    const URL_GAS = "MASUKKAN_URL_WEB_APP_GAS_DI_SINI";
+
+    const daftarPassword = {
+        '4': 'tka4sd001',
+        '5': 'tka5sd001',
+        '6': 'tka6sd001',
+        '7': 'tka7smp001',
+        '8': 'tka8smp001',
+        '9': 'tka9smp001'
+    };
+
+    // Variable Global State
     let currentIndex = 0;
     let jawabanSiswa = {};
     let skorTotal = 0;
-    let timerInterval = null; // Untuk menghitung mundur waktu ujian
+    let timerInterval = null; 
 
     // Elemen HTML
     const startScreen = document.getElementById('start-screen');
@@ -342,24 +358,16 @@
     const nextBtn = document.getElementById('nextBtn');
     const pageIndicator = document.getElementById('pageIndicator');
 
-    // 🔑 KONFIGURASI PASSWORD BERDASARKAN KELAS
-    const daftarPassword = {
-        '4': 'tka4sd001',
-        '5': 'tka5sd001',
-        '6': 'tka6sd001',
-        '7': 'tka7smp001',
-        '8': 'tka8smp001',
-        '9': 'tka9smp001'
-    };
+    // ==================================================
+    // ⚙️ 2. FUNGSI PENYIMPANAN & RECOVERY LOCALSTORAGE
+    // ==================================================
 
-    // Bersihkan data jika selesai atau batal
     function bersihkanDataUjian() {
         localStorage.removeItem('dataUjianTKA');
         sessionStorage.removeItem('ujianSelesai');
         if (timerInterval) clearInterval(timerInterval);
     }
 
-    // Ambil data dari Penyimpanan Lokal
     function ambilDataDariStorage() {
         const data = localStorage.getItem('dataUjianTKA');
         if (!data) return null;
@@ -367,10 +375,9 @@
         return (parsed.statusUjian === "sedang-berjalan" && parsed.terverifikasi === true) ? parsed : null;
     }
 
-    // Fungsi simpan data (Ditambahkan parameter inisialisasi agar tidak deadlock)
     function simpanDataKeStorage(inisialisasi = false) {
-        const kelas = document.getElementById('kelas').value;
-        const mapel = document.getElementById('mapel').value;
+        const kelas = document.getElementById('kelas')?.value;
+        const mapel = document.getElementById('mapel')?.value;
 
         if (!inisialisasi) {
             const dataLama = ambilDataDariStorage();
@@ -382,9 +389,9 @@
             terverifikasi: true,
             kelas: kelas || (ambilDataDariStorage()?.kelas),
             mapel: mapel || (ambilDataDariStorage()?.mapel),
-            nama: document.getElementById('nama').value,
-            asal: document.getElementById('asal').value,
-            nomor: document.getElementById('nomor').value,
+            nama: document.getElementById('nama')?.value,
+            asal: document.getElementById('asal')?.value,
+            nomor: document.getElementById('nomor')?.value,
             jawaban: jawabanSiswa,
             halamanAktif: currentIndex,
             jumlahPelanggaran: window.violationCount || 0,
@@ -396,7 +403,10 @@
         localStorage.setItem('dataUjianTKA', JSON.stringify(dataUjian));
     }
 
-    // Fungsi Timer Mundur Otomatis
+    // ==================================================
+    // ⏱️ 3. LOGIKA TIMER & PEMANTAUAN UJIAN
+    // ==================================================
+
     function jalankanTimerUjian() {
         if (timerInterval) clearInterval(timerInterval);
         
@@ -419,7 +429,6 @@
         }, 1000);
     }
 
-    // Logika Mulai Ujian (UI Tampilan Utama)
     function mulaiUjian() {
         startScreen.style.display = 'none';
         quizArea.style.display = 'block';
@@ -430,7 +439,6 @@
         jalankanTimerUjian();
     }
 
-    // Tombol Mulai Ujian di-klik
     startBtn.addEventListener('click', () => {
         const kelas = document.getElementById('kelas').value;
         const mapel = document.getElementById('mapel').value;
@@ -459,7 +467,7 @@
                     window.violationCount = 0;
 
                     mulaiUjian();
-                    simpanDataKeStorage(true); // Paksa inisialisasi awal ke localStorage
+                    simpanDataKeStorage(true);
                     buatNavigasiSoal();   
                     tampilkanSoal(0);
                 } else {
@@ -476,7 +484,7 @@
         document.body.appendChild(scriptSoal);
     });
 
-    // Cek status saat halaman dimuat / di-refresh
+    // Event saat halaman di-refresh
     window.onload = () => {
         if (sessionStorage.getItem('ujianSelesai') === 'true' || !ambilDataDariStorage()) {
             bersihkanDataUjian();
@@ -503,7 +511,7 @@
             window.waktuMulaiUjian = dataTersimpan.waktuMulaiUjian;
             window.durasiTotal = dataTersimpan.durasiTotal;
 
-            // Kunci Formulir
+            // Kunci Formulir Input
             document.getElementById('kelas').disabled = true;
             document.getElementById('nama').disabled = true;
             document.getElementById('asal').disabled = true;
@@ -511,7 +519,7 @@
             document.getElementById('password').disabled = true;
             startBtn.disabled = true;
 
-            // Pulihkan Hukuman Pelanggaran Aktif
+            // Pemulihan Penalti Hukuman Jika Ada
             if (dataTersimpan.sisaWaktuHukuman > 0 && dataTersimpan.waktuHukumanMulai > 0) {
                 const berlalunyaWaktu = Math.floor((Date.now() - dataTersimpan.waktuHukumanMulai) / 1000);
                 const sisa = dataTersimpan.sisaWaktuHukuman - berlalunyaWaktu;
@@ -533,7 +541,7 @@
                 }
             }
 
-            // Muat kembali soal ujian
+            // Load Soal
             let namaFileSoal = `soal_tka_gabungan_${kelas}.js`;
             const scriptSoal = document.createElement('script');
             scriptSoal.src = namaFileSoal; 
@@ -551,7 +559,10 @@
         }
     };
 
-    // Membuat tombol navigasi kotak-kotak nomor soal
+    // ==================================================
+    // 📝 4. RENDER SOAL & NAVIGASI
+    // ==================================================
+
     function buatNavigasiSoal() {
         questionNav.innerHTML = '';
         window.daftarSoal.forEach((soal) => {
@@ -568,15 +579,16 @@
         });
     }
 
-   window.konfirmasiSelesai = function() {
+    window.konfirmasiSelesai = function() {
+        window.isConfirming = true; // Matikan detektor kecurangan saat dialog konfirmasi aktif
         const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
+        window.isConfirming = false;
         
         if (yakin) {
             tampilkanHasil(); 
         }
     };
 
-   // Menampilkan soal berdasarkan index
     function tampilkanSoal(idx) {
         currentIndex = idx;
         const soal = window.daftarSoal[idx];
@@ -641,9 +653,6 @@
                 });
                 htmlSoal += `</div>`;
             }
-            // ==================================================
-            // ✅ TAMBAHAN BARU: TIPE BS (BENAR / SALAH)
-            // ==================================================
             else if(soal.tipe === 'BS') {
                 htmlSoal += `
                 <div style="overflow-x: auto; margin-top: 15px;">
@@ -658,7 +667,6 @@
                         <tbody>`;
                 
                 soal.pilihan.forEach((p, noPernyataan) => {
-                    // Cek apakah data jawabanSiswa[idx] sudah ada, jika belum set kosong
                     const jawabanSaatIni = (jawabanSiswa[idx] && jawabanSiswa[idx][noPernyataan]) ? jawabanSiswa[idx][noPernyataan] : null;
                     
                     htmlSoal += `
@@ -686,7 +694,7 @@
 
         quizArea.innerHTML = htmlSoal;
 
-        // Perbaruan Indikator Warna Kotak Navigasi
+        // Update indikator warna kotak navigasi
         document.querySelectorAll('.nav-item').forEach(el => {
             const nomorDiKotak = parseInt(el.textContent);
             el.classList.remove('active', 'answered', 'unanswered');
@@ -710,10 +718,8 @@
 
         prevBtn.disabled = idx === 0;
         
-        // ✅ INI DIA LETAK TOMBOL SELESAINYA
         if(idx === window.daftarSoal.length - 1) {
             nextBtn.textContent = 'SELESAI & NILAI';
-            // ✅ SUDAH DIGANTI MENJADI PANGGILAN KONFIRMASI
             nextBtn.onclick = konfirmasiSelesai; 
         } else {
             nextBtn.textContent = 'Selanjutnya';
@@ -737,26 +743,19 @@
         }
         tampilkanSoal(currentIndex);
     }
-   // ==================================================
-    // ✅ TAMBAHAN BARU: SIMPAN JAWABAN BENAR/SALAH (BS)
-    // ==================================================
+
     function simpanJawabanBS(idx, noPernyataan, jawaban) {
-        // Cek apakah wadah jawaban untuk soal ini sudah ada, jika belum buatkan bentuk Array (daftar)
         if (!jawabanSiswa[idx] || !Array.isArray(jawabanSiswa[idx])) {
             jawabanSiswa[idx] = [];
         }
-        
-        // Simpan jawaban ('B' atau 'S') di urutan pernyataan yang tepat
         jawabanSiswa[idx][noPernyataan] = jawaban;
-        
-        // Perbarui tampilan agar kotak navigasi soal berubah status menjadi sudah dijawab
         tampilkanSoal(currentIndex);
     }
 
     // ==================================================
-    // ✅ FUNGSI HITUNG SKOR (VERSI PARSIAL / SEBAGIAN)
+    // 📊 5. HITUNG SKOR & HASIL AKHIR
     // ==================================================
-    
+
     function hitungSkor() {
         let hasil = {
             totalBenar: 0, totalNilai: 0, maksNilai: 0, totalSoalValid: 0,
@@ -768,7 +767,6 @@
             if (soal.tipe === 'INFO' || soal.id === 99) return; 
             hasil.totalSoalValid++;
             
-            // Membaca poin maksimal dari soal
             let nilaiSoal = 0;
             if (soal.rentangNilai && typeof soal.rentangNilai === 'string') {
                 const pecah = soal.rentangNilai.split(/[-–]/); 
@@ -776,7 +774,6 @@
             }
             hasil.maksNilai += nilaiSoal;
 
-            // Membaca kategori literasi/numerasi
             const kategori = (soal.kategori || '').toUpperCase();
             if (kategori === 'LITERASI') {
                 hasil.litTotalSoal++;
@@ -787,16 +784,14 @@
             }
 
             let skorItem = 0;
-            let isBenarPenuh = false; // Hanya bernilai true jika soal dijawab 100% sempurna
+            let isBenarPenuh = false;
             
-            // 1. TIPE Pilihan Ganda (PG)
             if(soal.tipe === 'PG') {
                 if(jawabanSiswa[idx] === soal.kunciJawaban) {
                     skorItem = nilaiSoal;
                     isBenarPenuh = true;
                 }
             } 
-            // 2. TIPE Pilihan Ganda Kompleks (PGK) - PARSIAL
             else if(soal.tipe === 'PGK') {
                 const jawabanUser = Array.isArray(jawabanSiswa[idx]) ? jawabanSiswa[idx] : [];
                 const kunci = Array.isArray(soal.kunciJawaban) ? soal.kunciJawaban : [];
@@ -807,17 +802,12 @@
                     for (let i = 0; i < totalPilihan; i++) {
                         const userCentang = jawabanUser.includes(i);
                         const kunciCentang = kunci.includes(i);
-                        
-                        // Cek apakah siswa tepat dalam mencentang (atau tidak mencentang) opsi ini
-                        if (userCentang === kunciCentang) {
-                            aksiBenar++;
-                        }
+                        if (userCentang === kunciCentang) aksiBenar++;
                     }
                     skorItem = (aksiBenar / totalPilihan) * nilaiSoal;
                     if (aksiBenar === totalPilihan) isBenarPenuh = true;
                 }
             } 
-            // 3. TIPE Benar/Salah (BS) - PARSIAL
             else if(soal.tipe === 'BS') {
                 const jawabanUser = Array.isArray(jawabanSiswa[idx]) ? jawabanSiswa[idx] : [];
                 const kunci = Array.isArray(soal.kunciJawaban) ? soal.kunciJawaban : [];
@@ -826,22 +816,17 @@
                 if (totalPernyataan > 0) {
                     let tebakanBenar = 0;
                     for (let i = 0; i < totalPernyataan; i++) {
-                        if (jawabanUser[i] === kunci[i]) {
-                            tebakanBenar++;
-                        }
+                        if (jawabanUser[i] === kunci[i]) tebakanBenar++;
                     }
                     skorItem = (tebakanBenar / totalPernyataan) * nilaiSoal;
                     if (tebakanBenar === totalPernyataan) isBenarPenuh = true;
                 }
             }
 
-            // Jika mendapat poin (meski parsial), masukkan ke perhitungan total
             if (skorItem > 0) {
-                // Bulatkan ke 2 angka di belakang koma (misal: 6.67) agar rapi
                 skorItem = Math.round(skorItem * 100) / 100;
                 hasil.totalNilai += skorItem;
                 
-                // Indikator "Jumlah Soal Benar" hanya dihitung jika 100% sempurna
                 if (isBenarPenuh) hasil.totalBenar++;
                 
                 if (kategori === 'LITERASI') {
@@ -854,221 +839,270 @@
             }
         });
         
-        // ✅ GANTI DENGAN KODE INI (Konversi langsung ke skala 100)
-let litMaksAsli = hasil.litMaks;
-let numMaksAsli = hasil.numMaks;
+        let litMaksAsli = hasil.litMaks;
+        let numMaksAsli = hasil.numMaks;
 
-// Rumus: (Skor Diperoleh / Skor Maksimal Asli) * 100
-hasil.litSkor = litMaksAsli > 0 ? Math.round((hasil.litSkor / litMaksAsli) * 100) : 0;
-hasil.numSkor = numMaksAsli > 0 ? Math.round((hasil.numSkor / numMaksAsli) * 100) : 0;
+        hasil.litSkor = litMaksAsli > 0 ? Math.round((hasil.litSkor / litMaksAsli) * 100) : 0;
+        hasil.numSkor = numMaksAsli > 0 ? Math.round((hasil.numSkor / numMaksAsli) * 100) : 0;
 
-// Paksa nilai maksimal tampilan di halaman hasil menjadi 100
-hasil.litMaks = 100;
-hasil.numMaks = 100;
+        hasil.litMaks = 100;
+        hasil.numMaks = 100;
         
         return hasil;
     }
 
     // ==================================================
-// ✅ TAMPILAN HASIL AKHIR (BEBAS BUG RECOVERY)
-// ==================================================
+    // 🚀 6. FUNGSI KIRIM DATA SPREADSHEET (FETCH API)
+    // ==================================================
 
-function tampilkanHasil() {
-    // 1. HENTIKAN TIMER AGAR TIDAK BERJALAN DI BACKGROUND
-    if (timerInterval) clearInterval(timerInterval);
+    async function kirimKeSpreadsheet(h) {
+        const statusBox = document.getElementById('statusPengiriman');
+        
+        const detikTerlewat = Math.floor((Date.now() - (window.waktuMulaiUjian || Date.now())) / 1000);
+        const jam = Math.floor(detikTerlewat / 3600);
+        const menit = Math.floor((detikTerlewat % 3600) / 60);
+        const detik = detikTerlewat % 60;
+        const durasiFormatted = `${jam.toString().padStart(2, '0')}:${menit.toString().padStart(2, '0')}:${detik.toString().padStart(2, '0')}`;
 
-    const h = hitungSkor();
-    
-    quizArea.innerHTML = `
-        <div class="result-box">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center;">
-                <div style="flex: 1; border-right: 1px solid #e2e8f0; padding: 0 10px;">
-                    <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Literasi</div>
-                    <div style="font-size: 28px; font-weight: 900; color: #0056b3; margin: 5px 0;">
-                        ${h.litSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.litMaks}</span>
+        const payload = {
+            nama: document.getElementById('nama')?.value || (ambilDataDariStorage()?.nama) || "",
+            kelas: document.getElementById('kelas')?.value || (ambilDataDariStorage()?.kelas) || "",
+            asal: document.getElementById('asal')?.value || (ambilDataDariStorage()?.asal) || "",
+            nomor: document.getElementById('nomor')?.value || (ambilDataDariStorage()?.nomor) || "",
+            mapel: document.getElementById('mapel')?.value || (ambilDataDariStorage()?.mapel) || "",
+            skorLiterasi: h.litSkor,
+            skorNumerasi: h.numSkor,
+            totalSkor: Math.round((h.litSkor + h.numSkor) / 2),
+            pelanggaran: window.violationCount || 0,
+            durasi: durasiFormatted,
+            jawaban: jawabanSiswa
+        };
+
+        try {
+            if (statusBox) {
+                statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menyimpan hasil ujian ke server...</span>`;
+            }
+
+            const response = await fetch(URL_GAS, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            });
+
+            const resData = await response.json();
+
+            if (resData.status === "ok") {
+                if (statusBox) {
+                    statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian berhasil terkirim dan tersimpan!</span>`;
+                }
+            } else if (resData.status === "sudah_terkirim") {
+                if (statusBox) {
+                    statusBox.innerHTML = `<span style="color: #d97706; font-weight: bold;">⚠️ Data ujian Anda sudah pernah terkirim sebelumnya.</span>`;
+                }
+            } else {
+                throw new Error(resData.pesan || "Gagal menyimpan data.");
+            }
+
+        } catch (err) {
+            console.error("Error kirim data:", err);
+            if (statusBox) {
+                statusBox.innerHTML = `
+                    <div style="color: #cc0000; font-weight: bold; margin-bottom: 8px;">
+                        ❌ Gagal terhubung ke server.
                     </div>
-                    <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
-                        ✅ Benar ${h.litBenar} dari ${h.litTotalSoal} soal
+                    <button onclick="kirimKeSpreadsheet(hitungSkor())" style="padding: 6px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                        🔄 Coba Kirim Ulang Data
+                    </button>
+                `;
+            }
+        }
+    }
+
+    function tampilkanHasil() {
+        if (timerInterval) clearInterval(timerInterval);
+
+        const h = hitungSkor();
+        
+        quizArea.innerHTML = `
+            <div class="result-box">
+                <div id="statusPengiriman" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-size: 14px;">
+                    ⏳ Mempersiapkan pengiriman data...
+                </div>
+
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center;">
+                    <div style="flex: 1; border-right: 1px solid #e2e8f0; padding: 0 10px;">
+                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Literasi</div>
+                        <div style="font-size: 28px; font-weight: 900; color: #0056b3; margin: 5px 0;">
+                            ${h.litSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.litMaks}</span>
+                        </div>
+                        <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
+                            ✅ Benar ${h.litBenar} dari ${h.litTotalSoal} soal
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1; padding: 0 10px;">
+                        <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Numerasi</div>
+                        <div style="font-size: 28px; font-weight: 900; color: #d97706; margin: 5px 0;">
+                            ${h.numSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.numMaks}</span>
+                        </div>
+                        <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
+                            ✅ Benar ${h.numBenar} dari ${h.numTotalSoal} soal
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
+
+                <div class="result-details">
+                    <div class="result-item correct">
+                        <span class="result-val">${h.totalBenar}</span>
+                        <span>Total Benar Keseluruhan</span>
+                    </div>
+                    <div class="result-item wrong">
+                        <span class="result-val">${h.totalSoalValid - h.totalBenar}</span> 
+                        <span>Total Salah Keseluruhan</span>
                     </div>
                 </div>
                 
-                <div style="flex: 1; padding: 0 10px;">
-                    <div style="font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase;">Numerasi</div>
-                    <div style="font-size: 28px; font-weight: 900; color: #d97706; margin: 5px 0;">
-                        ${h.numSkor} <span style="font-size: 14px; color: #94a3b8;">/ ${h.numMaks}</span>
-                    </div>
-                    <div style="font-size: 13px; color: #16a34a; font-weight: bold;">
-                        ✅ Benar ${h.numBenar} dari ${h.numTotalSoal} soal
-                    </div>
-                </div>
+                <button onclick="kembaliKeAwal()" style="margin-top: 25px; padding: 12px 20px; background: #0056b3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: background 0.3s;">
+                    🏠 Kembali ke Halaman Awal
+                </button>
             </div>
+        `;
+        
+        controls.style.display = 'none';
+        questionNav.style.display = 'none';
+        
+        const timerBadge = document.getElementById('timerBadge');
+        if (timerBadge) {
+            timerBadge.classList.add('hidden');
+        }
+        
+        sessionStorage.setItem('ujianSelesai', 'true');
+        bersihkanDataUjian(); 
 
-            <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
+        kirimKeSpreadsheet(h);
+    }
 
-            <div class="result-details">
-                <div class="result-item correct">
-                    <span class="result-val">${h.totalBenar}</span>
-                    <span>Total Benar Keseluruhan</span>
-                </div>
-                <div class="result-item wrong">
-                    <span class="result-val">${h.totalSoalValid - h.totalBenar}</span> 
-                    <span>Total Salah Keseluruhan</span>
-                </div>
-            </div>
-            
-            <button onclick="kembaliKeAwal()" style="margin-top: 25px; padding: 12px 20px; background: #0056b3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: background 0.3s;">
-                🏠 Kembali ke Halaman Awal
-            </button>
+    window.kembaliKeAwal = function() {
+        bersihkanDataUjian();
+        sessionStorage.removeItem('ujianSelesai'); 
+        window.location.reload(); 
+    };
+
+    prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
+
+    // ==================================================
+    // 🚨 7. SISTEM DETEKSI PELANGGARAN & SHOCK ALERT
+    // ==================================================
+
+    const styleAlert = document.createElement('style');
+    styleAlert.innerHTML = `
+        .peringatan-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            backdrop-filter: blur(5px);
+        }
+        .peringatan-box {
+            background: #FFD700;
+            border: 6px solid #CC0000;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(204, 0, 0, 0.9);
+            animation: shakeAlert 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        .peringatan-icon { font-size: 60px; margin-bottom: 10px; line-height: 1; }
+        .peringatan-title {
+            color: #CC0000; font-size: 26px; font-weight: 900;
+            text-transform: uppercase; margin-bottom: 15px;
+            font-family: 'Arial Black', Impact, sans-serif;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+        }
+        .peringatan-text { color: #000; font-size: 16px; font-weight: 700; margin-bottom: 25px; line-height: 1.5; }
+        .peringatan-angka { color: #CC0000; font-size: 24px; font-weight: 900; background: #000; padding: 2px 8px; border-radius: 5px; }
+        .peringatan-btn {
+            background: #000; color: #FFD700; border: 2px solid #000;
+            padding: 12px 20px; font-size: 14px; font-weight: bold;
+            border-radius: 8px; cursor: pointer; transition: 0.2s;
+            text-transform: uppercase; width: 100%;
+        }
+        .peringatan-btn:hover { background: #CC0000; color: #FFF; border-color: #CC0000; }
+        @keyframes shakeAlert {
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(4px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
+            40%, 60% { transform: translate3d(8px, 0, 0); }
+        }
+    `;
+    document.head.appendChild(styleAlert);
+
+    const alertOverlay = document.createElement('div');
+    alertOverlay.className = 'peringatan-overlay';
+    alertOverlay.id = 'customPeringatan';
+    alertOverlay.innerHTML = `
+        <div class="peringatan-box">
+            <div class="peringatan-icon">🚨</div>
+            <div class="peringatan-title">PERINGATAN KERAS!</div>
+            <div class="peringatan-text" id="peringatanText"></div>
+            <button class="peringatan-btn" onclick="tutupPeringatan()">Saya Mengerti & Tidak Akan Mengulangi</button>
         </div>
     `;
-    
-    controls.style.display = 'none';
-    questionNav.style.display = 'none';
-    
-    const timerBadge = document.getElementById('timerBadge');
-    if (timerBadge) {
-        timerBadge.classList.add('hidden');
-    }
-    
-    // 2. TANDAI SELESAI DAN BERSIHKAN LOCALSTORAGE UJIAN
-    sessionStorage.setItem('ujianSelesai', 'true');
-    bersihkanDataUjian(); 
-}
+    document.body.appendChild(alertOverlay);
 
-// ✅ RESET TOTAL KE HALAMAN LOGIN / AWAL
-window.kembaliKeAwal = function() {
-    bersihkanDataUjian();
-    sessionStorage.removeItem('ujianSelesai'); 
-    window.location.reload(); 
-};
+    window.tutupPeringatan = function() {
+        document.getElementById('customPeringatan').style.display = 'none';
+    };
 
-// Navigasi Tombol Kembali
-prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
+    function catatPelanggaran() {
+        if (sessionStorage.getItem('ujianSelesai') === 'true') return;
+        if (window.isConfirming) return;
 
-// ✅ PERBAIKAN KONFIRMASI (MENCEGAH FALSE ALARM PELANGGARAN)
-window.konfirmasiSelesai = function() {
-    window.isConfirming = true; // Matikan detektor kecurangan sementara
-    const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
-    window.isConfirming = false; // Aktifkan kembali
-    
-    if (yakin) {
-        tampilkanHasil(); 
-    }
-};
-
-// ==================================================
-// ✅ FITUR DETEKSI PELANGGARAN (DENGAN CUSTOM ALERT SHOCK)
-// ==================================================
-
-const styleAlert = document.createElement('style');
-styleAlert.innerHTML = `
-    .peringatan-overlay {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 99999;
-        backdrop-filter: blur(5px);
-    }
-    .peringatan-box {
-        background: #FFD700;
-        border: 6px solid #CC0000;
-        border-radius: 15px;
-        padding: 30px;
-        max-width: 450px;
-        width: 90%;
-        text-align: center;
-        box-shadow: 0 0 40px rgba(204, 0, 0, 0.9);
-        animation: shakeAlert 0.5s cubic-bezier(.36,.07,.19,.97) both;
-    }
-    .peringatan-icon { font-size: 60px; margin-bottom: 10px; line-height: 1; }
-    .peringatan-title {
-        color: #CC0000; font-size: 26px; font-weight: 900;
-        text-transform: uppercase; margin-bottom: 15px;
-        font-family: 'Arial Black', Impact, sans-serif;
-        text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-    }
-    .peringatan-text { color: #000; font-size: 16px; font-weight: 700; margin-bottom: 25px; line-height: 1.5; }
-    .peringatan-angka { color: #CC0000; font-size: 24px; font-weight: 900; background: #000; padding: 2px 8px; border-radius: 5px; }
-    .peringatan-btn {
-        background: #000; color: #FFD700; border: 2px solid #000;
-        padding: 12px 20px; font-size: 14px; font-weight: bold;
-        border-radius: 8px; cursor: pointer; transition: 0.2s;
-        text-transform: uppercase; width: 100%;
-    }
-    .peringatan-btn:hover { background: #CC0000; color: #FFF; border-color: #CC0000; }
-    @keyframes shakeAlert {
-        10%, 90% { transform: translate3d(-2px, 0, 0); }
-        20%, 80% { transform: translate3d(4px, 0, 0); }
-        30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
-        40%, 60% { transform: translate3d(8px, 0, 0); }
-    }
-`;
-document.head.appendChild(styleAlert);
-
-const alertOverlay = document.createElement('div');
-alertOverlay.className = 'peringatan-overlay';
-alertOverlay.id = 'customPeringatan';
-alertOverlay.innerHTML = `
-    <div class="peringatan-box">
-        <div class="peringatan-icon">🚨</div>
-        <div class="peringatan-title">PERINGATAN KERAS!</div>
-        <div class="peringatan-text" id="peringatanText"></div>
-        <button class="peringatan-btn" onclick="tutupPeringatan()">Saya Mengerti & Tidak Akan Mengulangi</button>
-    </div>
-`;
-document.body.appendChild(alertOverlay);
-
-window.tutupPeringatan = function() {
-    document.getElementById('customPeringatan').style.display = 'none';
-};
-
-// 3. Logika Pencatatan Pelanggaran (Sudah Dilindungi dari Confirm/Blur Palsu)
-function catatPelanggaran() {
-    if (sessionStorage.getItem('ujianSelesai') === 'true') return;
-    if (window.isConfirming) return; // Abaikan jika dialog konfirmasi selesai sedang aktif
-
-    if (quizArea && quizArea.style.display === 'block') {
-        window.violationCount = (window.violationCount || 0) + 1;
-        
-        const elemenPelanggaran = document.getElementById('violationCount');
-        if (elemenPelanggaran) {
-            elemenPelanggaran.textContent = window.violationCount;
-        }
-        
-        simpanDataKeStorage();
-
-        const textEl = document.getElementById('peringatanText');
-        textEl.innerHTML = `Kamu terdeteksi meninggalkan layar ujian sebanyak <span class="peringatan-angka">${window.violationCount} KALI</span>.<br><br>Aktivitas ini terus dicatat oleh sistem. Harap segera kembali fokus pada halaman ujian!`;
-        
-        const modalPeringatan = document.getElementById('customPeringatan');
-        modalPeringatan.style.display = 'flex';
-        
-        const box = modalPeringatan.querySelector('.peringatan-box');
-        box.style.animation = 'none';
-        setTimeout(() => box.style.animation = '', 10);
-    }
-}
-
-// Event Listeners Pelanggaran
-document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
-        catatPelanggaran();
-    }
-});
-
-window.addEventListener('blur', () => {
-    setTimeout(() => {
-        if (document.activeElement !== document.body) {
-            const customAlert = document.getElementById('customPeringatan');
-            if (customAlert && !customAlert.contains(document.activeElement)) {
-                catatPelanggaran();
+        if (quizArea && quizArea.style.display === 'block') {
+            window.violationCount = (window.violationCount || 0) + 1;
+            
+            const elemenPelanggaran = document.getElementById('violationCount');
+            if (elemenPelanggaran) {
+                elemenPelanggaran.textContent = window.violationCount;
             }
+            
+            simpanDataKeStorage();
+
+            const textEl = document.getElementById('peringatanText');
+            textEl.innerHTML = `Kamu terdeteksi meninggalkan layar ujian sebanyak <span class="peringatan-angka">${window.violationCount} KALI</span>.<br><br>Aktivitas ini terus dicatat oleh sistem. Harap segera kembali fokus pada halaman ujian!`;
+            
+            const modalPeringatan = document.getElementById('customPeringatan');
+            modalPeringatan.style.display = 'flex';
+            
+            const box = modalPeringatan.querySelector('.peringatan-box');
+            box.style.animation = 'none';
+            setTimeout(() => box.style.animation = '', 10);
         }
-    }, 150);
-});
+    }
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+            catatPelanggaran();
+        }
+    });
+
+    window.addEventListener('blur', () => {
+        setTimeout(() => {
+            if (document.activeElement !== document.body) {
+                const customAlert = document.getElementById('customPeringatan');
+                if (customAlert && !customAlert.contains(document.activeElement)) {
+                    catatPelanggaran();
+                }
+            }
+        }, 150);
+    });
 </script>
 
 </body>
