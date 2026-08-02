@@ -80,7 +80,17 @@ window.daftarSoal = [
         kategori: "LITERASI",
         rentangNilai: "0-3",
         tipe: "PG",
-        soal: "Tiga siswa mendiskusikan kesan mereka terhadap dua foto yang diceritakan oleh tokoh Aku:<br><br>Banu : Wah, foto-foto itu membuktikan bahwa di tengah kesulitan pun, masih ada kepedulian dan kekuatan yang luar biasa di dalam manusia.<br>Wina : Aku rasa, foto itu hanya menarik karena harganya mahal dan akan menggegerkan balai lelang internasional.<br>Fajar : Cerita di balik kedua foto itu justru lebih kuat dari foto itu sendiri. Ada pesan kemanusiaan yang mendalam.<br><br>Hal yang dilakukan tokoh Aku saat membayangkan berada di makam ibunya adalah ....",
+        soal: "Setidaknya empat—lima kali dalam setahun aku menengok Ibuku yang tertidur abadi di makamnya yang sunyi. Namun, nyekar sebelum Ramadan, juga dikenal sebagai ziarah kubur, sangat penting bagiku karena selalu mengingatkan tentang batas usia raga, tentang keniscayaan yang alamiah.<br><br>" +
+      "Makam Ibuku terletak di leher bukit, yang harus dicapai dengan kondisi tubuh yang prima karena jalannya menanjak mencapai kemiringan hingga 45 derajat.<br><br>" +
+      "Aku sudah membayangkan akan menghirup udara yang bersih dari ketinggian. Biasanya aku berhenti agak lama, berdiri tegak menghadap langit, memejam mata, menghirup nafas dalam-dalam, lalu mengembuskannya pelan-pelan, sambil membuang sisa endapan kesedihan dan kekhawatiran.<br><br>" +
+      "Setelah itu baru aku bersimpuh di makam Ibuku, membersihkan bagian yang masih tertutup tanah, menyirami dengan air mawar dari atas ke bawah, lalu menebar mawar merah, putih, melati, bunga kantil, kenanga dan pandan, menyapu kepala makam dengan pelukan, lalu mendaras doa.<br><br>" +
+      "Baru membayangkan saja, hatiku sudah merasa sangat nyaman, meski kakiku terasa beku karena kedinginan.<br><br>" +
+      "Kaus kaki seperti tidak berfungsi. Jaket yang kukenakan tidak mampu mengusir hawa dingin yang mengepung dari mesin pendingin di gerbong kereta api eksekutif bersuhu 20 derajat celsius itu. Freezing. Aku memang tidak tahan udara dingin. Apalagi di luar pun udara terasa sangat dingin. Musim penghujan mencapai titik tertingginya di beberapa wilayah pada bulan Februari.<br><br>" +
+      "Tubuhku bergetar ketika kereta berhenti di stasiun tujuan: Tugu, Yogyakarta. Aku segera mencari mobil yang sudah kupesan dari tetangga baik untuk segera mengantarku sampai ke rumah peninggalan Ibuku. Oh aku harus berhenti sebentar di supermarket di jalan searah untuk membeli kyuri, teman sarapan pagiku.<br><br>" +
+      "Semua terasa baik-baik saja, sebelum tiba-tiba aku merasa energi gelap menyerang, memberi tekanan negatif yang kuat ke ulu hati. Nafasku tersengal. Aku seperti mau tumbang.<br><br>" +
+      "Setiba di rumah, Yu Tinah membantuku berjalan supaya aku tidak jatuh. Dia sudah lebih 14 tahun mengurus rumah itu sementara aku lebih banyak tinggal di Jakarta. Dia menuntunku untuk duduk dan memberiku teh encer hangat dengan sedikit gula, memijat tengkukku pelan, membantuku ke kamar mandi dan membaluri tubuhku dengan minyak kayu putih, lalu menyelimutiku.<br><br>" +
+      "Aku menolak makan malam. Aku hanya ingin berbaring.<br><br>" +
+      "\"Sugeng saré, Mbak,\" ujarnya, pelan",
         pilihan: [
             "membacakan doa dan mengenang kebersamaan dengan sang ibu",
             "berdiri menghadap langit, memejamkan mata, dan menghirup napas dalam-dalam",
@@ -98,7 +108,17 @@ window.daftarSoal = [
         kategori: "LITERASI",
         rentangNilai: "0-3",
         tipe: "PG",
-        soal: "Tiga siswa mendiskusikan kesan mereka terhadap dua foto yang diceritakan oleh tokoh Aku:<br><br>Banu : Wah, foto-foto itu membuktikan bahwa di tengah kesulitan pun, masih ada kepedulian dan kekuatan yang luar biasa di dalam manusia.<br>Wina : Aku rasa, foto itu hanya menarik karena harganya mahal dan akan menggegerkan balai lelang internasional.<br>Fajar : Cerita di balik kedua foto itu justru lebih kuat dari foto itu sendiri. Ada pesan kemanusiaan yang mendalam.<br><br>Apa perasaan yang paling dominan dirasakan tokoh Aku di akhir cerita?",
+        soal: "Setidaknya empat—lima kali dalam setahun aku menengok Ibuku yang tertidur abadi di makamnya yang sunyi. Namun, nyekar sebelum Ramadan, juga dikenal sebagai ziarah kubur, sangat penting bagiku karena selalu mengingatkan tentang batas usia raga, tentang keniscayaan yang alamiah.<br><br>" +
+      "Makam Ibuku terletak di leher bukit, yang harus dicapai dengan kondisi tubuh yang prima karena jalannya menanjak mencapai kemiringan hingga 45 derajat.<br><br>" +
+      "Aku sudah membayangkan akan menghirup udara yang bersih dari ketinggian. Biasanya aku berhenti agak lama, berdiri tegak menghadap langit, memejam mata, menghirup nafas dalam-dalam, lalu mengembuskannya pelan-pelan, sambil membuang sisa endapan kesedihan dan kekhawatiran.<br><br>" +
+      "Setelah itu baru aku bersimpuh di makam Ibuku, membersihkan bagian yang masih tertutup tanah, menyirami dengan air mawar dari atas ke bawah, lalu menebar mawar merah, putih, melati, bunga kantil, kenanga dan pandan, menyapu kepala makam dengan pelukan, lalu mendaras doa.<br><br>" +
+      "Baru membayangkan saja, hatiku sudah merasa sangat nyaman, meski kakiku terasa beku karena kedinginan.<br><br>" +
+      "Kaus kaki seperti tidak berfungsi. Jaket yang kukenakan tidak mampu mengusir hawa dingin yang mengepung dari mesin pendingin di gerbong kereta api eksekutif bersuhu 20 derajat celsius itu. Freezing. Aku memang tidak tahan udara dingin. Apalagi di luar pun udara terasa sangat dingin. Musim penghujan mencapai titik tertingginya di beberapa wilayah pada bulan Februari.<br><br>" +
+      "Tubuhku bergetar ketika kereta berhenti di stasiun tujuan: Tugu, Yogyakarta. Aku segera mencari mobil yang sudah kupesan dari tetangga baik untuk segera mengantarku sampai ke rumah peninggalan Ibuku. Oh aku harus berhenti sebentar di supermarket di jalan searah untuk membeli kyuri, teman sarapan pagiku.<br><br>" +
+      "Semua terasa baik-baik saja, sebelum tiba-tiba aku merasa energi gelap menyerang, memberi tekanan negatif yang kuat ke ulu hati. Nafasku tersengal. Aku seperti mau tumbang.<br><br>" +
+      "Setiba di rumah, Yu Tinah membantuku berjalan supaya aku tidak jatuh. Dia sudah lebih 14 tahun mengurus rumah itu sementara aku lebih banyak tinggal di Jakarta. Dia menuntunku untuk duduk dan memberiku teh encer hangat dengan sedikit gula, memijat tengkukku pelan, membantuku ke kamar mandi dan membaluri tubuhku dengan minyak kayu putih, lalu menyelimutiku.<br><br>" +
+      "Aku menolak makan malam. Aku hanya ingin berbaring.<br><br>" +
+      "\"Sugeng saré, Mbak,\" ujarnya, pelan",
         pilihan: [
             "Senang karena disambut oleh Yu Tinah di rumah.",
             "Tenang dan damai karena sudah sampai di rumah.",
@@ -116,7 +136,17 @@ window.daftarSoal = [
         kategori: "LITERASI",
         rentangNilai: "0-4",
         tipe: "PGK",
-        soal: "Tiga siswa mendiskusikan kesan mereka terhadap dua foto yang diceritakan oleh tokoh Aku:<br><br>Banu : Wah, foto-foto itu membuktikan bahwa di tengah kesulitan pun, masih ada kepedulian dan kekuatan yang luar biasa di dalam manusia.<br>Wina : Aku rasa, foto itu hanya menarik karena harganya mahal dan akan menggegerkan balai lelang internasional.<br>Fajar : Cerita di balik kedua foto itu justru lebih kuat dari foto itu sendiri. Ada pesan kemanusiaan yang mendalam.<br><br>Berdasarkan teks, manakah pernyataan yang menggambarkan kondisi fisik dan mental tokoh Aku selama perjalanan?<br><br>Pilihlah jawaban benar! Jawaban benar lebih dari satu.",
+        soal: "Setidaknya empat—lima kali dalam setahun aku menengok Ibuku yang tertidur abadi di makamnya yang sunyi. Namun, nyekar sebelum Ramadan, juga dikenal sebagai ziarah kubur, sangat penting bagiku karena selalu mengingatkan tentang batas usia raga, tentang keniscayaan yang alamiah.<br><br>" +
+      "Makam Ibuku terletak di leher bukit, yang harus dicapai dengan kondisi tubuh yang prima karena jalannya menanjak mencapai kemiringan hingga 45 derajat.<br><br>" +
+      "Aku sudah membayangkan akan menghirup udara yang bersih dari ketinggian. Biasanya aku berhenti agak lama, berdiri tegak menghadap langit, memejam mata, menghirup nafas dalam-dalam, lalu mengembuskannya pelan-pelan, sambil membuang sisa endapan kesedihan dan kekhawatiran.<br><br>" +
+      "Setelah itu baru aku bersimpuh di makam Ibuku, membersihkan bagian yang masih tertutup tanah, menyirami dengan air mawar dari atas ke bawah, lalu menebar mawar merah, putih, melati, bunga kantil, kenanga dan pandan, menyapu kepala makam dengan pelukan, lalu mendaras doa.<br><br>" +
+      "Baru membayangkan saja, hatiku sudah merasa sangat nyaman, meski kakiku terasa beku karena kedinginan.<br><br>" +
+      "Kaus kaki seperti tidak berfungsi. Jaket yang kukenakan tidak mampu mengusir hawa dingin yang mengepung dari mesin pendingin di gerbong kereta api eksekutif bersuhu 20 derajat celsius itu. Freezing. Aku memang tidak tahan udara dingin. Apalagi di luar pun udara terasa sangat dingin. Musim penghujan mencapai titik tertingginya di beberapa wilayah pada bulan Februari.<br><br>" +
+      "Tubuhku bergetar ketika kereta berhenti di stasiun tujuan: Tugu, Yogyakarta. Aku segera mencari mobil yang sudah kupesan dari tetangga baik untuk segera mengantarku sampai ke rumah peninggalan Ibuku. Oh aku harus berhenti sebentar di supermarket di jalan searah untuk membeli kyuri, teman sarapan pagiku.<br><br>" +
+      "Semua terasa baik-baik saja, sebelum tiba-tiba aku merasa energi gelap menyerang, memberi tekanan negatif yang kuat ke ulu hati. Nafasku tersengal. Aku seperti mau tumbang.<br><br>" +
+      "Setiba di rumah, Yu Tinah membantuku berjalan supaya aku tidak jatuh. Dia sudah lebih 14 tahun mengurus rumah itu sementara aku lebih banyak tinggal di Jakarta. Dia menuntunku untuk duduk dan memberiku teh encer hangat dengan sedikit gula, memijat tengkukku pelan, membantuku ke kamar mandi dan membaluri tubuhku dengan minyak kayu putih, lalu menyelimutiku.<br><br>" +
+      "Aku menolak makan malam. Aku hanya ingin berbaring.<br><br>" +
+      "\"Sugeng saré, Mbak,\" ujarnya, pelan",
         pilihan: [
             "Merasa bersemangat dan gembira.",
             "Merasa tidak nyaman karena kedinginan.",
@@ -134,7 +164,17 @@ window.daftarSoal = [
         kategori: "LITERASI",
         rentangNilai: "0-3",
         tipe: "BS",
-        soal: "Tiga siswa mendiskusikan kesan mereka terhadap dua foto yang diceritakan oleh tokoh Aku:<br><br>Banu : Wah, foto-foto itu membuktikan bahwa di tengah kesulitan pun, masih ada kepedulian dan kekuatan yang luar biasa di dalam manusia.<br>Wina : Aku rasa, foto itu hanya menarik karena harganya mahal dan akan menggegerkan balai lelang internasional.<br>Fajar : Cerita di balik kedua foto itu justru lebih kuat dari foto itu sendiri. Ada pesan kemanusiaan yang mendalam.<br><br>Tentukan Benar atau Salah pernyataan berikut mengenai hubungan tokoh Aku dengan karakter lain dalam cerita!",
+        soal: "Setidaknya empat—lima kali dalam setahun aku menengok Ibuku yang tertidur abadi di makamnya yang sunyi. Namun, nyekar sebelum Ramadan, juga dikenal sebagai ziarah kubur, sangat penting bagiku karena selalu mengingatkan tentang batas usia raga, tentang keniscayaan yang alamiah.<br><br>" +
+      "Makam Ibuku terletak di leher bukit, yang harus dicapai dengan kondisi tubuh yang prima karena jalannya menanjak mencapai kemiringan hingga 45 derajat.<br><br>" +
+      "Aku sudah membayangkan akan menghirup udara yang bersih dari ketinggian. Biasanya aku berhenti agak lama, berdiri tegak menghadap langit, memejam mata, menghirup nafas dalam-dalam, lalu mengembuskannya pelan-pelan, sambil membuang sisa endapan kesedihan dan kekhawatiran.<br><br>" +
+      "Setelah itu baru aku bersimpuh di makam Ibuku, membersihkan bagian yang masih tertutup tanah, menyirami dengan air mawar dari atas ke bawah, lalu menebar mawar merah, putih, melati, bunga kantil, kenanga dan pandan, menyapu kepala makam dengan pelukan, lalu mendaras doa.<br><br>" +
+      "Baru membayangkan saja, hatiku sudah merasa sangat nyaman, meski kakiku terasa beku karena kedinginan.<br><br>" +
+      "Kaus kaki seperti tidak berfungsi. Jaket yang kukenakan tidak mampu mengusir hawa dingin yang mengepung dari mesin pendingin di gerbong kereta api eksekutif bersuhu 20 derajat celsius itu. Freezing. Aku memang tidak tahan udara dingin. Apalagi di luar pun udara terasa sangat dingin. Musim penghujan mencapai titik tertingginya di beberapa wilayah pada bulan Februari.<br><br>" +
+      "Tubuhku bergetar ketika kereta berhenti di stasiun tujuan: Tugu, Yogyakarta. Aku segera mencari mobil yang sudah kupesan dari tetangga baik untuk segera mengantarku sampai ke rumah peninggalan Ibuku. Oh aku harus berhenti sebentar di supermarket di jalan searah untuk membeli kyuri, teman sarapan pagiku.<br><br>" +
+      "Semua terasa baik-baik saja, sebelum tiba-tiba aku merasa energi gelap menyerang, memberi tekanan negatif yang kuat ke ulu hati. Nafasku tersengal. Aku seperti mau tumbang.<br><br>" +
+      "Setiba di rumah, Yu Tinah membantuku berjalan supaya aku tidak jatuh. Dia sudah lebih 14 tahun mengurus rumah itu sementara aku lebih banyak tinggal di Jakarta. Dia menuntunku untuk duduk dan memberiku teh encer hangat dengan sedikit gula, memijat tengkukku pelan, membantuku ke kamar mandi dan membaluri tubuhku dengan minyak kayu putih, lalu menyelimutiku.<br><br>" +
+      "Aku menolak makan malam. Aku hanya ingin berbaring.<br><br>" +
+      "\"Sugeng saré, Mbak,\" ujarnya, pelan",
         pilihan: [
             "Tokoh Aku memiliki hubungan yang sangat dekat dengan mendiang ibunya.",
             "Tokoh Aku merasa berterima kasih kepada Yu Tinah karena telah merawat rumah ibunya.",
