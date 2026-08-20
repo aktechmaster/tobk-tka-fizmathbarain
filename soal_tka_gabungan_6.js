@@ -656,7 +656,7 @@ window.daftarSoal = [
         rentangNilai: "0-3",
         tipe: "BS",
         soal: "<img src=\"images_tka_6/34.png\" alt=\"Gambar Soal 34\" style=\"max-width:200px; display:block; margin:10px auto;\"><br><b>Pernyataan yang sesuai dengan gambar berwarna tersebut!</b><br><br>(1) Pecahan yang sesuai dengan gambar adalah 3/9.<br>(2) Pecahan senilai yang sesuai adalah 1/4.<br>(3) Pecahan senilai yang sesuai adalah 5/15.",
-        gambar: "images_tka_6/34.png",
+        gambar: null,
         pilihan: [
             "(1)",
             "(2)",
