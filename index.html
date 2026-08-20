@@ -915,20 +915,20 @@
             : Math.round((h.indoSkor + h.mtkSkor) / 2);
 
         const payload = {
-            nama: document.getElementById('nama')?.value || (ambilDataDariStorage()?.nama) || "",
-            kelas: document.getElementById('kelas')?.value || (ambilDataDariStorage()?.kelas) || "",
-            asal: document.getElementById('asal')?.value || (ambilDataDariStorage()?.asal) || "",
-            nomor: document.getElementById('nomor')?.value || (ambilDataDariStorage()?.nomor) || "",
-            mapel: document.getElementById('mapel')?.value || (ambilDataDariStorage()?.mapel) || "",
-            skorIndo: h.indoSkor,
-            skorMtk: h.mtkSkor,
-            skorIpa: h.ipaSkor,
-            totalSkor: totalSkorRata,
-            pelanggaran: window.violationCount || 0,
-            durasi: durasiFormatted,
-            jawaban: jawabanRapi
-        };
-
+    namaSheet: "Rekap_TKA_6_SD", // Penanda khusus agar data Kelas 6 masuk ke sheet Rekap_TKA_6_SD
+    nama: document.getElementById('nama')?.value || (ambilDataDariStorage()?.nama) || "",
+    kelas: document.getElementById('kelas')?.value || (ambilDataDariStorage()?.kelas) || "",
+    asal: document.getElementById('asal')?.value || (ambilDataDariStorage()?.asal) || "",
+    nomor: document.getElementById('nomor')?.value || (ambilDataDariStorage()?.nomor) || "",
+    mapel: document.getElementById('mapel')?.value || (ambilDataDariStorage()?.mapel) || "",
+    skorIndo: h.indoSkor,
+    skorMtk: h.mtkSkor,
+    skorIpa: h.ipaSkor,
+    totalSkor: totalSkorRata,
+    pelanggaran: window.violationCount || 0,
+    durasi: durasiFormatted,
+    jawaban: jawabanRapi
+};
         try {
             if (statusBox) {
                 statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menyimpan hasil ujian ke server...</span>`;
