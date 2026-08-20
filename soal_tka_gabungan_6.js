@@ -93,6 +93,63 @@ window.daftarSoal = [
             "Di dalam perut mereka terdapat bakteri baik yang membantu proses pencernaan"
         ],
         kunciJawaban: [0, 2, 3]
-    }
+    },
+
+    // ========================================
+// SOAL NOMOR 6 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 6,
+    kategori: "BAHASA INDONESIA",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Cermati teks bacaan berikut dengan saksama!<br><br>Burung hantu dikenal sebagai hewan malam yang pandai berburu. Ia memiliki penglihatan tajam dan pendengaran luar biasa. Burung ini mampu melihat mangsanya walau dalam kegelapan. Tak heran jika burung hantu menjadi simbol kecerdasan dalam banyak cerita. Selain itu, burung hantu juga sering muncul dalam cerita rakyat dan buku cerita sebagai makhluk yang bijaksana.<br><br>Namun, tidak semua orang menyukai burung hantu. Di beberapa daerah, burung ini dianggap membawa pertanda buruk karena suaranya yang terdengar menyeramkan pada malam hari. Meski demikian, burung hantu sebenarnya memiliki peran penting dalam menjaga keseimbangan alam, terutama dalam mengendalikan populasi tikus dan hewan kecil lainnya.<br><br><b>Ide pokok di paragraf pertama pada bacaan di atas adalah…</b>",
+    gambar: null,
+    pilihan: [
+        "burung hantu melambangkan kecerdasan",
+        "burung hantu pandai berburu malam hari",
+        "ciri-ciri burung hantu sebagai pemburu malam",
+        "burung hantu memiliki budaya unik"
+    ],
+    kunciJawaban: "C"
+},
+
+// ========================================
+// SOAL NOMOR 7 (BS) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 7,
+    kategori: "BAHASA INDONESIA",
+    rentangNilai: "0-3",
+    tipe: "BS",
+    soal: "<b>Perhatikan setiap pernyataan di bawah ini! Berdasarkan teks bacaan soal nomor 6, tentukan pernyataan Benar atau Salah!</b><br><br>(1) Burung hantu menjadi simbol kecerdasan dalam banyak cerita rakyat.<br>(2) Burung hantu mengandalkan penglihatan dan pendengaran saat berburu.<br>(3) Peran burung hantu di alam adalah mengendalikan populasi tikus.<br>(4) Suara burung hantu yang menyeramkan disukai semua orang.",
+    gambar: null,
+    pilihan: [
+        "(1) Benar",
+        "(2) Benar",
+        "(3) Benar",
+        "(4) Benar"
+    ],
+    kunciJawaban: ["B", "B", "B", "S"]
+}
+
+// ========================================
+// SOAL NOMOR 8 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 8,
+    kategori: "BAHASA INDONESIA",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Bacalah teks berikut dengan saksama!<br><br>Kemasan makanan memiliki berbagai bentuk dan warna yang menarik. Namun, tidak semua kemasan ramah lingkungan. Banyak kemasan plastik yang sulit terurai dan merugikan lingkungan. Oleh karena itu, pemilihan kemasan yang tepat dapat dilakukan dengan memilih kemasan ramah lingkungan, kita turut menjaga kebersihan alam dan mengurangi sampah plastik yang menumpuk di laut maupun di darat.<br><br>Beberapa produsen kini berinovasi dengan menggunakan bahan-bahan alami, seperti daun pisang, kertas daur ulang, atau plastik berbasis bahan tumbuhan. Langkah kecil ini bisa menjadi dampak besar jika dilakukan bersama-sama. Sebagai konsumen, kita juga dapat berperan aktif dengan lebih bijak memilih produk yang tidak hanya baik untuk kesehatan, tetapi juga menjaga lingkungan.<br><br><b>Pernyataan mana yang paling tepat menyimpulkan tujuan utama dari ajakan untuk memilih kemasan ramah lingkungan?</b>",
+    gambar: null,
+    pilihan: [
+        "agar produsen mau mencoba inovasi menggunakan bahan-bahan alami",
+        "untuk membantu mengurangi pencemaran lingkungan yang disebabkan oleh sampah plastik",
+        "supaya kemasan makanan bisa memiliki bentuk dan warna yang lebih menarik",
+        "karena kemasan plastik biasa lebih murah dibandingkan kemasan alami"
+    ],
+    kunciJawaban: "B"
+}
 
 ];
