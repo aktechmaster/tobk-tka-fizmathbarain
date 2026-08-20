@@ -382,7 +382,7 @@ window.daftarSoal = [
     // ========================================
     {
         id: 21,
-        kategori: "IPA",
+        kategori: "BAHASA INDONESIA",
         rentangNilai: "0-3",
         tipe: "PG",
         soal: "Bacalah teks berikut untuk menjawab soal nomor 21–23!<br><br><b>Pohon Bakau</b><br><br>Pohon bakau adalah jenis tanaman yang sangat unik. Tanaman ini tumbuh subur di kawasan pantai bertemu muara atau muara sungai. Bakau memiliki ciri khas akar tunjang yang kokoh, berfungsi utama untuk menahan seluruh tanaman dari gelombang pasang yang kuat. Selain itu, daun bakau juga dapat menjadi tempat dan mampu bertahan dari air asin.<br><br>Manfaat bakau sangat besar untuk ekosistem. Secara ekologis, hutan bakau menjadi rumah yang aman bagi berbagai biota laut, seperti ikan kecil, udang, dan kepiting. Bakau juga berperan penting dalam melindungi garis pantai dari abrasi (pengikisan) akibat ombak. Daun dan ranting bakau yang gugur juga menjadi sumber makanan utama bagi berbagai biota laut.<br><br>Selain manfaat lingkungan, bakau juga memberikan manfaat bagi kehidupan manusia. Kayu bakau sering dipakai oleh masyarakat pesisir sebagai bahan bangunan yang kuat atau sebagai kayu bakar. Buah bakau (seperti jenis pidada) juga dapat diolah menjadi berbagai makanan dan minuman sehat, seperti sirup atau dodol. Menanam bakau adalah investasi jangka panjang untuk menjaga desa pesisir dari bencana alam.<br><br><b>Bagan di bawah ini menunjukkan pengelompokan manfaat Pohon Bakau berdasarkan isi teks. Pilih satu bagan yang tepat dan urut berdasarkan pengelompokan manfaat bakau yang dijelaskan dalam teks!</b>",
@@ -401,7 +401,7 @@ window.daftarSoal = [
     // ========================================
     {
         id: 22,
-        kategori: "IPA",
+        kategori: "BAHASA INDONESIA",
         rentangNilai: "0-3",
         tipe: "PG",
         soal: "<b>Pernyataan mana di bawah ini yang seluruhnya merupakan informasi tersurat dalam teks di atas!</b>",
@@ -420,7 +420,7 @@ window.daftarSoal = [
     // ========================================
     {
         id: 23,
-        kategori: "IPA",
+        kategori: "BAHASA INDONESIA",
         rentangNilai: "0-3",
         tipe: "BS",
         soal: "<b>Berdasarkan teks di atas mengenai pohon bakau, tentukan pernyataan Benar atau Salah!</b><br><br>(1) Akar tunjang pohon bakau berfungsi untuk menahan tanaman dari gelombang yang kuat di kawasan pantai.<br>(2) Pohon bakau memiliki peran penting dalam mencegah pengikisan tanah di sepanjang garis pantai.<br>(3) Buah bakau tidak dapat dijadikan bahan olahan makanan atau minuman karena rasanya yang terlalu asin.",
@@ -431,6 +431,139 @@ window.daftarSoal = [
             "(3)"
         ],
         kunciJawaban: ["B", "B", "S"]
+    },
+
+        // ========================================
+    // SOAL NOMOR 24 (PG) - Tingkat Kesulitan: Mudah
+    // ========================================
+    {
+        id: 24,
+        kategori: "BAHASA INDONESIA",
+        rentangNilai: "0-2",
+        tipe: "PG",
+        soal: "Bacalah teks berikut untuk menjawab soal nomor 24–25!<br><br>Setiap pagi, sebelum bel masuk berbunyi, Rani suka berjalan-jalan di taman sekolah. Ia senang melihat bunga-bunga bermekaran dengan warna yang indah. Taman itu tampak asri dan terawat karena setiap siswa memiliki jadwal piket untuk menyiram tanaman.<br><br>Suatu hari, Rani melihat seekor kupu-kupu hinggap di atas bunga mawar merah muda. Kupu-kupu itu tampak kesulitan terbang karena salah sayapnya sayap sobek. Rani merasa kasihan. Ia segera memanggil temannya, Sari, untuk membantu. Mereka bersama-sama mengambil daun kering, lalu meletakkan kupu-kupu itu di tempat teduh agar bisa beristirahat.<br><br>Sejak kejadian itu, Rani semakin rajin menjaga kebersihan taman sekolah. Ia juga mengajak teman-temannya agar tidak merusak tanaman atau menginjak serangga yang ada di sana. Bagi Rani, taman sekolah bukan hanya tempat yang indah, tetapi juga rumah bagi banyak makhluk kecil yang perlu dijaga.<br><br><b>Arti kata asri pada paragraf pertama adalah…</b>",
+        gambar: null,
+        pilihan: [
+            "luas dan bersih",
+            "sejuk dan indah",
+            "hijau dan tinggi",
+            "rapi dan kosong"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ========================================
+    // SOAL NOMOR 25 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 25,
+        kategori: "BAHASA INDONESIA",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "<b>Apakah kamu setuju dengan sikap Rani dalam cerita tersebut?</b>",
+        gambar: null,
+        pilihan: [
+            "Setuju, karena Rani peduli terhadap makhluk hidup di sekitarnya",
+            "Tidak setuju, karena Rani terlalu banyak bermain di taman sekolah",
+            "Tidak setuju, karena kupu-kupu tidak perlu ditolong oleh manusia",
+            "Setuju, karena Rani ingin menjadi ketua kelompok piket taman"
+        ],
+        kunciJawaban: "A"
+    },
+
+    // ========================================
+    // SOAL NOMOR 26 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 26,
+        kategori: "BAHASA INDONESIA",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Bacalah teks berikut untuk menjawab soal nomor 26–27!<br><br>Pisang adalah salah satu buah yang banyak digemari masyarakat. Selain rasanya yang manis, pisang juga mengandung banyak nutrisi. Buah ini mengandung vitamin, serat, dan mineral yang baik untuk pencernaan. Pisang juga sering dijadikan sebagai bahan utama dalam berbagai olahan makanan, seperti kue dan smoothie.<br><br><b>Ringkasan dari paragraf tersebut adalah…</b>",
+        gambar: null,
+        pilihan: [
+            "pisang dapat diolah menjadi kue dan smoothie karena rasanya manis dan digemari masyarakat",
+            "pisang disukai karena manis dan mengandung nutrisi yang baik untuk tubuh serta dapat diolah menjadi berbagai makanan",
+            "pisang mengandung banyak vitamin dan serat yang dapat melancarkan pencernaan dan menambah energi",
+            "pisang adalah buah yang lezat dan sering ditemukan di pasar tradisional maupun modern"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ========================================
+    // SOAL NOMOR 27 (BS) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 27,
+        kategori: "BAHASA INDONESIA",
+        rentangNilai: "0-3",
+        tipe: "BS",
+        soal: "<b>Perhatikan pernyataan-pernyataan berikut! Berdasarkan informasi yang disampaikan dalam teks, tentukan Benar atau Salah!</b><br><br>(1) Pisang disukai banyak orang karena rasanya manis.<br>(2) Pisang mengandung vitamin, protein, dan lemak.<br>(3) Pisang memiliki kandungan yang berguna untuk pencernaan.<br>(4) Pisang hanya bisa dijadikan bahan utama untuk membuat kue.",
+        gambar: null,
+        pilihan: [
+            "(1)",
+            "(2)",
+            "(3)",
+            "(4)"
+        ],
+        kunciJawaban: ["B", "S", "B", "S"]
+    },
+
+    // ========================================
+    // SOAL NOMOR 28 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 28,
+        kategori: "BAHASA INDONESIA",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Bacalah teks fiksi berikut untuk menjawab soal nomor 28–29!<br><br>Setiap pagi sebelum bel masuk berbunyi, Nita selalu datang lebih awal ke sekolah. Ia tak langsung masuk ke kelas, melainkan menuju pojok baca di samping perpustakaan kecil sekolah. Di sana, ia merapikan buku-buku yang terserak di tempat, menyusun ulang sesuai kategori: cerita rakyat, ilmu pengetahuan, dan buku bergambar.<br><br>\"Kalau rapi begini, teman-teman jadi lebih semangat membaca,\" ujar Nita sambil tersenyum. Bukan hanya merapikan, Nita juga membuat kartu pinjam sederhana dari kertas bekas agar teman-temannya bisa meminjam buku dan mengembalikannya dengan tertib. Ia bahkan melukis poster warna-warni bertuliskan \"Ayo Membaca, Buku adalah Jendela Dunia!\" dan menempelkannya di papan pengumuman sekolah.<br><br>Pada saat hari Senin, kepala sekolah menyampaikan apresiasi khusus saat upacara. \"Terima kasih untuk Nita, yang telah membuat pojok baca menjadi tempat yang menyenangkan dan bermanfaat bagi kita semua,\" ucap beliau. Teman-teman bertepuk tangan. Nita tersipu malu, hatinya sangat senang. Ia tidak menyangka hal kecil yang dilakukannya ternyata memberi perubahan.<br><br><b>Objek yang Nita ciptakan khusus sebagai sarana untuk memastikan teman-temannya meminjam dan mengembalikan buku dengan tertib adalah…</b>",
+        gambar: null,
+        pilihan: [
+            "Buku-buku",
+            "Poster warna-warni",
+            "Papan pengumuman",
+            "Kartu pinjam"
+        ],
+        kunciJawaban: "D"
+    },
+
+    // ========================================
+    // SOAL NOMOR 29 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 29,
+        kategori: "BAHASA INDONESIA",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "<b>Berdasarkan teks di atas, pilihan fakta yang tersurat menjelaskan mengenai kegiatan Nita!</b>",
+        gambar: null,
+        pilihan: [
+            "Nita melukis poster untuk mendapatkan pujian dari kepala sekolah",
+            "Nita membuat kartu pinjam buku dari kertas bekas",
+            "Nita tidak pernah menyusun ulang buku-buku berdasarkan kategorinya",
+            "Teman-teman Nita marah karena harus meminjam buku menggunakan kartu"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ========================================
+    // SOAL NOMOR 30 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 30,
+        kategori: "BAHASA INDONESIA",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Bacalah teks berikut dengan saksama!<br><br>Sinar matahari yang kita lihat terlihat berwarna putih. Padahal, sinar matahari terdiri dari banyak warna. Ketika sinar matahari masuk ke Bumi, ia bertemu dengan partikel-partikel kecil di udara, seperti debu dan uap air. Warna sinar matahari yang paling banyak dipantulkan oleh partikel-partikel ini adalah warna biru dan ungu. Karena mata kita lebih sensitif terhadap warna biru, maka langit terlihat berwarna biru cerah di siang hari.<br><br><b>Berdasarkan teks di atas, fakta utama yang tersurat menjelaskan mengenai sinar matahari adalah…</b>",
+        gambar: null,
+        pilihan: [
+            "Sinar matahari yang terlihat putih sebenarnya terdiri dari banyak warna",
+            "Sinar matahari tidak mengandung warna ungu",
+            "Sinar matahari dapat memantulkan semua warna secara merata",
+            "Sinar matahari hanya terdiri dari dua warna utama"
+        ],
+        kunciJawaban: "A"
     }
 
 ];
