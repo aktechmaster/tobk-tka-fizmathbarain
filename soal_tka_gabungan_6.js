@@ -375,9 +375,9 @@ window.daftarSoal = [
             "Udara yang sangat bersih seperti yang ada di paru-paru"
         ],
         kunciJawaban: "A"
-    }
+    },
 
-        // ========================================
+    // ========================================
     // SOAL NOMOR 21 (PG) - Tingkat Kesulitan: Sulit
     // ========================================
     {
