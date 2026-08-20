@@ -564,6 +564,105 @@ window.daftarSoal = [
             "Sinar matahari hanya terdiri dari dua warna utama"
         ],
         kunciJawaban: "A"
+    },
+
+        // ========================================
+    // PEMBATAS: PERGANTIAN BAGIAN SOAL
+    // ========================================
+    {
+        id: 99,
+        kategori: "-",
+        tipe: "INFO",
+        tingkatKesulitan: "-",
+        rentangNilai: "0 – 0",
+        soal: `
+        <div style="text-align:center; padding:30px 20px; background-color:#fff9c4; border:2px solid #fbc02d; border-radius:12px; color:#856404;">
+          <h2 style="margin:0 0 15px 0; font-size:22px; font-weight:900;">📢 PERHATIAN</h2>
+          <p style="font-size:17px; line-height:1.6; margin:0;">
+            Anda telah menyelesaikan bagian <strong>TKA LITERASI</strong>.<br><br>
+            Selanjutnya Anda akan mengerjakan soal bagian <strong>TKA NUMERASI (MATEMATIKA)</strong>.<br>
+            Silakan tekan tombol <strong>SELANJUTNYA</strong> di bawah ini untuk melanjutkan ujian.
+          </p>
+        </div>
+        `,
+        gambar: null,
+        pilihan: [],
+        kunciJawaban: ""
+    },
+
+    // ========================================
+    // SOAL NOMOR 31 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 31,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Sebuah kandang ayam dapat menampung 1.500 ekor ayam. Seorang peternak mempunyai 1.025 ekor ayam, setelah menambah sebanyak 98 ekor ayam baru. Untuk memaksimalkan kapasitas kandang ayam, maka peternak harus membeli ... ekor ayam lagi.",
+        gambar: null,
+        pilihan: [
+            "573",
+            "377",
+            "273",
+            "177"
+        ],
+        kunciJawaban: "C"
+    },
+
+    // ========================================
+    // SOAL NOMOR 32 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 32,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "120% - 3 : 2 + 0,75 × 2/3 = ...",
+        gambar: null,
+        pilihan: [
+            "11/30",
+            "49/60",
+            "31/30",
+            "98/60"
+        ],
+        kunciJawaban: "B"
+    },
+
+    // ========================================
+    // SOAL NOMOR 33 (PGK) - Tingkat Kesulitan: Sulit
+    // ========================================
+    {
+        id: 33,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PGK",
+        soal: "Pak Bayu akan membeli beras keperluan sebesar di toko \"Amanah\". Pak Bayu membeli dua uang seratus ribuan dan satu lembar uang lima puluh ribuan. Pak Bayu membeli 5 kg beras, 2 kg gula pasir, dan 2 liter minyak goreng.<br><br><b>Harga Barang Toko \"Amanah\"</b><br>Beras Rp 15.000,00/Kg<br>Gula pasir Rp 11.000,00/Kg<br>Minyak goreng Rp 12.000,00/Liter<br><br>Setiap pembelian Rp 100.000,00 dapat potongan harga Rp 10.000,00.<br><br>Pernyataan berikut yang benar adalah... (Pilih lebih dari satu jawaban benar)",
+        gambar: null,
+        pilihan: [
+            "Total pembelian beras Rp 75.000,00",
+            "Total pembelian minyak goreng Rp 25.000,00",
+            "Uang kembalian yang diterima Pak Bayu Rp 39.000,00",
+            "Uang yang harus dibayarkan untuk semua belanjaan Pak Bayu Rp 111.000,00"
+        ],
+        kunciJawaban: [0, 2]
+    },
+
+    // ========================================
+    // SOAL NOMOR 34 (BS) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 34,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "BS",
+        soal: "<img src=\"images_tka_6/34.png\" alt=\"Gambar Soal 34\" style=\"max-width:200px; display:block; margin:10px auto;\"><br><b>Pernyataan yang sesuai dengan gambar berwarna tersebut!</b><br><br>(1) Pecahan yang sesuai dengan gambar adalah 3/9.<br>(2) Pecahan senilai yang sesuai adalah 1/4.<br>(3) Pecahan senilai yang sesuai adalah 5/15.",
+        gambar: "images_tka_6/34.png",
+        pilihan: [
+            "(1)",
+            "(2)",
+            "(3)"
+        ],
+        kunciJawaban: ["B", "S", "B"]
     }
 
 ];
