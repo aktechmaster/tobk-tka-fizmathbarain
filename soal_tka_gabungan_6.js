@@ -131,7 +131,7 @@ window.daftarSoal = [
         "(4) Benar"
     ],
     kunciJawaban: ["B", "B", "B", "S"]
-}
+},
 
 // ========================================
 // SOAL NOMOR 8 (PG) - Tingkat Kesulitan: Sedang
