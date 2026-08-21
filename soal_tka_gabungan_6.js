@@ -663,6 +663,176 @@ window.daftarSoal = [
             "(3)"
         ],
         kunciJawaban: ["B", "S", "B"]
+    },
+
+        // ========================================
+    // SOAL NOMOR 35 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 35,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Dalam pembelajaran pecahan, Bu Sisika membagikan kartu pecahan kepada Abi, Fatih, Genta, Kesya, dan Ines. Ines mendapatkan kartu berpecahan 6/22, Abi mendapatkan 3/16, Fatih mendapatkan 11/36, sedangkan Genta 3/61 dan Kesya mendapatkan 11/21. Kelima anak tersebut menduduki barisan dari yang terkecil.<br><br>Urutan nama anak yang terkecil berturut-turut adalah ...",
+        gambar: null,
+        pilihan: [
+            "A. Genta, Abi, Kesya, Fatih, dan Ines",
+            "B. Genta, Kesya, Abi, Ines, dan Fatih",
+            "C. Genta, Ines, Kesya, Abi, dan Fatih",
+            "D. Genta, Fatih, Kesya, Abi, dan Ines"
+        ],
+        kunciJawaban: "C"
+    },
+
+    // ========================================
+    // SOAL NOMOR 36 (PGK) - Tingkat Kesulitan: Sulit
+    // ========================================
+    {
+        id: 36,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PGK",
+        soal: "Paman mempunyai 3 lahan kebun. Pada musim panen, lahan kebun pertama menghasilkan 3/4 kuintal buah jeruk, lahan kebun kedua menghasilkan 2/5 kuintal buah apel, dan lahan kebun ketiga menghasilkan 3/10 kuintal buah mangga.<br><br>(1) Jumlah panen buah jeruk dan buah apel ada 1 1/10 kuintal<br>(2) Jumlah panen buah jeruk dan buah mangga ada 1 1/20 kuintal<br>(3) Selisih panen buah apel dan buah mangga ada 1/10 kuintal<br>(4) Selisih panen buah jeruk dan mangga ada 9/20 kuintal<br><br>Pernyataan yang benar adalah ...",
+        gambar: null,
+        pilihan: [
+            "(1), (2) dan (3)",
+            "(2), (3) dan (4)",
+            "(2) dan (3)",
+            "(1) dan (2)"
+        ],
+        kunciJawaban: [1, 2]
+    },
+
+    // ========================================
+    // SOAL NOMOR 37 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 37,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Bu Wati membeli 6 botol minyak goreng. Setiap botol berisi 1/2 liter minyak goreng. Sisa minyak goreng di dalam wadah plastik berukuran 3/4 liter. Banyak wadah plastik yang dibutuhkan Bu Wati untuk menampung semua minyak goreng adalah ... buah",
+        gambar: null,
+        pilihan: [
+            "18",
+            "16",
+            "14",
+            "12"
+        ],
+        kunciJawaban: "D"
+    },
+
+    // ========================================
+    // SOAL NOMOR 38 (PGK) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 38,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PGK",
+        soal: "Jumlah kelereng Agus 2/3 kali jumlah kelereng Budi. Jika jumlah kelereng mereka 20 butir, maka ...<br><br>(1) Banyak kelereng Agus 8 butir<br>(2) Banyak kelereng Budi 10 butir<br>(3) Selisih kelereng mereka 4 butir<br>(4) Jika Budi membeli 3 butir kelereng lagi, maka jumlah kelereng sekarang ada 15 butir",
+        gambar: null,
+        pilihan: [
+            "Pernyataan (1) benar",
+            "Pernyataan (2) benar",
+            "Pernyataan (3) benar",
+            "Pernyataan (4) benar"
+        ],
+        kunciJawaban: [0, 2]
+    },
+
+    // ========================================
+    // SOAL NOMOR 39 (BS) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 39,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "BS",
+        soal: "Kakak akan menyambungkan beberapa pita. Sisa pita kebenaran sama rata. Jika pita yang tersambung 72 bungkus misal per instan, 60 bungkus sisa, dan 48 bungkus sisa. Pernyataan Benar atau Salah yang tepat adalah...<br><br>(1) Banyak pita sekadar 12<br>(2) Total item dalam setiap pita sama sisa 15<br>(3) Banyak mie instan sama setiap pita sekadar ada 5",
+        gambar: null,
+        pilihan: [
+            "(1)",
+            "(2)",
+            "(3)"
+        ],
+        kunciJawaban: ["B", "S", "B"]
+    },
+
+        // ========================================
+    // SOAL NOMOR 40 (PGK) - Tingkat Kesulitan: Sulit
+    // ========================================
+    {
+        id: 40,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PGK",
+        soal: "<b>Perhatikan!</b><br><br>Les renang \"JUARA\"<br>Tersedia:<br>• Paket 1: les setiap 2 hari sekali, dimulai 2 September 2025<br>• Paket 2: les setiap 3 hari sekali, dimulai 5 September 2025<br>• Paket 3: les setiap 5 hari sekali, dimulai 9 September 2025<br><br>Jani mengambil paket 1, Lila mengambil paket 2, dan Fira mengambil paket 3.<br><br>(1) Mereka akan les bersama pertama kali tanggal 20 September 2025.<br>(2) Mereka akan les bersama pertama kali tanggal 14 September 2025.<br>(3) Pada bulan September 2025, Fira akan les sebanyak 5 kali.<br>(4) Mereka akan les bersama setiap 20 hari sekali.<br><br>Pernyataan yang benar adalah ... (jawaban benar lebih dari satu)",
+        gambar: null,
+        pilihan: [
+            "(1), (2), dan (3)",
+            "(1), (2), dan (4)",
+            "(2) dan (3)",
+            "(2) dan (4)"
+        ],
+        kunciJawaban: [2]
+    },
+
+    // ========================================
+    // SOAL NOMOR 41 (BS) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 41,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "BS",
+        soal: "Berikut beberapa sifat bangun datar persegi panjang:<br><br>(1) Memiliki 4 sisi yang sama panjang.<br>(2) Mempunyai 2 pasang sisi yang sama panjang.<br>(3) Keempat sudutnya sama besar (90°).",
+        gambar: null,
+        pilihan: [
+            "(1)",
+            "(2)",
+            "(3)"
+        ],
+        kunciJawaban: ["S", "B", "B"]
+    },
+
+        // ========================================
+    // SOAL NOMOR 42 (PG) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 42,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PG",
+        soal: "Tiko akan membentuk mainan dadu dari karton seperti gambar di atas. Jumlah mata dadu yang saling berhadapan jumlahnya sama yaitu 7. Pola jaring-jaring mainan dari bahan Tiko yang tepat adalah ...<br><br><img src=\"images_tka_6/42a.png\" alt=\"Pilihan A\" style=\"max-width:100px; margin:5px;\"><img src=\"images_tka_6/42b.png\" alt=\"Pilihan B\" style=\"max-width:100px; margin:5px;\"><img src=\"images_tka_6/42c.png\" alt=\"Pilihan C\" style=\"max-width:100px; margin:5px;\"><img src=\"images_tka_6/42d.png\" alt=\"Pilihan D\" style=\"max-width:100px; margin:5px;\">",
+        gambar: null,
+        pilihan: [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        kunciJawaban: "D"
+    },
+
+    // ========================================
+    // SOAL NOMOR 43 (PGK) - Tingkat Kesulitan: Sedang
+    // ========================================
+    {
+        id: 43,
+        kategori: "NUMERASI",
+        rentangNilai: "0-3",
+        tipe: "PGK",
+        soal: "Jika jarak rumah Andi ke sekolah 800 m dan jarak rumah Budi ke sekolah 1.200 m, maka ...<br><br>(1) Jarak rumah Andi dan Budi 2 km<br>(2) Jarak rumah Andi ke sekolah 8 km<br>(3) Jarak rumah Budi ke sekolah 12 km<br>(4) Selisih jarak rumah mereka ke sekolah 400 m<br><br>Pernyataan yang benar adalah ... (jawaban benar lebih dari satu)",
+        gambar: null,
+        pilihan: [
+            "(1) dan (2)",
+            "(2) dan (3)",
+            "(1) dan (4)",
+            "(3) dan (4)"
+        ],
+        kunciJawaban: [2]
     }
+
 
 ];
