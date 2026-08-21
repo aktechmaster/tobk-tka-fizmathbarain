@@ -579,7 +579,7 @@ window.daftarSoal = [
         <div style="text-align:center; padding:30px 20px; background-color:#fff9c4; border:2px solid #fbc02d; border-radius:12px; color:#856404;">
           <h2 style="margin:0 0 15px 0; font-size:22px; font-weight:900;">📢 PERHATIAN</h2>
           <p style="font-size:17px; line-height:1.6; margin:0;">
-            Anda telah menyelesaikan bagian <strong>TKA LITERASI</strong>.<br><br>
+            Anda telah menyelesaikan bagian <strong>TKA BAHASA INDONESIA</strong>.<br><br>
             Selanjutnya Anda akan mengerjakan soal bagian <strong>TKA MATEMATIKA (MATEMATIKA)</strong>.<br>
             Silakan tekan tombol <strong>SELANJUTNYA</strong> di bawah ini untuk melanjutkan ujian.
           </p>
@@ -979,8 +979,8 @@ window.daftarSoal = [
     <div style="text-align:center; padding:30px 20px; background-color:#fff9c4; border:2px solid #fbc02d; border-radius:12px; color:#856404;">
       <h2 style="margin:0 0 15px 0; font-size:22px; font-weight:900;">📢 PERHATIAN</h2>
       <p style="font-size:17px; line-height:1.6; margin:0;">
-        Anda telah menyelesaikan bagian <strong>TKA LITERASI</strong>.<br><br>
-        Selanjutnya Anda akan mengerjakan soal bagian <strong>TKA NUMERASI (MATEMATIKA)</strong>.<br>
+        Anda telah menyelesaikan bagian <strong>TKA MATEMATIKA</strong>.<br><br>
+        Selanjutnya Anda akan mengerjakan soal bagian <strong>TKA ILMU PENGETAHUAN ALAM (IPA)</strong>.<br>
         Silakan tekan tombol <strong>SELANJUTNYA</strong> di bawah ini untuk melanjutkan ujian.
       </p>
     </div>
@@ -995,7 +995,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 51,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Bakteri E-coli di usus besar membantu mengurangi sisa makanan. Sementara di situ bakteri mendapatkan tempat untuk hidup. Coba perhatikan gambar berikut!<br><br>Gambar yang memiliki kesamaan hubungan dengan bacaan di atas adalah ....",
@@ -1014,7 +1014,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 52,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Hewan yang mampu menyesuaikan diri dengan lingkungan akan bertahan dari proses seleksi alam. Hewan mengalami perkembangan pada organ atau kebiasaan untuk fungsi tertentu, misalnya beberapa hewan berikut:<br>(1) Kalajengking<br>(2) Bunglon<br>(3) Cicak<br>(4) Udang<br>(5) Bulu babi laut<br>(6) Belalang<br><br>Hewan yang memiliki kesamaan dalam adaptasi ditunjukkan nomor ....",
@@ -1033,7 +1033,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 53,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PGK",
     soal: "Di kota-kota besar kita bisa menemukan kedai kopi yang menggunakan wadah plastik yang estetik. Tidak hanya menghilangkan dahaga, berbagi jenis mer kopi menjadi sebutan standar hidup dan menunjukan kebersamaan masyarakat. Akan tetapi, kegiatain ini berdampak buruk karena memperbanyak jumlah sampah plastik yang sulit untuk terurai.<br><br>Oleh karena itu, kita perlu melakukan permasalahan dengan melakukan beberapa solusi. Upaya yang tepat untuk menjaga kelestarian lingkungan yang sesuai dengan ilustrasi tersebut adalah ....<br><br>Solusi<br>I. Menggunakan tumbler<br>II. Mendaulat ulang sampah plastik<br>III. Mengubur sampah plastik<br>IV. Mengolah sisa makanan menjadi pupuk<br>V. Membakar sampah plastik yang menumpuk",
@@ -1052,7 +1052,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 54,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PGK",
     soal: "Azka mengamati proses daur hidup hewan mulai dari telur hingga dewasa. Azka menemukan bahwa terdapat beberapa hewan yang mengalami perubahan yang sangat berbeda bentuk dari saat masih sampai dewasa, tetapi ada juga hewan yang setelah menetas menetas dewasa tidak terlihat perbedaannya. Proses perubahan bentuk ini disebut dengan metamorfosis.<br><br>Azka menemukan 4 gambar hewan sebagai berikut:<br>(I) Kupu-kupu<br>(II) Semut<br>(III) Kecoa<br>(IV) Belalang<br><br>Analisis yang tepat dari keempat hewan tersebut adalah .... (jawaban lebih dari satu)<br><br>(1) Kupu-kupu mengalami metamorfosis sempurna karena tidak mengalami fase kepompong dan memiliki bentuk berbeda antara menetas dewasa.<br>(2) Semut merupakan hewan dengan metamorfosis sempurna karena melalui 4 tahap yaitu telur, larva, pupa dan dewasa.<br>(3) Kecoa mengalami metamorfosis tidak sempurna karena tidak mengalami fase kepompong.<br>(4) Belalang tidak mengalami metamorfosis sempurna karena setelah menetas telur berubah menjadi mirip induk tetapi dan menjadi bertambah besar.",
@@ -1071,7 +1071,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 55,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Setiap hewan memiliki bagian tubuh yang memiliki fungsi tertentu. Beberapa hewan yang memiliki keunikan disajikan dalam tabel berikut.<br><br>Pasangan yang benar antara bagian tubuh hewan dengan fungsinya ditunjukkan oleh ...",
@@ -1090,7 +1090,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 56,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan gambar berikut!<br><br>Berikut ini pernyataan yang tepat mengenai otot sesuai dengan gambar di atas adalah ....",
@@ -1109,7 +1109,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 57,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan gambar berikut!<br><br>Sesuai dengan gambar di atas, mekanisme yang ditunjukkan nomor 3-6-1-2 adalah ....",
@@ -1128,7 +1128,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 58,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Aini mengalami rasa sakit pada sistem pencernaan. Setelah dicek oleh dokter, ternyata pada sistem pencernaan Aini mengandung bakteri Helicobacter pylori. Gejala yang dialami Aini seperti nyeri pada bagian perut, perih, dan mual. Aini diperiksa dan oleh dokter untuk tidak mengindahkan makanan dan minuman yang dapat mengiritasi organ, seperti makanan pedas, asam, berlemak tinggi, bumbu masakan, dan berkafein seperi kopi. Penyakit yang dialami Aini menyerang organ ....",
@@ -1147,7 +1147,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 59,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan gambar berikut!<br><br>Cara perkembangbiakan tanaman dari gambar secara berurutan (a), (b), dan (c) adalah ....",
@@ -1166,7 +1166,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 60,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Bima merupakan seorang anak laki-laki tahun depan akan masuk sekolah menengah pertama. Bima mengalami berbagai perubahan dari bentuk fisik dan berkurangnya intensitas bermain serta mulai mendalami hobi tertentu. Bima menjelaskan perubahannya kepada ayahnya, Pak Bayu. Pak Bayu menjelaskan bahwa Bima mengalami pubertas. Berikut ini ciri-ciri pubertas primer yang dialami oleh Bima adalah ....",
@@ -1185,7 +1185,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 61,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan daftar benda-benda berikut. Benda-benda yang memiliki sifat konduktor yang baik adalah ....<br>(1) Plastik makan<br>(2) Plat besi<br>(3) Kertas asturo<br>(4) Cup gelas kopi<br>(5) Panci aluminium",
@@ -1204,7 +1204,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 62,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perubahan wujud benda merupakan fenomena alam yang terjadi ketika suatu benda mengalami perubahan suhu. Dalam kehidupan sehari-hari, kita sering menemui berbagai perubahan wujud, seperti mencair, membeku, menguap, membeku, atau menyublim. Perubahan wujud ini disebabkan oleh penyerapan ataupun pelepasan energi panas.<br>Sandy memindahkan kamper di dalam lemari bajunya yang setelah satu minggu ukurannya berubah menjadi lebih kecil. Perubahan yang dialami oleh kamper milik Sandy sama dengan ....",
@@ -1223,7 +1223,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 63,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Pada hari yang sangat panas, seorang pekerja bangunan melepaskan tutup botol kaca yang terbuat dari logam. Setelah beberapa saat menenpa, pekerja tersebut menyiram tutup botol itu dengan air hangat. Anehnya, setelah disiram air hangat, tutup botol logam tersebut menjadi lebih mudah dibuka.<br><br>Mengapa menyiram tutup botol logam dengan air hangat dapat membantu pekerja tersebut membuka tutup botol kaca?",
@@ -1261,7 +1261,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 65,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Bacalah teks informasi berikut!<br>Shabrina memiliki tiga buah paku. Paku A didekatkan dengan magnet kuat dan menempel. Kemudian, paku B didekatkan dengan paku A dan ikut menempel. Lalu, paku C didekatkan dekat paku B dan ikut menempel. Mengapa paku B dan C dapat menempel?",
@@ -1280,7 +1280,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 66,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan gambar berikut!<br><br>Nisa memasukkan pensil ke dalam segelas air putih. Fahri mengamati pensil tersebut dan melihst seolah-olah pensil seperti terputus. Hal ini merupakan bukti bahwa cahaya bersifat ....",
@@ -1299,7 +1299,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 67,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "BS",
     soal: "Reza saat ini sedang membuat rangkaian listrik sebagai bagian dari ujian praktik IPA. Berikut bagian rangkaian listrik yang dibuat oleh Reza.<br><br>Kondisi yang sesuai praktik Reza adalah:<br><br>I. S1 dan S2 ditutup, sedangkan S3 dibuka, L1 dan L2 menyala<br>II. S1 dan S3 dibuka, sedangkan S2 ditutup, L1 dan L2 menyala<br>III. S1 dan S2 dibuka, sedangkan S3 ditutup, L3 dan L4 menyala<br>IV. S1 dan S3 ditutup, sedangkan S2 dibuka, L3 dan L4 menyala",
@@ -1318,7 +1318,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 68,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan gambar di samping ini!<br>Jika bulan berada pada posisi III maka akan terjadi gerhana ....",
@@ -1337,7 +1337,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 69,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Mikail mengamati penampakan beberapa planet dan mendapatkan beberapa ciri-ciri planet sebagai berikut.<br><br>(1) Planet bersuhu paling panas<br>(2) Planet kembaran bumi<br>(3) Termasuk planet terestrial<br>(4) Planet luar<br><br>Ciri-ciri planet venus ditunjukkan oleh nomor ....",
@@ -1356,7 +1356,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 70,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "IPA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Kabupaten Sleman dan Gunungkidul merupakan kabupaten yang memiliki keindahan alam baik alam maupun pegunungan yang luar biasa. Kabupaten ini juga memiliki berbagai sumber daya alam yang menjadi komoditas dan kekhasan daerahnya. Berikut ini disajikan beberapa gambar mengenai sumber daya alam.<br><br>Salah satu sumber daya alam yang menjadi kekhasan dari Kabupaten Sleman dan Gunungkidul sebagai UMKM lokal ditunjukkan oleh nomor ....",
