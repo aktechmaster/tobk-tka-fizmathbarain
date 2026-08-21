@@ -995,7 +995,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 51,
-    kategori: "BAHASA INDONESIA",
+    kategori: "ILMU PENGETAHUAN ALAM",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Bakteri E-coli di usus besar membantu mengurangi sisa makanan. Sementara di situ bakteri mendapatkan tempat untuk hidup. Coba perhatikan gambar berikut!<br><br>Gambar yang memiliki kesamaan hubungan dengan bacaan di atas adalah ....",
@@ -1014,7 +1014,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 52,
-    kategori: "BAHASA INDONESIA",
+    kategori: "ILMU PENGETAHUAN ALAM",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Hewan yang mampu menyesuaikan diri dengan lingkungan akan bertahan dari proses seleksi alam. Hewan mengalami perkembangan pada organ atau kebiasaan untuk fungsi tertentu, misalnya beberapa hewan berikut:<br>(1) Kalajengking<br>(2) Bunglon<br>(3) Cicak<br>(4) Udang<br>(5) Bulu babi laut<br>(6) Belalang<br><br>Hewan yang memiliki kesamaan dalam adaptasi ditunjukkan nomor ....",
@@ -1033,7 +1033,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 53,
-    kategori: "BAHASA INDONESIA",
+    kategori: "ILMU PENGETAHUAN ALAM",
     rentangNilai: "0-3",
     tipe: "PGK",
     soal: "Di kota-kota besar kita bisa menemukan kedai kopi yang menggunakan wadah plastik yang estetik. Tidak hanya menghilangkan dahaga, berbagi jenis mer kopi menjadi sebutan standar hidup dan menunjukan kebersamaan masyarakat. Akan tetapi, kegiatain ini berdampak buruk karena memperbanyak jumlah sampah plastik yang sulit untuk terurai.<br><br>Oleh karena itu, kita perlu melakukan permasalahan dengan melakukan beberapa solusi. Upaya yang tepat untuk menjaga kelestarian lingkungan yang sesuai dengan ilustrasi tersebut adalah ....<br><br>Solusi<br>I. Menggunakan tumbler<br>II. Mendaulat ulang sampah plastik<br>III. Mengubur sampah plastik<br>IV. Mengolah sisa makanan menjadi pupuk<br>V. Membakar sampah plastik yang menumpuk",
@@ -1052,7 +1052,7 @@ window.daftarSoal = [
 // ========================================
 {
     id: 54,
-    kategori: "BAHASA INDONESIA",
+    kategori: "ILMU PENGETAHUAN ALAM",
     rentangNilai: "0-3",
     tipe: "PGK",
     soal: "Azka mengamati proses daur hidup hewan mulai dari telur hingga dewasa. Azka menemukan bahwa terdapat beberapa hewan yang mengalami perubahan yang sangat berbeda bentuk dari saat masih sampai dewasa, tetapi ada juga hewan yang setelah menetas menetas dewasa tidak terlihat perbedaannya. Proses perubahan bentuk ini disebut dengan metamorfosis.<br><br>Azka menemukan 4 gambar hewan sebagai berikut:<br>(I) Kupu-kupu<br>(II) Semut<br>(III) Kecoa<br>(IV) Belalang<br><br>Analisis yang tepat dari keempat hewan tersebut adalah .... (jawaban lebih dari satu)<br><br>(1) Kupu-kupu mengalami metamorfosis sempurna karena tidak mengalami fase kepompong dan memiliki bentuk berbeda antara menetas dewasa.<br>(2) Semut merupakan hewan dengan metamorfosis sempurna karena melalui 4 tahap yaitu telur, larva, pupa dan dewasa.<br>(3) Kecoa mengalami metamorfosis tidak sempurna karena tidak mengalami fase kepompong.<br>(4) Belalang tidak mengalami metamorfosis sempurna karena setelah menetas telur berubah menjadi mirip induk tetapi dan menjadi bertambah besar.",
@@ -1064,5 +1064,310 @@ window.daftarSoal = [
         "Pernyataan (4)"
     ],
     kunciJawaban: [1, 2, 3]
+},
+
+    // ========================================
+// SOAL NOMOR 55 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 55,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Setiap hewan memiliki bagian tubuh yang memiliki fungsi tertentu. Beberapa hewan yang memiliki keunikan disajikan dalam tabel berikut.<br><br>Pasangan yang benar antara bagian tubuh hewan dengan fungsinya ditunjukkan oleh ...",
+    gambar: "images_tka_6/55.png",
+    pilihan: [
+        "J-III dan L-IV",
+        "K-I dan L-II",
+        "L-IV dan K-III",
+        "N-I dan K-III"
+    ],
+    kunciJawaban: "D"
+},
+
+// ========================================
+// SOAL NOMOR 56 (PG) - Tingkat Kesulitan: Sulit
+// ========================================
+{
+    id: 56,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perhatikan gambar berikut!<br><br>Berikut ini pernyataan yang tepat mengenai otot sesuai dengan gambar di atas adalah ....",
+    gambar: "images_tka_6/56.png",
+    pilihan: [
+        "Otot pada gambar A berkerja dengan kesadaran dan berbentuk silinder bercabang",
+        "Otot pada gambar B berkerja dengan kesadaran dan berbentuk silinder bercabang",
+        "Otot pada gambar C berkerja tanpa kesadaran dan berbentuk silinder tidak bercabang",
+        "Otot pada gambar C berkerja tanpa kesadaran dan berbentuk silinder bercabang"
+    ],
+    kunciJawaban: "D"
+},
+
+// ========================================
+// SOAL NOMOR 57 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 57,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perhatikan gambar berikut!<br><br>Sesuai dengan gambar di atas, mekanisme yang ditunjukkan nomor 3-6-1-2 adalah ....",
+    gambar: "images_tka_6/57.png",
+    pilihan: [
+        "Darah bersih dipompa dari bilik kiri menuju seluruh tubuh lalu diaterima oleh serambi kanan dan menuju bilik kanan untuk dipompa ke paru-paru.",
+        "Darah bersih dipompa dari bilik kanan menuju seluruh tubuh lalu diaterima oleh serambi kanan dan menuju bilik kanan untuk dipompa ke seluruh tubuh kembali.",
+        "Darah kotor dipompa dari bilik kiri menuju seluruh tubuh lalu diaterima oleh serambi kanan dan menuju bilik kanan untuk dipompa ke paru-paru.",
+        "Darah bersih dipompa dari bilik kanan menuju seluruh tubuh lalu diaterima oleh serambi kiri dan menuju bilik kiri untuk dipompa ke paru-paru."
+    ],
+    kunciJawaban: "A"
+},
+
+// ========================================
+// SOAL NOMOR 58 (PG) - Tingkat Kesulitan: Mudah
+// ========================================
+{
+    id: 58,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Aini mengalami rasa sakit pada sistem pencernaan. Setelah dicek oleh dokter, ternyata pada sistem pencernaan Aini mengandung bakteri Helicobacter pylori. Gejala yang dialami Aini seperti nyeri pada bagian perut, perih, dan mual. Aini diperiksa dan oleh dokter untuk tidak mengindahkan makanan dan minuman yang dapat mengiritasi organ, seperti makanan pedas, asam, berlemak tinggi, bumbu masakan, dan berkafein seperi kopi. Penyakit yang dialami Aini menyerang organ ....",
+    gambar: null,
+    pilihan: [
+        "Usus besar",
+        "Usus halus",
+        "Lambung",
+        "Kerongkongan"
+    ],
+    kunciJawaban: "C"
+},
+
+    // ========================================
+// SOAL NOMOR 59 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 59,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perhatikan gambar berikut!<br><br>Cara perkembangbiakan tanaman dari gambar secara berurutan (a), (b), dan (c) adalah ....",
+    gambar: "images_tka_6/59.png",
+    pilihan: [
+        "Umbi akar, umbi lapis, dan akar tinggal",
+        "Umbi batang, umbi lapis, dan akar tinggal",
+        "Umbi akar, umbi lapis, dan stolon",
+        "Umbi batang, umbi lapis, dan stolon"
+    ],
+    kunciJawaban: "C"
+},
+
+// ========================================
+// SOAL NOMOR 60 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 60,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Bima merupakan seorang anak laki-laki tahun depan akan masuk sekolah menengah pertama. Bima mengalami berbagai perubahan dari bentuk fisik dan berkurangnya intensitas bermain serta mulai mendalami hobi tertentu. Bima menjelaskan perubahannya kepada ayahnya, Pak Bayu. Pak Bayu menjelaskan bahwa Bima mengalami pubertas. Berikut ini ciri-ciri pubertas primer yang dialami oleh Bima adalah ....",
+    gambar: null,
+    pilihan: [
+        "Mimpi basah",
+        "Tumbuh jakun",
+        "Suara menjadi berat",
+        "Dada menjadi lebih bidang"
+    ],
+    kunciJawaban: "A"
+},
+
+// ========================================
+// SOAL NOMOR 61 (PG) - Tingkat Kesulitan: Mudah
+// ========================================
+{
+    id: 61,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perhatikan daftar benda-benda berikut. Benda-benda yang memiliki sifat konduktor yang baik adalah ....<br>(1) Plastik makan<br>(2) Plat besi<br>(3) Kertas asturo<br>(4) Cup gelas kopi<br>(5) Panci aluminium",
+    gambar: null,
+    pilihan: [
+        "(1) dan (2)",
+        "(2) dan (5)",
+        "(3) dan (4)",
+        "(4) dan (5)"
+    ],
+    kunciJawaban: "B"
+},
+
+// ========================================
+// SOAL NOMOR 62 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 62,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perubahan wujud benda merupakan fenomena alam yang terjadi ketika suatu benda mengalami perubahan suhu. Dalam kehidupan sehari-hari, kita sering menemui berbagai perubahan wujud, seperti mencair, membeku, menguap, membeku, atau menyublim. Perubahan wujud ini disebabkan oleh penyerapan ataupun pelepasan energi panas.<br>Sandy memindahkan kamper di dalam lemari bajunya yang setelah satu minggu ukurannya berubah menjadi lebih kecil. Perubahan yang dialami oleh kamper milik Sandy sama dengan ....",
+    gambar: null,
+    pilihan: [
+        "perubahan es batu menjadi air",
+        "perubahan pada air yang dimasukkan ke dalam kulkas",
+        "perubahan yang terjadi pada embun di pagi hari",
+        "perubahan pada es kering"
+    ],
+    kunciJawaban: "D"
+},
+
+    // ========================================
+// SOAL NOMOR 63 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 63,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Pada hari yang sangat panas, seorang pekerja bangunan melepaskan tutup botol kaca yang terbuat dari logam. Setelah beberapa saat menenpa, pekerja tersebut menyiram tutup botol itu dengan air hangat. Anehnya, setelah disiram air hangat, tutup botol logam tersebut menjadi lebih mudah dibuka.<br><br>Mengapa menyiram tutup botol logam dengan air hangat dapat membantu pekerja tersebut membuka tutup botol kaca?",
+    gambar: null,
+    pilihan: [
+        "Air hangat melarutkan kotoran yang membuat tutup botol lengket pada botol kaca.",
+        "Botol kaca memuai lebih cepat daripada tutup botol logam saat terkena air hangat.",
+        "Air hangat memberikan tekanan tambahan pada tutup botol sehingga lebih mudah diputar.",
+        "Tutup botol logam memuai lebih cepat daripada botol kaca saat terkena air hangat, sehingga sedikit melonggar."
+    ],
+    kunciJawaban: "D"
+},
+
+// ========================================
+// SOAL NOMOR 64 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 64,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perhatikan tabel kegiatan dan gaya berikut!<br><br>No | Kegiatan | Huruf | Gaya yang bekerja<br>1 | Bermain sepeda | A | Gaya otot dan gaya gesek<br>2 | Ujian Online dengan HP | B | Gaya gesek dan gaya magnet<br>3 | Bermain kelereng | C | Gaya listrik dan gaya otot<br>4 | Bermain layang-layang | D | Gaya gesek dan gaya listrik<br><br>Pasangan yang sesuai antara nomor dan huruf adalah ....",
+    gambar: null,
+    pilihan: [
+        "1-B dan 3-A",
+        "2-C dan 3-D",
+        "1-B dan 4-A",
+        "2-C dan 3-A"
+    ],
+    kunciJawaban: "D"
+},
+
+// ========================================
+// SOAL NOMOR 65 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 65,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Bacalah teks informasi berikut!<br>Shabrina memiliki tiga buah paku. Paku A didekatkan dengan magnet kuat dan menempel. Kemudian, paku B didekatkan dengan paku A dan ikut menempel. Lalu, paku C didekatkan dekat paku B dan ikut menempel. Mengapa paku B dan C dapat menempel?",
+    gambar: "images_tka_6/65.png",
+    pilihan: [
+        "Paku A memberikan lem kepada paku B dan C.",
+        "Paku A mengirimkan listrik kepada paku B dan C.",
+        "Paku A menginduksi sifat magnet kepada paku B dan C.",
+        "Semua paku tersebut sudah memiliki sifat magnet sejak awal."
+    ],
+    kunciJawaban: "C"
+},
+
+// ========================================
+// SOAL NOMOR 66 (PG) - Tingkat Kesulitan: Mudah
+// ========================================
+{
+    id: 66,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perhatikan gambar berikut!<br><br>Nisa memasukkan pensil ke dalam segelas air putih. Fahri mengamati pensil tersebut dan melihst seolah-olah pensil seperti terputus. Hal ini merupakan bukti bahwa cahaya bersifat ....",
+    gambar: "images_tka_6/66.png",
+    pilihan: [
+        "dipantulkan",
+        "dibiaskan",
+        "merambat lurus",
+        "diuraikan"
+    ],
+    kunciJawaban: "B"
+},
+
+    // ========================================
+// SOAL NOMOR 67 (BS) - Tingkat Kesulitan: Sulit
+// ========================================
+{
+    id: 67,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "BS",
+    soal: "Reza saat ini sedang membuat rangkaian listrik sebagai bagian dari ujian praktik IPA. Berikut bagian rangkaian listrik yang dibuat oleh Reza.<br><br>Kondisi yang sesuai praktik Reza adalah:<br><br>I. S1 dan S2 ditutup, sedangkan S3 dibuka, L1 dan L2 menyala<br>II. S1 dan S3 dibuka, sedangkan S2 ditutup, L1 dan L2 menyala<br>III. S1 dan S2 dibuka, sedangkan S3 ditutup, L3 dan L4 menyala<br>IV. S1 dan S3 ditutup, sedangkan S2 dibuka, L3 dan L4 menyala",
+    gambar: "images_tka_6/67.png",
+    pilihan: [
+        "Pernyataan I",
+        "Pernyataan II",
+        "Pernyataan III",
+        "Pernyataan IV"
+    ],
+    kunciJawaban: ["B", "S", "B", "B"]
+},
+
+// ========================================
+// SOAL NOMOR 68 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 68,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Perhatikan gambar di samping ini!<br>Jika bulan berada pada posisi III maka akan terjadi gerhana ....",
+    gambar: "images_tka_6/68.png",
+    pilihan: [
+        "Gerhana bulan total",
+        "Gerhana bulan sebagian",
+        "Gerhana matahari total",
+        "Gerhana matahari cincin"
+    ],
+    kunciJawaban: "C"
+},
+
+    // ========================================
+// SOAL NOMOR 69 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 69,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Mikail mengamati penampakan beberapa planet dan mendapatkan beberapa ciri-ciri planet sebagai berikut.<br><br>(1) Planet bersuhu paling panas<br>(2) Planet kembaran bumi<br>(3) Termasuk planet terestrial<br>(4) Planet luar<br><br>Ciri-ciri planet venus ditunjukkan oleh nomor ....",
+    gambar: null,
+    pilihan: [
+        "(1), (2) dan (3)",
+        "(1) dan (3)",
+        "(2), (3) dan (4)",
+        "(2) dan (4)"
+    ],
+    kunciJawaban: "A"
+},
+
+// ========================================
+// SOAL NOMOR 70 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 70,
+    kategori: "ILMU PENGETAHUAN ALAM",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Kabupaten Sleman dan Gunungkidul merupakan kabupaten yang memiliki keindahan alam baik alam maupun pegunungan yang luar biasa. Kabupaten ini juga memiliki berbagai sumber daya alam yang menjadi komoditas dan kekhasan daerahnya. Berikut ini disajikan beberapa gambar mengenai sumber daya alam.<br><br>Salah satu sumber daya alam yang menjadi kekhasan dari Kabupaten Sleman dan Gunungkidul sebagai UMKM lokal ditunjukkan oleh nomor ....",
+    gambar: "images_tka_6/70.png",
+    pilihan: [
+        "(1) dan (2)",
+        "(1) dan (3)",
+        "(2) dan (3)",
+        "(2) dan (4)"
+    ],
+    kunciJawaban: "A"
 }
+
 ];
