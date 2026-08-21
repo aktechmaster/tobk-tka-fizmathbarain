@@ -796,7 +796,7 @@ window.daftarSoal = [
         kunciJawaban: ["S", "B", "B"]
     },
 
-        // ========================================
+            // ========================================
     // SOAL NOMOR 42 (PG) - Tingkat Kesulitan: Sedang
     // ========================================
     {
@@ -804,17 +804,17 @@ window.daftarSoal = [
         kategori: "NUMERASI",
         rentangNilai: "0-3",
         tipe: "PG",
-        soal: "Tiko akan membentuk mainan dadu dari karton seperti gambar di atas. Jumlah mata dadu yang saling berhadapan jumlahnya sama yaitu 7. Pola jaring-jaring mainan dari bahan Tiko yang tepat adalah ...<br><br><img src=\"images_tka_6/42a.png\" alt=\"Pilihan A\" style=\"max-width:100px; margin:5px;\"><img src=\"images_tka_6/42b.png\" alt=\"Pilihan B\" style=\"max-width:100px; margin:5px;\"><img src=\"images_tka_6/42c.png\" alt=\"Pilihan C\" style=\"max-width:100px; margin:5px;\"><img src=\"images_tka_6/42d.png\" alt=\"Pilihan D\" style=\"max-width:100px; margin:5px;\">",
+        soal: "Tiko akan membentuk mainan dadu dari karton seperti gambar di atas. Jumlah mata dadu yang saling berhadapan jumlahnya sama yaitu 7. Pola jaring-jaring mainan dari bahan Tiko yang tepat adalah ...",
         gambar: null,
         pilihan: [
-            "A",
-            "B",
-            "C",
-            "D"
+            "<img src=\"images_tka_6/42a.png\" alt=\"A\" style=\"max-width:90px;\">",
+            "<img src=\"images_tka_6/42b.png\" alt=\"B\" style=\"max-width:90px;\">",
+            "<img src=\"images_tka_6/42c.png\" alt=\"C\" style=\"max-width:90px;\">",
+            "<img src=\"images_tka_6/42d.png\" alt=\"D\" style=\"max-width:90px;\">"
         ],
-        kunciJawaban: "D"
+        kunciJawaban: "C"
     },
-
+    
     // ========================================
     // SOAL NOMOR 43 (PGK) - Tingkat Kesulitan: Sedang
     // ========================================
