@@ -1242,10 +1242,10 @@ window.daftarSoal = [
 // ========================================
 {
     id: 64,
-    kategori: "ILMU PENGETAHUAN ALAM",
+    kategori: "BAHASA INDONESIA",
     rentangNilai: "0-3",
     tipe: "PG",
-    soal: "Perhatikan tabel kegiatan dan gaya berikut!<br><br>No | Kegiatan | Huruf | Gaya yang bekerja<br>1 | Bermain sepeda | A | Gaya otot dan gaya gesek<br>2 | Ujian Online dengan HP | B | Gaya gesek dan gaya magnet<br>3 | Bermain kelereng | C | Gaya listrik dan gaya otot<br>4 | Bermain layang-layang | D | Gaya gesek dan gaya listrik<br><br>Pasangan yang sesuai antara nomor dan huruf adalah ....",
+    soal: "Perhatikan tabel kegiatan dan gaya berikut!<br><br><table border='1' style='border-collapse: collapse; text-align: center; width: 100%; margin-top: 4px;'><tr style='background-color:#f0f0f0;'><th style='padding: 6px;'>No</th><th style='padding: 6px;'>Kegiatan</th><th style='padding: 6px;'>Huruf</th><th style='padding: 6px;'>Gaya yang bekerja</th></tr><tr><td style='padding: 6px;'>1</td><td style='padding: 6px;'>Bermain sepeda</td><td style='padding: 6px;'>A</td><td style='padding: 6px;'>Gaya otot dan gaya gesek</td></tr><tr><td style='padding: 6px;'>2</td><td style='padding: 6px;'>Ujian Online dengan HP</td><td style='padding: 6px;'>B</td><td style='padding: 6px;'>Gaya listrik dan gaya otot</td></tr><tr><td style='padding: 6px;'>3</td><td style='padding: 6px;'>Bermain kelereng</td><td style='padding: 6px;'>C</td><td style='padding: 6px;'>Gaya gesek dan gaya magnet</td></tr><tr><td style='padding: 6px;'>4</td><td style='padding: 6px;'>Bermain layang-layang</td><td style='padding: 6px;'>D</td><td style='padding: 6px;'>Gaya gesek dan gaya listrik</td></tr></table><br>Pasangan yang sesuai antara nomor dan huruf adalah ....",
     gambar: null,
     pilihan: [
         "1-B dan 3-A",
