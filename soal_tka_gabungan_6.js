@@ -947,23 +947,22 @@ window.daftarSoal = [
         kunciJawaban: [2]
     },
 
-    // ========================================
+        // ========================================
     // SOAL NOMOR 50 (PG) - Tingkat Kesulitan: Sedang
     // ========================================
     {
         id: 50,
-        kategori: "MATEMATIKA",
+        kategori: "NUMERASI",
         rentangNilai: "0-3",
         tipe: "PG",
-        soal: "Hasil penilaian harian IPA siswa kelas VI SD Merdeka sebagai berikut:<br>75, 83, 89, 80, 83, 85, 80, 83, 80, 89,<br>83, 85, 95, 83, 75, 89, 83, 85, 83, 83,<br>85, 83, 89, 83, 95, 75, 85, dan 83.<br><br>Tabel yang sesuai data tersebut adalah ...",
+        soal: "Hasil penilaian harian IPA siswa kelas VI SD Merdeka sebagai berikut:<br><br>75, 83, 89, 80, 83, 85, 80, 83, 80, 89,<br>83, 85, 95, 83, 75, 89, 83, 85, 83, 83,<br>85, 83, 89, 83, 95, 75, 85, dan 83.<br><br>Tabel yang sesuai data tersebut adalah ...",
         gambar: null,
         pilihan: [
-            "Nilai: 75,80,83,85,89,95 — Jumlah siswa: 3,4,9,5,5,2",
-            "Nilai: 75,80,83,85,89,95 — Jumlah siswa: 3,4,8,5,5,2",
-            "Nilai: 75,80,83,85,89,95 — Jumlah siswa: 3,4,8,5,6,2",
-            "Nilai: 75,80,83,85,89,95 — Jumlah siswa: 3,4,9,6,5,2"
+            "A. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 9 | 5 | 5 | 2",
+            "B. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 8 | 5 | 5 | 2",
+            "C. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 8 | 5 | 6 | 2",
+            "D. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 9 | 6 | 5 | 2"
         ],
         kunciJawaban: "B"
     }
-
 ];
