@@ -854,9 +854,10 @@ function hitungSkor() {
     let mtkMaksAsli = hasil.mtkMaks;
     let ipaMaksAsli = hasil.ipaMaks;
 
-    hasil.indoSkor = indoMaksAsli > 0 ? Math.round((hasil.indoSkor / indoMaksAsli) * 100) : 0;
-    hasil.mtkSkor = mtkMaksAsli > 0 ? Math.round((hasil.mtkSkor / mtkMaksAsli) * 100) : 0;
-    hasil.ipaSkor = ipaMaksAsli > 0 ? Math.round((hasil.ipaSkor / ipaMaksAsli) * 100) : 0;
+    // Rumus Skala Minimal 20 dan Maksimal 100
+    hasil.indoSkor = indoMaksAsli > 0 ? Math.round(20 + ((hasil.indoSkor / indoMaksAsli) * 80)) : 20;
+    hasil.mtkSkor = mtkMaksAsli > 0 ? Math.round(20 + ((hasil.mtkSkor / mtkMaksAsli) * 80)) : 20;
+    hasil.ipaSkor = ipaMaksAsli > 0 ? Math.round(20 + ((hasil.ipaSkor / ipaMaksAsli) * 80)) : 20;
 
     hasil.indoMaks = 100;
     hasil.mtkMaks = 100;
