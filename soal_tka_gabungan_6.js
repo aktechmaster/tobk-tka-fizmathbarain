@@ -805,7 +805,7 @@ window.daftarSoal = [
         rentangNilai: "0-3",
         tipe: "PG",
         soal: "Tiko akan membentuk mainan dadu dari karton seperti gambar di atas. Jumlah mata dadu yang saling berhadapan jumlahnya sama yaitu 7. Pola jaring-jaring mainan dari bahan Tiko yang tepat adalah ...",
-        gambar: null,
+        gambar: "images_tka_6/42.png",
         pilihan: [
             "<img src=\"images_tka_6/42a.png\" alt=\"A\" style=\"max-width:90px;\">",
             "<img src=\"images_tka_6/42b.png\" alt=\"B\" style=\"max-width:90px;\">",
