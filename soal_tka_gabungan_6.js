@@ -862,7 +862,7 @@ window.daftarSoal = [
         rentangNilai: "0-3",
         tipe: "PG",
         soal: "<img src=\"images_tka_6/45.png\" alt=\"Gambar Soal 45\" style=\"max-width:220px; display:block; margin:10px auto;\"><br>Besar sudut WZY pada gambar tersebut adalah ...",
-        gambar: "images_tka_6/45.png",
+        gambar: null,
         pilihan: [
             "110°",
             "120°",
@@ -881,7 +881,7 @@ window.daftarSoal = [
         rentangNilai: "0-3",
         tipe: "PG",
         soal: "<img src=\"images_tka_6/46.png\" alt=\"Gambar Soal 46\" style=\"max-width:260px; display:block; margin:10px auto;\"><br>Sebuah pigura foto dibuat Lina dari kertas karton. Pigura tersebut berbentuk seperti pada gambar. Bagian tengah untuk pemasangan foto. Bagian lain dilapisi kertas warna. Luas minimal kertas warna yang diperlukan adalah ...",
-        gambar: "images_tka_6/46.png",
+        gambar: null,
         pilihan: [
             "225 cm²",
             "375 cm²",
@@ -937,7 +937,7 @@ window.daftarSoal = [
         rentangNilai: "0-3",
         tipe: "PGK",
         soal: "<img src=\"images_tka_6/49.png\" alt=\"Gambar Soal 49\" style=\"max-width:220px; display:block; margin:10px auto;\"><br>Bak tersebut berisi air seperempat bagian (π = 22/7). Dari gambar tersebut dapat disimpulkan pernyataan berikut:<br><br>(1) Ketinggian air dalam bak adalah 50 dm.<br>(2) Ketinggian air dalam bak adalah 12,5 dm.<br>(3) Volume air dalam bak penampungan tersebut adalah 7.700 dm³.<br>(4) Volume air dalam bak penampungan tersebut adalah 30.800 dm³.<br><br>Pernyataan yang benar ditunjukkan nomor ...",
-        gambar: "images_tka_6/49.png",
+        gambar: null,
         pilihan: [
             "(1), (2), dan (3)",
             "(1), (3), dan (4)",
