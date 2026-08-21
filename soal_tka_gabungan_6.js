@@ -947,7 +947,7 @@ window.daftarSoal = [
         kunciJawaban: [2]
     },
 
-        // ========================================
+            // ========================================
     // SOAL NOMOR 50 (PG) - Tingkat Kesulitan: Sedang
     // ========================================
     {
@@ -958,10 +958,10 @@ window.daftarSoal = [
         soal: "Hasil penilaian harian IPA siswa kelas VI SD Merdeka sebagai berikut:<br><br>75, 83, 89, 80, 83, 85, 80, 83, 80, 89,<br>83, 85, 95, 83, 75, 89, 83, 85, 83, 83,<br>85, 83, 89, 83, 95, 75, 85, dan 83.<br><br>Tabel yang sesuai data tersebut adalah ...",
         gambar: null,
         pilihan: [
-            "A. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 9 | 5 | 5 | 2",
-            "B. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 8 | 5 | 5 | 2",
-            "C. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 8 | 5 | 6 | 2",
-            "D. Nilai: 75 | 80 | 83 | 85 | 89 | 95<br>&nbsp;&nbsp;&nbsp;&nbsp;Jumlah: 3 | 4 | 9 | 6 | 5 | 2"
+            "A<br>Nilai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;80&nbsp;&nbsp;83&nbsp;&nbsp;85&nbsp;&nbsp;89&nbsp;&nbsp;95<br>Jumlah&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;2",
+            "B<br>Nilai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;80&nbsp;&nbsp;83&nbsp;&nbsp;85&nbsp;&nbsp;89&nbsp;&nbsp;95<br>Jumlah&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;2",
+            "C<br>Nilai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;80&nbsp;&nbsp;83&nbsp;&nbsp;85&nbsp;&nbsp;89&nbsp;&nbsp;95<br>Jumlah&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;2",
+            "D<br>Nilai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;80&nbsp;&nbsp;83&nbsp;&nbsp;85&nbsp;&nbsp;89&nbsp;&nbsp;95<br>Jumlah&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;2"
         ],
         kunciJawaban: "B"
     }
