@@ -964,5 +964,105 @@ window.daftarSoal = [
             "D.<br><table border='1' style='border-collapse: collapse; text-align: center; width: 100%; margin-top: 4px;'><tr><td style='padding: 4px;'>Nilai</td><td style='padding: 4px;'>75</td><td style='padding: 4px;'>80</td><td style='padding: 4px;'>83</td><td style='padding: 4px;'>85</td><td style='padding: 4px;'>89</td><td style='padding: 4px;'>95</td></tr><tr><td style='padding: 4px;'>Jumlah siswa</td><td style='padding: 4px;'>3</td><td style='padding: 4px;'>3</td><td style='padding: 4px;'>9</td><td style='padding: 4px;'>6</td><td style='padding: 4px;'>5</td><td style='padding: 4px;'>2</td></tr></table>"
         ],
         kunciJawaban: "A"
-    }
+    },
+
+    // ========================================
+// PEMBATAS: PERGANTIAN BAGIAN SOAL
+// ========================================
+{
+    id: 99,
+    kategori: "-",
+    tipe: "INFO",
+    tingkatKesulitan: "-",
+    rentangNilai: "0 – 0",
+    soal: `
+    <div style="text-align:center; padding:30px 20px; background-color:#fff9c4; border:2px solid #fbc02d; border-radius:12px; color:#856404;">
+      <h2 style="margin:0 0 15px 0; font-size:22px; font-weight:900;">📢 PERHATIAN</h2>
+      <p style="font-size:17px; line-height:1.6; margin:0;">
+        Anda telah menyelesaikan bagian <strong>TKA LITERASI</strong>.<br><br>
+        Selanjutnya Anda akan mengerjakan soal bagian <strong>TKA NUMERASI (MATEMATIKA)</strong>.<br>
+        Silakan tekan tombol <strong>SELANJUTNYA</strong> di bawah ini untuk melanjutkan ujian.
+      </p>
+    </div>
+    `,
+    gambar: null,
+    pilihan: [],
+    kunciJawaban: ""
+},
+
+// ========================================
+// SOAL NOMOR 51 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 51,
+    kategori: "BAHASA INDONESIA",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Bakteri E-coli di usus besar membantu mengurangi sisa makanan. Sementara di situ bakteri mendapatkan tempat untuk hidup. Coba perhatikan gambar berikut!<br><br>Gambar yang memiliki kesamaan hubungan dengan bacaan di atas adalah ....",
+    gambar: "images_tka_6/51.png",
+    pilihan: [
+        "(a) dan (b)",
+        "(a) dan (d)",
+        "(b) dan (c)",
+        "(c) dan (d)"
+    ],
+    kunciJawaban: "D"
+},
+
+// ========================================
+// SOAL NOMOR 52 (PG) - Tingkat Kesulitan: Sedang
+// ========================================
+{
+    id: 52,
+    kategori: "BAHASA INDONESIA",
+    rentangNilai: "0-3",
+    tipe: "PG",
+    soal: "Hewan yang mampu menyesuaikan diri dengan lingkungan akan bertahan dari proses seleksi alam. Hewan mengalami perkembangan pada organ atau kebiasaan untuk fungsi tertentu, misalnya beberapa hewan berikut:<br>(1) Kalajengking<br>(2) Bunglon<br>(3) Cicak<br>(4) Udang<br>(5) Bulu babi laut<br>(6) Belalang<br><br>Hewan yang memiliki kesamaan dalam adaptasi ditunjukkan nomor ....",
+    gambar: "images_tka_6/52.png",
+    pilihan: [
+        "(1), (3) dan (4)",
+        "(2), (4), dan (6)",
+        "(3), (4), dan (5)",
+        "(3), (4), dan (5)"
+    ],
+    kunciJawaban: "A"
+},
+
+// ========================================
+// SOAL NOMOR 53 (PGK) - Tingkat Kesulitan: Sulit
+// ========================================
+{
+    id: 53,
+    kategori: "BAHASA INDONESIA",
+    rentangNilai: "0-3",
+    tipe: "PGK",
+    soal: "Di kota-kota besar kita bisa menemukan kedai kopi yang menggunakan wadah plastik yang estetik. Tidak hanya menghilangkan dahaga, berbagi jenis mer kopi menjadi sebutan standar hidup dan menunjukan kebersamaan masyarakat. Akan tetapi, kegiatain ini berdampak buruk karena memperbanyak jumlah sampah plastik yang sulit untuk terurai.<br><br>Oleh karena itu, kita perlu melakukan permasalahan dengan melakukan beberapa solusi. Upaya yang tepat untuk menjaga kelestarian lingkungan yang sesuai dengan ilustrasi tersebut adalah ....<br><br>Solusi<br>I. Menggunakan tumbler<br>II. Mendaulat ulang sampah plastik<br>III. Mengubur sampah plastik<br>IV. Mengolah sisa makanan menjadi pupuk<br>V. Membakar sampah plastik yang menumpuk",
+    gambar: "images_tka_6/53.png",
+    pilihan: [
+        "I dan II",
+        "II dan III",
+        "III dan IV",
+        "IV dan V"
+    ],
+    kunciJawaban: [0]
+},
+
+// ========================================
+// SOAL NOMOR 54 (PGK) - Tingkat Kesulitan: Sulit
+// ========================================
+{
+    id: 54,
+    kategori: "BAHASA INDONESIA",
+    rentangNilai: "0-3",
+    tipe: "PGK",
+    soal: "Azka mengamati proses daur hidup hewan mulai dari telur hingga dewasa. Azka menemukan bahwa terdapat beberapa hewan yang mengalami perubahan yang sangat berbeda bentuk dari saat masih sampai dewasa, tetapi ada juga hewan yang setelah menetas menetas dewasa tidak terlihat perbedaannya. Proses perubahan bentuk ini disebut dengan metamorfosis.<br><br>Azka menemukan 4 gambar hewan sebagai berikut:<br>(I) Kupu-kupu<br>(II) Semut<br>(III) Kecoa<br>(IV) Belalang<br><br>Analisis yang tepat dari keempat hewan tersebut adalah .... (jawaban lebih dari satu)<br><br>(1) Kupu-kupu mengalami metamorfosis sempurna karena tidak mengalami fase kepompong dan memiliki bentuk berbeda antara menetas dewasa.<br>(2) Semut merupakan hewan dengan metamorfosis sempurna karena melalui 4 tahap yaitu telur, larva, pupa dan dewasa.<br>(3) Kecoa mengalami metamorfosis tidak sempurna karena tidak mengalami fase kepompong.<br>(4) Belalang tidak mengalami metamorfosis sempurna karena setelah menetas telur berubah menjadi mirip induk tetapi dan menjadi bertambah besar.",
+    gambar: "images_tka_6/54.png",
+    pilihan: [
+        "Pernyataan (1)",
+        "Pernyataan (2)",
+        "Pernyataan (3)",
+        "Pernyataan (4)"
+    ],
+    kunciJawaban: [1, 2, 3]
+}
 ];
